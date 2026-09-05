@@ -7,6 +7,7 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Mutable;
 import org.spongepowered.asm.mixin.Shadow;
 
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
  */
 @Mixin(ShipwreckPieces.class)
 public class ShipwreckPiecesMixin {
-    @Shadow @Final
+    @Shadow @Final @Mutable
     private static final Map<String, ResourceKey<LootTable>> MARKERS_TO_LOOT = Map.of(
             "map_chest", BuiltInLootTables.SHIPWRECK_MAP,
             "treasure_chest", ModChestLootTables.MC_SHIPWRECK_TREASURE,

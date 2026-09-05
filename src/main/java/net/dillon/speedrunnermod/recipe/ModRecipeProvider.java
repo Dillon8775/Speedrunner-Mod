@@ -8,23 +8,30 @@ import net.dillon.speedrunnermod.tag.ModBlockItemTags;
 import net.dillon.speedrunnermod.tag.ModItemTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.*;
 import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.crafting.CookingBookCategory;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.ShapedRecipePattern;
+import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+
+import static net.dillon.dillonlib.util.Arithmetics.S_asTick;
+import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
 
 /**
  * Used to modify {@code vanilla recipes} and create {@code Speedrunner Mod} recipes.
@@ -41,6 +48,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     protected RecipeProvider createRecipeProvider(HolderLookup.Provider wrapperLookup, BootstrapContext<Recipe<?>> recipes, BootstrapContext<Advancement> advancements) {
         return new RecipeProvider(recipes, advancements) {
+            HolderGetter<Item> items = this.output.lookup(Registries.ITEM);
 
             @Override
             public void buildRecipes() {
@@ -70,6 +78,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                         this.buildMix(Potions.WATER, Items.LILY_PAD, Potions.LUCK);
                         this.buildMix(Potions.LUCK, Items.GLOWSTONE_DUST, ModPotions.STRONG_LUCK);
+                    }
+
+                    @Override
+                    protected void save(BrewingRecipeBuilder builder) {
+                        ResourceKey<Recipe<?>> defaultKey = builder.defaultId();
+
+                        ResourceKey<Recipe<?>> minecraftKey = ResourceKey.create(
+                                Registries.RECIPE,
+                                ofSpeedrunnerMod(defaultKey.identifier().getPath())
+                        );
+
+                        builder.save(output, minecraftKey);
                     }
                 }.buildRecipes();
 
@@ -258,7 +278,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                 CookingBookCategory.MISC,
                                 ModItems.SPEEDRUNNER_NUGGET,
                                 0.2F,
-                                200
+                                S_asTick(10)
                         )
                         .unlockedBy("has_speedrunner_pickaxe", this.has(ModItems.SPEEDRUNNER_PICKAXE))
                         .unlockedBy("has_speedrunner_shovel", this.has(ModItems.SPEEDRUNNER_SHOVEL))
@@ -287,7 +307,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                 CookingBookCategory.MISC,
                                 ModItems.SPEEDRUNNER_NUGGET,
                                 0.2F,
-                                200
+                                S_asTick(10)
                         )
                         .unlockedBy("has_speedrunner_pickaxe", this.has(ModItems.SPEEDRUNNER_PICKAXE))
                         .unlockedBy("has_speedrunner_shovel", this.has(ModItems.SPEEDRUNNER_SHOVEL))
@@ -351,7 +371,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 this.shaped(RecipeCategory.TOOLS, ModItems.SPEEDRUNNER_PADDLE)
                         .define('I', ModItems.SPEEDRUNNER_PLANKS)
-                        .define('S', ModItemTags.SPEEDRUNNER_STICKS)
+                        .define('S', ConventionalItemTags.WOODEN_RODS)
                         .pattern("I")
                         .pattern("S")
                         .pattern("I")
@@ -389,7 +409,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .save(this.output);
 
                 this.shaped(RecipeCategory.COMBAT, ModItems.SPEEDRUNNER_BOW)
-                        .define('/', ModItemTags.SPEEDRUNNER_STICKS)
+                        .define('/', ConventionalItemTags.WOODEN_RODS)
                         .define('S', Items.STRING)
                         .pattern(" /S")
                         .pattern("/ S")
@@ -400,7 +420,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 this.shaped(RecipeCategory.COMBAT, ModItems.SPEEDRUNNER_CROSSBOW)
                         .define('~', Items.STRING)
-                        .define('#', ModItemTags.SPEEDRUNNER_STICKS)
+                        .define('#', ConventionalItemTags.WOODEN_RODS)
                         .define('S', ModItems.SPEEDRUNNER_INGOT)
                         .define('$', Items.TRIPWIRE_HOOK)
                         .pattern("#S#")
@@ -533,7 +553,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
                 this.shaped(RecipeCategory.BREWING, Items.BLAZE_ROD)
                         .define('P', Items.BLAZE_POWDER)
-                        .define('/', ModItemTags.SPEEDRUNNER_STICKS)
+                        .define('/', ConventionalItemTags.WOODEN_RODS)
                         .pattern("P")
                         .pattern("P")
                         .pattern("/")
@@ -563,6 +583,37 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .requires(ModItems.ENDER_MATTER)
                         .unlockedBy("has_totem", this.has(Items.TOTEM_OF_UNDYING))
                         .save(this.output);
+
+                this.output.accept(
+                        ResourceKey.create(
+                                Registries.RECIPE,
+                                Identifier.withDefaultNamespace("anvil")
+                        ),
+                        new ShapedRecipe(
+                                RecipeBuilder.createCraftingCommonInfo(true),
+                                RecipeBuilder.createCraftingBookInfo(
+                                        RecipeCategory.DECORATIONS,
+                                        null
+                                ),
+                                ShapedRecipePattern.of(
+                                        Map.of(
+                                                'I', Ingredient.of(
+                                                        this.items.getOrThrow(ModBlockItemTags.IRON_BLOCKS.item())
+                                                ),
+                                                'i', Ingredient.of(
+                                                        this.items.getOrThrow(ConventionalItemTags.IRON_INGOTS)
+                                                )
+                                        ),
+                                        List.of(
+                                                "III",
+                                                " i ",
+                                                "iii"
+                                        )
+                                ),
+                                new ItemStackTemplate(Items.ANVIL, 1)
+                        ),
+                        null
+                );
             }
         };
     }

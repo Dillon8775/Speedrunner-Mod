@@ -3,7 +3,7 @@
   "category": "equipment",
   "group": "bows",
   "key": {
-    "/": "#speedrunnermod:speedrunner_sticks",
+    "/": "#c:rods/wooden",
     "S": "minecraft:string"
   },
   "pattern": [

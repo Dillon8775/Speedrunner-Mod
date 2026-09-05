@@ -48,8 +48,6 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
     public static final TagKey<Item> BLUE_EYE_PARTICLES = createItemTag(ofSpeedrunnerMod("blue_eye_particles"));
     public static final TagKey<Item> PIGLIN_AWAKENER_CRAFTABLES = createItemTag(ofSpeedrunnerMod("piglin_awakener_craftables"));
     public static final TagKey<Item> SPEED_BOOTS = createItemTag(ofSpeedrunnerMod("speed_boots"));
-    public static final TagKey<Item> STICKS = createItemTag(ofSpeedrunnerMod("sticks"));
-    public static final TagKey<Item> SPEEDRUNNER_STICKS = createItemTag(ofSpeedrunnerMod("speedrunner_sticks"));
     public static final TagKey<Item> TOTEMS = createItemTag(ofSpeedrunnerMod("totems"));
     public static final TagKey<Item> UPGRADEABLE_GOLD = createItemTag(ofSpeedrunnerMod("upgradable_gold"));
 
@@ -106,6 +104,9 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ConventionalItemTags.NAUTILUS_ARMORS)
                 .addOptionalTag(ModItemTags.SPEEDRUNNER_NAUTILUSES);
+
+        tag(ConventionalItemTags.WOODEN_RODS)
+                .add(ModItemIds.SPEEDRUNNER_STICK);
 
         tag(ModItemTags.SPEED_BOOTS)
                 .add(ModItemIds.SPEEDRUNNER_BOOTS)
@@ -227,13 +228,6 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
         tag(ModItemTags.SPEEDRUNNER_NAUTILUSES)
                 .add(ModItemIds.SPEEDRUNNER_NAUTILUS_ARMOR)
                 .add(ModItemIds.GOLDEN_SPEEDRUNNER_NAUTILUS_ARMOR);
-
-        tag(ModItemTags.STICKS)
-                .add(ItemIds.STICK)
-                .add(ModItemIds.SPEEDRUNNER_STICK);
-
-        tag(ModItemTags.SPEEDRUNNER_STICKS)
-                .add(ModItemIds.SPEEDRUNNER_STICK);
 
         tag(ModItemTags.TOTEMS)
                 .add(ItemIds.TOTEM_OF_UNDYING)

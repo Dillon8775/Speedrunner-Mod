@@ -19,6 +19,6 @@ public class Overrides {
      * @return if we should apply registry loader mixin.
      */
     public static boolean applyRegistryLoaderMixin() {
-        return false;
+        return true;
     }
 }

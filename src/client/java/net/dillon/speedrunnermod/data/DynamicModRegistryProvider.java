@@ -23,6 +23,7 @@ public class DynamicModRegistryProvider extends FabricDynamicRegistryProvider {
         entries.addAll(registries.lookupOrThrow(Registries.BIOME));
         entries.addAll(registries.lookupOrThrow(Registries.FEATURE));
         entries.addAll(registries.lookupOrThrow(Registries.PLACED_FEATURE));
+        entries.addAll(registries.lookupOrThrow(Registries.MATERIAL_RULE));
         entries.addAll(registries.lookupOrThrow(Registries.STRUCTURE)); // Unused right now
         entries.addAll(registries.lookupOrThrow(Registries.STRUCTURE_SET)); // Unused right now
         entries.addAll(registries.lookupOrThrow(Registries.TEMPLATE_POOL)); // Unused right now

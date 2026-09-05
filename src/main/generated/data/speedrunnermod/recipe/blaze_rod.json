@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "key": {
-    "/": "#speedrunnermod:speedrunner_sticks",
+    "/": "#c:rods/wooden",
     "P": "minecraft:blaze_powder"
   },
   "pattern": [

@@ -2,6 +2,7 @@
 2174d631b80c644c6451f983073ed2b1c15ec66e data/c/tags/item/armors/nautilus.json
 d4e8fbabce8e118bdc7985820641d86ff907ff7f data/c/tags/item/ingots/iron.json
 55a14f2855efc563470730747a0b80e668282d9e data/c/tags/item/nuggets/iron.json
+1cdcec497959de36b75c7b9a1397f824d5dcd10c data/c/tags/item/rods/wooden.json
 e39ac6ffb6af974addd599ea1dfef968053522ad data/c/tags/item/tools/bow.json
 362b26547b99707c8fde2e335bfd18110e4f7fc2 data/c/tags/item/tools/crossbow.json
 eda7dbbdacb3b7dde786ad7f02df7264022a6ee9 data/c/tags/item/tools/igniter.json
@@ -85,11 +86,9 @@ a8c63be4943eddb2d6ef3266e5d1178233b657c5 data/speedrunnermod/tags/item/speedrunn
 74a24da4555d2f344b6355f1aa3ced5be049f537 data/speedrunnermod/tags/item/speedrunner_planks.json
 ad2bc39d1c696a086452905e74843a5f49ecdc40 data/speedrunnermod/tags/item/speedrunner_sapling_placeables.json
 49cf36d6cfaecc7ed143e42813ab64ed7d475fca data/speedrunnermod/tags/item/speedrunner_shield_repairable.json
-1cdcec497959de36b75c7b9a1397f824d5dcd10c data/speedrunnermod/tags/item/speedrunner_sticks.json
 d4e8fbabce8e118bdc7985820641d86ff907ff7f data/speedrunnermod/tags/item/speedrunner_tool_materials.json
 d7dcce29a48dfde98775ef8f50f4ebb93d5899d0 data/speedrunnermod/tags/item/speedrunners_workbench_convertable.json
 80939322faef56f7e3a32178f1c7af36cbec3e9a data/speedrunnermod/tags/item/speedrunners_workbench_upgradeable.json
-665d8409ac3a36472092740f9af19156023a5c33 data/speedrunnermod/tags/item/sticks.json
 eedf6f9346bbce4b250969deb256730a7540ad09 data/speedrunnermod/tags/item/throwable_fireballs.json
 2304ff4d95604d43fbe00791aa7aab11834cc1bb data/speedrunnermod/tags/item/totems.json
 7fb7a4ce458766bae09468a39bd27b170c4b42c7 data/speedrunnermod/tags/item/upgradable_gold.json

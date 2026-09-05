@@ -3,6 +3,7 @@ package net.dillon.speedrunnermod.recipe;
 import net.dillon.speedrunnermod.block.ModBlocks;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.tag.ModItemTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -22,6 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static net.dillon.dillonlib.util.Arithmetics.S_asTick;
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
 
 /**
@@ -37,13 +39,13 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      * Creates a smelting, campfire cooking, and smoker recipe.
      */
     protected void createCookableFood(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, 60)
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(3))
                 .unlockedBy("has_item", this.has(input))
                 .save(this.output, output+"_from_campfire_cooking");
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, CookingBookCategory.FOOD, output, 0.35F, 200)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, CookingBookCategory.FOOD, output, 0.35F, S_asTick(10))
                 .unlockedBy("has_item", this.has(input))
                 .save(this.output, output+"_from_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, 200)
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(10))
                 .unlockedBy("has_item", this.has(input))
                 .save(this.output, output+"_from_smoking");
     }
@@ -94,14 +96,14 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      * A helper method for creating a new smelting recipe.
      */
     protected void offerNewSmelting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group) {
-        this.offerMultipleOptionsH(SmeltingRecipe::new, inputs, category, cookingBookCategory, output, experience, 200, group, "_from_smelting");
+        this.offerMultipleOptionsH(SmeltingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(10), group, "_from_smelting");
     }
 
     /**
      * A helper method for creating a new blasting recipe.
      */
     protected void offerNewBlasting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group) {
-        this.offerMultipleOptionsH(BlastingRecipe::new, inputs, category, cookingBookCategory, output, experience, 100, group, "_from_blasting");
+        this.offerMultipleOptionsH(BlastingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(10), group, "_from_blasting");
     }
 
     /**
@@ -223,7 +225,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createSpear(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.COMBAT, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("  X")
                 .pattern(" # ")
@@ -238,7 +240,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createSword(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.COMBAT, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("X")
                 .pattern("X")
@@ -254,7 +256,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createShovel(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.TOOLS, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("X")
                 .pattern("#")
@@ -269,7 +271,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createPickaxe(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.TOOLS, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("XXX")
                 .pattern(" # ")
@@ -284,7 +286,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createAxe(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.TOOLS, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("XX")
                 .pattern("X#")
@@ -299,7 +301,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      */
     protected void createHoe(TagKey<Item> material, ItemLike output) {
         var recipe = this.shaped(RecipeCategory.TOOLS, output)
-                .define('#', ModItemTags.STICKS)
+                .define('#', ConventionalItemTags.WOODEN_RODS)
                 .define('X', material)
                 .pattern("XX")
                 .pattern(" #")
@@ -380,7 +382,7 @@ public class RecipeGeneratorHelper extends RecipeProvider {
     public void banner(ItemLike output, ItemLike inputWool) {
         this.shaped(RecipeCategory.DECORATIONS, output)
                 .define('#', inputWool)
-                .define('|', ModItemTags.STICKS)
+                .define('|', ConventionalItemTags.WOODEN_RODS)
                 .pattern("###")
                 .pattern("###")
                 .pattern(" | ")

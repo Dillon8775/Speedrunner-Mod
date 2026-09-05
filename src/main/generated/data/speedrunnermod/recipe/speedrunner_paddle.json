@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "I": "speedrunnermod:speedrunner_planks",
-    "S": "#speedrunnermod:speedrunner_sticks"
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "I",

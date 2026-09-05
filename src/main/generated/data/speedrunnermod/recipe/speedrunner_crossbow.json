@@ -3,7 +3,7 @@
   "category": "equipment",
   "group": "crossbows",
   "key": {
-    "#": "#speedrunnermod:speedrunner_sticks",
+    "#": "#c:rods/wooden",
     "$": "minecraft:tripwire_hook",
     "S": "speedrunnermod:speedrunner_ingot",
     "~": "minecraft:string"

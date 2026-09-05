@@ -5,6 +5,7 @@ import net.dillon.speedrunnermod.component.ModEnchantments;
 import net.dillon.speedrunnermod.loot.ModBlockLoot;
 import net.dillon.speedrunnermod.loot.ModBlockLootTables;
 import net.dillon.speedrunnermod.loot.ModChestLootTables;
+import net.dillon.speedrunnermod.loot.ModPiglinBarterLootTables;
 import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.recipe.ModRecipeProvider;
 import net.dillon.speedrunnermod.render.ModEquipmentAssetProvider;
@@ -35,6 +36,7 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModBlockLootTables::new);
         pack.addProvider(ModBlockLoot::new);
         pack.addProvider(ModChestLootTables::new);
+        pack.addProvider(ModPiglinBarterLootTables::new);
         pack.addProvider((output, registriesFuture) -> new ModEquipmentAssetProvider(output));
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModItemModelGenerators::new);
@@ -69,6 +71,7 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.add(Registries.BIOME, ModBiomes::bootstrap);
         registryBuilder.add(Registries.FEATURE, ModWorldFeatures::bootstrap);
         registryBuilder.add(Registries.PLACED_FEATURE, ModWorldPlacements::bootstrap);
+        registryBuilder.add(Registries.MATERIAL_RULE, ModMaterialRules::bootstrap);
         registryBuilder.add(Registries.TEMPLATE_POOL, ModPools::bootstrap);
         registryBuilder.add(Registries.STRUCTURE, ModStructures::bootstrap);
         registryBuilder.add(Registries.STRUCTURE_SET, ModStructureSets::bootstrap);

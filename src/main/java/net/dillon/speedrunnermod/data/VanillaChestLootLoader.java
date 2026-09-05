@@ -17,6 +17,9 @@ public class VanillaChestLootLoader {
      * Modifies all structure loot paths.
      */
     private static void modifyStructures(String lootTable, CompoundTag blockNbt) {
+        modifyStructure(BuiltInLootTables.ABANDONED_CAMP_BARREL, ModChestLootTables.MC_ABANDONED_CAMP_BARREL, lootTable, blockNbt);
+        modifyStructure(BuiltInLootTables.ABANDONED_CAMP_COMMON_CHEST, ModChestLootTables.MC_ABANDONED_CAMP_COMMON_CHEST, lootTable, blockNbt);
+        modifyStructure(BuiltInLootTables.ABANDONED_CAMP_SECRET_CHEST, ModChestLootTables.MC_ABANDONED_CAMP_SECRET_CHEST, lootTable, blockNbt);
         modifyStructure(BuiltInLootTables.ANCIENT_CITY, ModChestLootTables.MC_ANCIENT_CITY, lootTable, blockNbt);
         modifyStructure(BuiltInLootTables.BASTION_BRIDGE, ModChestLootTables.MC_BASTION_BRIDGE, lootTable, blockNbt);
         modifyStructure(BuiltInLootTables.BASTION_HOGLIN_STABLE, ModChestLootTables.MC_BASTION_HOGLIN_STABLE, lootTable, blockNbt);

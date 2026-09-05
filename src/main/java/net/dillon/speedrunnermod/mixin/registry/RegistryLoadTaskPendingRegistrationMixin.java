@@ -6,7 +6,10 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Decoder;
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
-import net.dillon.speedrunnermod.data.*;
+import net.dillon.speedrunnermod.data.JsonIdentifiers;
+import net.dillon.speedrunnermod.data.PlacedFeaturesLoader;
+import net.dillon.speedrunnermod.data.StructuresLoader;
+import net.dillon.speedrunnermod.data.TheEndBiomesLoader;
 import net.minecraft.resources.RegistryLoadTask;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
@@ -33,7 +36,7 @@ public class RegistryLoadTaskPendingRegistrationMixin {
         String elementPath = elementKey.identifier().getPath();
         String fileName = registryPath + "/" + elementPath + ".json";
 
-        for (int i = 0; i < EntitySpawnsLoader.biomesWithDefaultMonsters().size(); i++) {
+        /*for (int i = 0; i < EntitySpawnsLoader.biomesWithDefaultMonsters().size(); i++) {
             if (fileName.equals(EntitySpawnsLoader.biomesWithDefaultMonsters().get(i))) {
                 EntitySpawnsLoader.modifyBiomesWithDefaultMonsters(jsonElement);
             }
@@ -65,16 +68,16 @@ public class RegistryLoadTaskPendingRegistrationMixin {
             NetherBiomesLoader.modifySoulSandValley(jsonElement);
         }
 
+        if (fileName.equals(JsonIdentifiers.WARPED_FOREST)) {
+            NetherBiomesLoader.modifyWarpedForest(jsonElement);
+        }
+
         if (fileName.equals(JsonIdentifiers.THE_END)) {
             TheEndBiomesLoader.modifyTheEnd(jsonElement);
-        }
+        }*/
 
         if (fileName.equals(JsonIdentifiers.END)) {
             TheEndBiomesLoader.modifyEnd(jsonElement);
-        }
-
-        if (fileName.equals(JsonIdentifiers.WARPED_FOREST)) {
-            NetherBiomesLoader.modifyWarpedForest(jsonElement);
         }
 
         if (fileName.equals(JsonIdentifiers.MONSTER_ROOM) || fileName.equals(JsonIdentifiers.MONSTER_ROOM_DEEP)) {

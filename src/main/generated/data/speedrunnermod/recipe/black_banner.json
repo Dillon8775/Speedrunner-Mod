@@ -3,7 +3,7 @@
   "group": "banner",
   "key": {
     "#": "minecraft:black_wool",
-    "|": "#speedrunnermod:sticks"
+    "|": "#c:rods/wooden"
   },
   "pattern": [
     "###",

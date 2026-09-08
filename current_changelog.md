@@ -36,6 +36,5 @@
 
 ## Technical Changes
 - Massive backend optimizations, and several changes to the mod's configuration system.
-- Vanilla loot tables (including chests, recipes, and piglin bartering) now point to the speedrunner mod's loot table directory, meaning the mod now uses its own custom loot tables for vanilla loot tables.
 - Several tag removals for conventional item tag replacements.
 - Removed "minBrightness" option.

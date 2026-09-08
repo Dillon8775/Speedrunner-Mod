@@ -283,16 +283,17 @@ public class ModCommonOptions {
      */
     public static class StructureConfigs {
 
+        public StructureConfig abandonedCamp = new StructureConfig(16, 8);
         public StructureConfig ancientCity = new StructureConfig(10, 6);
         public StructureConfig desertPyramid = new StructureConfig(10, 8);
-        public StructureConfig endCity = new StructureConfig(7, 6);
-        public StructureConfig igloo = new StructureConfig(9, 6);
+        public StructureConfig endCity = new StructureConfig(8, 7);
+        public StructureConfig igloo = new StructureConfig(10, 6);
         public StructureConfig junglePyramid = new StructureConfig(10, 8);
         public MineshaftConfig mineshaft = new MineshaftConfig(14.0F);
         public StructureConfig netherComplexes = new StructureConfig(10, 8);
         public StructureConfig oceanRuin = new StructureConfig(10, 5);
         public StructureConfig pillagerOutpost = new StructureConfig(10, 8);
-        public StructureConfig ruinedPortal = new StructureConfig(9, 8);
+        public StructureConfig ruinedPortal = new StructureConfig(10, 8);
         public StructureConfig shipwreck = new StructureConfig(10, 8);
         public StructureConfig swampHut = new StructureConfig(12, 6);
         public StructureConfig trailRuin = new StructureConfig(11, 7);

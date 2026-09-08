@@ -150,10 +150,7 @@ public class ModItemGroups {
                         entries.accept(ModItems.SPEEDRUNNER_PRESSURE_PLATE);
                         entries.accept(ModItems.SPEEDRUNNER_BUTTON);
                         entries.accept(ModItems.SPEEDRUNNER_BOAT);
-                        entries.accept(ModItems.FIREPROOF_SPEEDRUNNER_BOAT);
                         entries.accept(ModItems.SPEEDRUNNER_CHEST_BOAT);
-                        entries.accept(ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT);
-                        entries.accept(ModItems.SPEEDRUNNER_PADDLE);
                         entries.accept(ModItems.DEAD_SPEEDRUNNER_LOG);
                         entries.accept(ModItems.DEAD_SPEEDRUNNER_WOOD);
                         entries.accept(ModItems.DEAD_SPEEDRUNNER_PLANKS);
@@ -177,13 +174,9 @@ public class ModItemGroups {
                         entries.accept(ModItems.DEAD_SPEEDRUNNER_LEAVES);
                         entries.accept(ModItems.DEAD_SPEEDRUNNER_BUSH);
                         entries.accept(ModItems.CRIMSON_BOAT);
-                        entries.accept(ModItems.FIREPROOF_CRIMSON_BOAT);
                         entries.accept(ModItems.CRIMSON_CHEST_BOAT);
-                        entries.accept(ModItems.FIREPROOF_CRIMSON_CHEST_BOAT);
                         entries.accept(ModItems.WARPED_BOAT);
-                        entries.accept(ModItems.FIREPROOF_WARPED_BOAT);
                         entries.accept(ModItems.WARPED_CHEST_BOAT);
-                        entries.accept(ModItems.FIREPROOF_WARPED_CHEST_BOAT);
                         entries.accept(ModItems.DOOM_STONE);
                         entries.accept(ModItems.DOOM_LOG);
                         entries.accept(ModItems.DOOM_LEAVES);
@@ -233,7 +226,6 @@ public class ModItemGroups {
         Factories.factorItemLikesIntoCreativeTab(CreativeModeTabs.INGREDIENTS, List.of(
                 ModItems.SPEEDRUNNER_INGOT,
                 ModItems.SPEEDRUNNER_NUGGET,
-                ModItems.SPEEDRUNNER_PADDLE,
                 ModItems.RAW_SPEEDRUNNER,
                 ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE,
                 ModItems.DRAGON_UPGRADE_SMITHING_TEMPLATE,
@@ -312,18 +304,12 @@ public class ModItemGroups {
                 ModItems.INVENTORY_PRESERVER,
                 ModItems.SPEEDRUNNER_BOAT,
                 ModItems.SPEEDRUNNER_CHEST_BOAT,
-                ModItems.FIREPROOF_SPEEDRUNNER_BOAT,
-                ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT,
                 ModItems.DEAD_SPEEDRUNNER_BOAT,
                 ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT,
                 ModItems.CRIMSON_BOAT,
                 ModItems.CRIMSON_CHEST_BOAT,
-                ModItems.FIREPROOF_CRIMSON_BOAT,
-                ModItems.FIREPROOF_CRIMSON_CHEST_BOAT,
                 ModItems.WARPED_BOAT,
-                ModItems.WARPED_CHEST_BOAT,
-                ModItems.FIREPROOF_WARPED_BOAT,
-                ModItems.FIREPROOF_WARPED_CHEST_BOAT
+                ModItems.WARPED_CHEST_BOAT
         ));
 
         Factories.factorItemLikesIntoCreativeTab(CreativeModeTabs.BUILDING_BLOCKS, List.of(

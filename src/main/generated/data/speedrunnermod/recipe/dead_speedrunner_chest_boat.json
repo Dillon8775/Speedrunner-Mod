@@ -3,7 +3,7 @@
   "group": "chest_boat",
   "ingredients": [
     "minecraft:chest",
-    "minecraft:chest"
+    "speedrunnermod:dead_speedrunner_boat"
   ],
   "result": {
     "id": "speedrunnermod:dead_speedrunner_chest_boat"

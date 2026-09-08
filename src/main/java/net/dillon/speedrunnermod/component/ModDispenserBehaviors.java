@@ -68,18 +68,12 @@ public class ModDispenserBehaviors {
         Factories.registerBoatDispenserBehavior(List.of(
                 Map.of(ModItems.SPEEDRUNNER_BOAT, ModEntityTypes.SPEEDRUNNER_BOAT),
                 Map.of(ModItems.SPEEDRUNNER_CHEST_BOAT, ModEntityTypes.SPEEDRUNNER_CHEST_BOAT),
-                Map.of(ModItems.FIREPROOF_SPEEDRUNNER_BOAT, ModEntityTypes.FIREPROOF_SPEEDRUNNER_BOAT),
-                Map.of(ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT, ModEntityTypes.FIREPROOF_SPEEDRUNNER_CHEST_BOAT),
                 Map.of(ModItems.DEAD_SPEEDRUNNER_BOAT, ModEntityTypes.DEAD_SPEEDRUNNER_BOAT),
                 Map.of(ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT, ModEntityTypes.DEAD_SPEEDRUNNER_CHEST_BOAT),
                 Map.of(ModItems.CRIMSON_BOAT, ModEntityTypes.CRIMSON_BOAT),
                 Map.of(ModItems.CRIMSON_CHEST_BOAT, ModEntityTypes.CRIMSON_CHEST_BOAT),
-                Map.of(ModItems.FIREPROOF_CRIMSON_BOAT, ModEntityTypes.FIREPROOF_CRIMSON_CHEST_BOAT),
-                Map.of(ModItems.FIREPROOF_CRIMSON_CHEST_BOAT, ModEntityTypes.FIREPROOF_CRIMSON_CHEST_BOAT),
                 Map.of(ModItems.WARPED_BOAT, ModEntityTypes.WARPED_BOAT),
-                Map.of(ModItems.WARPED_CHEST_BOAT, ModEntityTypes.WARPED_CHEST_BOAT),
-                Map.of(ModItems.FIREPROOF_WARPED_BOAT, ModEntityTypes.FIREPROOF_WARPED_CHEST_BOAT),
-                Map.of(ModItems.FIREPROOF_WARPED_CHEST_BOAT, ModEntityTypes.FIREPROOF_WARPED_CHEST_BOAT)
+                Map.of(ModItems.WARPED_CHEST_BOAT, ModEntityTypes.WARPED_CHEST_BOAT)
         ));
 
         Factories.registerShearDispenserBehavior(List.of(

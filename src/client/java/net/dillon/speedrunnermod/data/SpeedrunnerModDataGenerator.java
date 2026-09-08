@@ -3,10 +3,12 @@ package net.dillon.speedrunnermod.data;
 import net.dillon.speedrunnermod.advancement.ModAdvancementProvider;
 import net.dillon.speedrunnermod.component.ModEnchantments;
 import net.dillon.speedrunnermod.loot.ModBlockLoot;
-import net.dillon.speedrunnermod.loot.ModBlockLootTables;
-import net.dillon.speedrunnermod.loot.ModChestLootTables;
-import net.dillon.speedrunnermod.loot.ModPiglinBarterLootTables;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
+import net.dillon.speedrunnermod.loot.ModContextInts;
+import net.dillon.speedrunnermod.loot.ModEntityLoot;
+import net.dillon.speedrunnermod.loot.context.ModBlockLootTables;
+import net.dillon.speedrunnermod.loot.context.ModChestLootTables;
+import net.dillon.speedrunnermod.loot.context.ModPiglinBarterLootTables;
+import net.dillon.speedrunnermod.loot.context.ModShearingLootTables;
 import net.dillon.speedrunnermod.recipe.ModRecipeProvider;
 import net.dillon.speedrunnermod.render.ModEquipmentAssetProvider;
 import net.dillon.speedrunnermod.render.ModItemModelGenerators;
@@ -27,19 +29,21 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-        SpeedrunnerMod.LOGGER.info("Initializing speedrunner mod data generator!");
-
         final FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        // Pack Providers
+        // Basic Pack Providers
         pack.addProvider(ModAdvancementProvider::new);
-        pack.addProvider(ModBlockLootTables::new);
-        pack.addProvider(ModBlockLoot::new);
-        pack.addProvider(ModChestLootTables::new);
-        pack.addProvider(ModPiglinBarterLootTables::new);
         pack.addProvider((output, registriesFuture) -> new ModEquipmentAssetProvider(output));
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModItemModelGenerators::new);
+
+        // Loot Providers
+        pack.addProvider(ModBlockLoot::new);
+        pack.addProvider(ModEntityLoot::new);
+        pack.addProvider(ModBlockLootTables::new);
+        pack.addProvider(ModChestLootTables::new);
+        pack.addProvider(ModPiglinBarterLootTables::new);
+        pack.addProvider(ModShearingLootTables::new);
 
         // Dynamic Providers
         pack.addProvider(DynamicModRegistryProvider::new);
@@ -57,17 +61,13 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModPotionTags::new);
         pack.addProvider(ModStructureTags::new);
         pack.addProvider(ModTradeTags::new);
-
-        SpeedrunnerMod.LOGGER.info("Finished running through Speedrunner Mod data generator.");
     }
 
     /**
-     * Runs all other data generators.
+     * Builds all {@code final} registries for Datagen.
      */
     @Override
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
-        // registryBuilder.add(Registries.CONTEXT_INT_PROVIDER, ModContextInts::bootstrap);
-
         registryBuilder.add(Registries.BIOME, ModBiomes::bootstrap);
         registryBuilder.add(Registries.FEATURE, ModWorldFeatures::bootstrap);
         registryBuilder.add(Registries.PLACED_FEATURE, ModWorldPlacements::bootstrap);
@@ -79,5 +79,13 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.add(Registries.ENCHANTMENT, ModEnchantments::bootstrap);
         registryBuilder.add(Registries.TRADE_SET, ModTradeSets::bootstrap);
         registryBuilder.add(Registries.VILLAGER_TRADE, ModTrades::bootstrap);
+    }
+
+    /**
+     * Builds all {@code reloadable} registries for Datagen.
+     */
+    @Override
+    public void buildReloadableRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.CONTEXT_INT_PROVIDER, ModContextInts::bootstrap);
     }
 }

@@ -44,13 +44,6 @@ public abstract class PiglinAiMixin {
     }
 
     /**
-     * Copied over from {@link PiglinAi}.
-     */
-    private static boolean hasBeenHitByPlayer(Piglin piglin) {
-        return piglin.getBrain().hasMemoryValue(MemoryModuleType.ADMIRING_DISABLED);
-    }
-
-    /**
      * @return if the player has the piglin safe attribute.
      */
     @Unique
@@ -60,6 +53,14 @@ public abstract class PiglinAiMixin {
             return piglinSafety >= 2.0F;
         }
         return piglinSafety > 1.0F && player.getRandom().nextFloat() < (piglinSafety - 1.0F);
+    }
+
+    /**
+     * Copied over from {@link PiglinAi}.
+     */
+    @Unique
+    private static boolean hasBeenHitByPlayer(Piglin piglin) {
+        return piglin.getBrain().hasMemoryValue(MemoryModuleType.ADMIRING_DISABLED);
     }
 
     /**

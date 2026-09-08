@@ -1,5 +1,6 @@
 package net.dillon.speedrunnermod.tag;
 
+import net.dillon.speedrunnermod.entity.ModEntityTypeIds;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
@@ -17,6 +18,8 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
  * All Speedrunner Mod {@code entity type tags.}
  */
 public class ModEntityTypeTags extends FabricTagsProvider<EntityType<?>> {
+    public static final TagKey<EntityType<?>> FIREPROOF_BOATS = createEntityTypeTag(ofSpeedrunnerMod("fireproof_boats"));
+    public static final TagKey<EntityType<?>> FAST_BOATS = createEntityTypeTag(ofSpeedrunnerMod("fast_boats"));
     public static final TagKey<EntityType<?>> BLACKLISTED_WITHER_TARGET_MOBS = createEntityTypeTag(ofSpeedrunnerMod("blacklisted_wither_target_mobs"));
     public static final TagKey<EntityType<?>> BLACKLISTED_MINION_CALL_MOBS = createEntityTypeTag(ofSpeedrunnerMod("blacklisted_minion_call_mobs"));
     public static final TagKey<EntityType<?>> BLACKLISTED_ENDER_DRAGON_KILL_MOBS = createEntityTypeTag(ofSpeedrunnerMod("blacklisted_ender_dragon_kill_mobs"));
@@ -39,6 +42,18 @@ public class ModEntityTypeTags extends FabricTagsProvider<EntityType<?>> {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
+        tag(ModEntityTypeTags.FIREPROOF_BOATS)
+                .add(ModEntityTypeIds.SPEEDRUNNER_BOAT)
+                .add(ModEntityTypeIds.SPEEDRUNNER_CHEST_BOAT)
+                .add(ModEntityTypeIds.CRIMSON_BOAT)
+                .add(ModEntityTypeIds.CRIMSON_CHEST_BOAT)
+                .add(ModEntityTypeIds.WARPED_BOAT)
+                .add(ModEntityTypeIds.WARPED_CHEST_BOAT);
+
+        tag(ModEntityTypeTags.FAST_BOATS)
+                .add(ModEntityTypeIds.SPEEDRUNNER_BOAT)
+                .add(ModEntityTypeIds.SPEEDRUNNER_CHEST_BOAT);
+
         tag(ModEntityTypeTags.BLACKLISTED_WITHER_TARGET_MOBS)
                 .add(EntityTypeIds.ENDER_DRAGON)
                 .add(EntityTypeIds.GIANT);

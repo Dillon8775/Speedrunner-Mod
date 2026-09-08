@@ -222,7 +222,7 @@ public class GeneralCategory {
                                         Option.<Integer>createBuilder()
                                                 .name(Component.translatable("speedrunnermod.options.fireball_explosion_power"))
                                                 .description(OptionDescription.of(Component.translatable("speedrunnermod.options.fireball_explosion_power.description")))
-                                                .binding(2, () -> common().general().fireballExplosionPower, v -> common().general().fireballExplosionPower = v)
+                                                .binding(1, () -> common().general().fireballExplosionPower, v -> common().general().fireballExplosionPower = v)
                                                 .controller(o -> IntegerSliderControllerBuilder.create(o)
                                                         .range(1, 10)
                                                         .step(1)

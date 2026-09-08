@@ -28,7 +28,6 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
     );
 
-    @Deprecated
     public static final Block SPEEDRUNNER_WOOD = Blocks.register(ModBlockItemIds.SPEEDRUNNER_WOOD.block(),
             RotatedPillarBlock::new,
             Block.Properties.of()
@@ -76,7 +75,6 @@ public class ModBlocks {
                     .sound(SoundType.GRASS)
     );
 
-    @Deprecated
     public static final Block POTTED_SPEEDRUNNER_SAPLING = Blocks.register(ModBlockIds.POTTED_SPEEDRUNNER_SAPLING,
             settings ->
                     new FlowerPotBlock(ModBlocks.SPEEDRUNNER_SAPLING, settings),
@@ -86,7 +84,6 @@ public class ModBlocks {
                     .pushReaction(PushReaction.POPPED)
     );
 
-    @Deprecated
     public static final Block POTTED_DEAD_SPEEDRUNNER_BUSH = Blocks.register(ModBlockIds.DEAD_POTTED_SPEEDRUNNER_BUSH,
             settings ->
                     new FlowerPotBlock(ModBlocks.DEAD_SPEEDRUNNER_BUSH, settings),
@@ -136,7 +133,6 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
     );
 
-    @Deprecated
     public static final Block SPEEDRUNNER_BUTTON = Blocks.register(ModBlockItemIds.SPEEDRUNNER_BUTTON.block(),
             settings ->
                     new ButtonBlock(BlockSetType.OAK, 30, settings),
@@ -147,7 +143,6 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
     );
 
-    @Deprecated
     public static final Block SPEEDRUNNER_PRESSURE_PLATE = Blocks.register(ModBlockItemIds.SPEEDRUNNER_PRESSURE_PLATE.block(),
             settings ->
                     new PressurePlateBlock(BlockSetType.OAK, settings),
@@ -187,7 +182,6 @@ public class ModBlocks {
                     .ignitedByLava()
     );
 
-    @Deprecated
     public static final Block DEAD_SPEEDRUNNER_WOOD = Blocks.register(ModBlockItemIds.DEAD_SPEEDRUNNER_WOOD.block(),
             RotatedPillarBlock::new,
             Block.Properties.ofFullCopy(ModBlocks.SPEEDRUNNER_WOOD)
@@ -201,7 +195,6 @@ public class ModBlocks {
                     .ignitedByLava()
     );
 
-    @Deprecated
     public static final Block DEAD_POTTED_SPEEDRUNNER_SAPLING = Blocks.register(ModBlockIds.DEAD_POTTED_SPEEDRUNNER_SAPLING,
             settings -> new FlowerPotBlock(ModBlocks.DEAD_SPEEDRUNNER_SAPLING, settings),
             Block.Properties.ofFullCopy(ModBlocks.DEAD_SPEEDRUNNER_SAPLING)
@@ -248,14 +241,12 @@ public class ModBlocks {
                     .ignitedByLava()
     );
 
-    @Deprecated
     public static final Block DEAD_SPEEDRUNNER_BUTTON = Blocks.register(ModBlockItemIds.DEAD_SPEEDRUNNER_BUTTON.block(),
             settings -> new ButtonBlock(BlockSetType.OAK, 30, settings),
             Block.Properties.ofFullCopy(ModBlocks.SPEEDRUNNER_BUTTON)
                     .ignitedByLava()
     );
 
-    @Deprecated
     public static final Block DEAD_SPEEDRUNNER_PRESSURE_PLATE = Blocks.register(ModBlockItemIds.DEAD_SPEEDRUNNER_PRESSURE_PLATE.block(),
             settings ->
                     new PressurePlateBlock(BlockSetType.OAK, settings),
@@ -277,7 +268,6 @@ public class ModBlocks {
                     .ignitedByLava()
     );
 
-    @Deprecated(forRemoval = true)
     public static final Block METAL_SPEEDRUNNER_TRAPDOOR = Blocks.register(ModBlockItemIds.METAL_SPEEDRUNNER_TRAPDOOR.block(),
             settings ->
                     new TrapDoorBlock(BlockSetType.IRON, settings),
@@ -290,7 +280,6 @@ public class ModBlocks {
                     .sound(SoundType.METAL)
     );
 
-    @Deprecated(forRemoval = true)
     public static final Block MEDIATE_WEIGHTED_SPEEDRUNNER_PRESSURE_PLATE = Blocks.register(ModBlockItemIds.MEDIATE_WEIGHTED_SPEEDRUNNER_PRESSURE_PLATE.block(),
             settings ->
                     new WeightedPressurePlateBlock(100, BlockSetType.IRON, settings),
@@ -302,7 +291,6 @@ public class ModBlocks {
                     .sound(SoundType.WOOD)
     );
 
-    @Deprecated(forRemoval = true)
     public static final Block METAL_SPEEDRUNNER_DOOR = Blocks.register(ModBlockItemIds.METAL_SPEEDRUNNER_DOOR.block(),
             settings ->
                     new DoorBlock(BlockSetType.IRON, settings),

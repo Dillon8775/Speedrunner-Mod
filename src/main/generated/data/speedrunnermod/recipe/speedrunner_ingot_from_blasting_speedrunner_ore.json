@@ -1,6 +1,7 @@
 {
   "type": "minecraft:blasting",
-  "cookingtime": 200,
+  "category": "blocks",
+  "cookingtime": 100,
   "experience": 0.85,
   "group": "speedrunner_ingot",
   "ingredient": "speedrunnermod:speedrunner_ore",

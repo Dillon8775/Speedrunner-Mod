@@ -7,93 +7,55 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.entity.vehicle.boat.ChestBoat;
 
-import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
-
 /**
  * All different entity types for the speedrunner mod.
  */
 public class ModEntityTypes {
     public static final EntityType<Boat> SPEEDRUNNER_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("speedrunner_boat"),
+            ModEntityTypeIds.SPEEDRUNNER_BOAT.identifier(),
             () -> ModItems.SPEEDRUNNER_BOAT,
             false
     );
 
-    public static final EntityType<Boat> FIREPROOF_SPEEDRUNNER_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_speedrunner_boat"),
-            () -> ModItems.FIREPROOF_SPEEDRUNNER_BOAT,
-            false
-    );
-
     public static final EntityType<ChestBoat> SPEEDRUNNER_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("speedrunner_chest_boat"),
+            ModEntityTypeIds.SPEEDRUNNER_CHEST_BOAT.identifier(),
             () -> ModItems.SPEEDRUNNER_CHEST_BOAT,
             true
     );
 
-    public static final EntityType<ChestBoat> FIREPROOF_SPEEDRUNNER_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_speedrunner_chest_boat"),
-            () -> ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT,
-            true
-    );
-
     public static final EntityType<Boat> DEAD_SPEEDRUNNER_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("dead_speedrunner_boat"),
+            ModEntityTypeIds.DEAD_SPEEDRUNNER_BOAT.identifier(),
             () -> ModItems.DEAD_SPEEDRUNNER_BOAT,
             false
     );
 
     public static final EntityType<ChestBoat> DEAD_SPEEDRUNNER_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("dead_speedrunner_chest_boat"),
+            ModEntityTypeIds.DEAD_SPEEDRUNNER_CHEST_BOAT.identifier(),
             () -> ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT,
             true
     );
 
     public static final EntityType<Boat> CRIMSON_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("crimson_boat"),
+            ModEntityTypeIds.CRIMSON_BOAT.identifier(),
             () -> ModItems.CRIMSON_BOAT,
             false
     );
 
-    public static final EntityType<Boat> FIREPROOF_CRIMSON_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_crimson_boat"),
-            () -> ModItems.FIREPROOF_CRIMSON_BOAT,
-            false
-    );
-
     public static final EntityType<ChestBoat> CRIMSON_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("crimson_chest_boat"),
+            ModEntityTypeIds.CRIMSON_CHEST_BOAT.identifier(),
             () -> ModItems.CRIMSON_CHEST_BOAT,
             true
     );
 
-    public static final EntityType<ChestBoat> FIREPROOF_CRIMSON_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_crimson_chest_boat"),
-            () -> ModItems.FIREPROOF_CRIMSON_CHEST_BOAT,
-            true
-    );
-
     public static final EntityType<Boat> WARPED_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("warped_boat"),
+            ModEntityTypeIds.WARPED_BOAT.identifier(),
             () -> ModItems.WARPED_BOAT,
             false
     );
 
-    public static final EntityType<Boat> FIREPROOF_WARPED_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_warped_boat"),
-            () -> ModItems.FIREPROOF_WARPED_BOAT,
-            false
-    );
-
     public static final EntityType<ChestBoat> WARPED_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("warped_chest_boat"),
+            ModEntityTypeIds.WARPED_CHEST_BOAT.identifier(),
             () -> ModItems.WARPED_CHEST_BOAT,
-            true
-    );
-
-    public static final EntityType<ChestBoat> FIREPROOF_WARPED_CHEST_BOAT = Factories.registerBoatFactory(
-            ofSpeedrunnerMod("fireproof_warped_chest_boat"),
-            () -> ModItems.FIREPROOF_WARPED_CHEST_BOAT,
             true
     );
 

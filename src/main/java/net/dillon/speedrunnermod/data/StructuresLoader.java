@@ -9,138 +9,149 @@ import static net.dillon.speedrunnermod.option.ModCommonOptions.isDoomMode;
 /**
  * Contains all  {@code structure modifications}, making them generate more commonly.
  */
-public class StructuresLoader {
+public record StructuresLoader(LoaderMain main) {
+    public static int MODIFIED_STRUCTURES = 0;
+
+    /**
+     * Changes the {@code spacing} and {@code separation} values for {@code abandoned camps.}
+     */
+    public void modifyAbandonedCamp() {
+        configure(main().rootJsonElement(), common().structureConfigs().abandonedCamp);
+    }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code ancient cities.}
      */
-    public static void modifyAncientCities(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().ancientCity);
+    public void modifyAncientCities() {
+        configure(main().rootJsonElement(), common().structureConfigs().ancientCity);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code desert pyramids.}
      */
-    public static void modifyDesertPyramids(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().desertPyramid);
+    public void modifyDesertPyramids() {
+        configure(main().rootJsonElement(), common().structureConfigs().desertPyramid);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code end cities.}
      */
-    public static void modifyEndCities(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().endCity);
+    public void modifyEndCities() {
+        configure(main().rootJsonElement(), common().structureConfigs().endCity);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code jungle temples.}
      */
-    public static void modifyJunglePyramids(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().junglePyramid);
+    public void modifyJunglePyramids() {
+        configure(main().rootJsonElement(), common().structureConfigs().junglePyramid);
     }
 
     /**
      * Changes the {@code frequency} value for {@code mineshafts.}
      */
-    public static void modifyMineshafts(JsonElement jsonElement) {
-        jsonElement.getAsJsonObject().getAsJsonObject("placement").addProperty("frequency",
+    public void modifyMineshafts() {
+        main().rootJsonElement().getAsJsonObject().getAsJsonObject("placement").addProperty("frequency",
                 common().structureConfigs().mineshaft.frequency() / 1000.0F
         );
+        MODIFIED_STRUCTURES++;
     }
 
     /**
      * Changes the {@code frequency} value for {@code igloos.}
      */
-    public static void modifyIgloos(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().igloo);
+    public void modifyIgloos() {
+        configure(main().rootJsonElement(), common().structureConfigs().igloo);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code nether complexes} (nether fortresses and bastions).
      */
-    public static void modifyNetherComplexes(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().netherComplexes);
+    public void modifyNetherComplexes() {
+        configure(main().rootJsonElement(), common().structureConfigs().netherComplexes);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code pillager outposts.}
      */
-    public static void modifyPillagerOutposts(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().pillagerOutpost);
+    public void modifyPillagerOutposts() {
+        configure(main().rootJsonElement(), common().structureConfigs().pillagerOutpost);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code ruined portals.}
      */
-    public static void modifyRuinedPortals(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().ruinedPortal);
+    public void modifyRuinedPortals() {
+        configure(main().rootJsonElement(), common().structureConfigs().ruinedPortal);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code shipwrecks.}
      */
-    public static void modifyShipwrecks(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().shipwreck);
+    public void modifyShipwrecks() {
+        configure(main().rootJsonElement(), common().structureConfigs().shipwreck);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code ocean ruins.}
      */
-    public static void modifyOceanRuins(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().oceanRuin);
+    public void modifyOceanRuins() {
+        configure(main().rootJsonElement(), common().structureConfigs().oceanRuin);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code swamp huts.}
      */
-    public static void modifySwampHuts(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().swampHut);
+    public void modifySwampHuts() {
+        configure(main().rootJsonElement(), common().structureConfigs().swampHut);
     }
 
     /**
      * Changes the {@code distance,} {@code spread,} and {@code count} values for {@code strongholds.}
      */
-    public static void modifyStrongholds(JsonElement jsonElement) {
+    public void modifyStrongholds() {
         if (!isDoomMode()) {
-            jsonElement.getAsJsonObject().getAsJsonObject("placement").addProperty("distance", common().structureConfigs().stronghold.distance());
-            jsonElement.getAsJsonObject().getAsJsonObject("placement").addProperty("spread", common().structureConfigs().stronghold.spread());
+            main().rootJsonElement().getAsJsonObject().getAsJsonObject("placement").addProperty("distance", common().structureConfigs().stronghold.distance());
+            main().rootJsonElement().getAsJsonObject().getAsJsonObject("placement").addProperty("spread", common().structureConfigs().stronghold.spread());
         }
-        jsonElement.getAsJsonObject().getAsJsonObject("placement").addProperty("count", common().structureConfigs().stronghold.totalStrongholdsPerWorld());
+        main().rootJsonElement().getAsJsonObject().getAsJsonObject("placement").addProperty("count", common().structureConfigs().stronghold.totalStrongholdsPerWorld());
+        MODIFIED_STRUCTURES++;
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code trial chambers.}
      */
-    public static void modifyTrialChambers(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().trialChamber);
+    public void modifyTrialChambers() {
+        configure(main().rootJsonElement(), common().structureConfigs().trialChamber);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code trail ruins.}
      */
-    public static void modifyTrailRuins(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().trailRuin);
+    public void modifyTrailRuins() {
+        configure(main().rootJsonElement(), common().structureConfigs().trailRuin);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code villagers.}
      */
-    public static void modifyVillages(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().village);
+    public void modifyVillages() {
+        configure(main().rootJsonElement(), common().structureConfigs().village);
     }
 
     /**
      * Changes the {@code spacing} and {@code separation} values for {@code woodland mansions.}
      */
-    public static void modifyWoodlandMansions(JsonElement jsonElement) {
-        configure(jsonElement, common().structureConfigs().woodlandMansion);
+    public void modifyWoodlandMansions() {
+        configure(main().rootJsonElement(), common().structureConfigs().woodlandMansion);
     }
 
     /**
      * Configures the structure spawn rate {@code spacing} and {@code separation} values.
      */
-    private static void configure(JsonElement element, StructureConfig structureConfig) {
+    private void configure(JsonElement element, StructureConfig structureConfig) {
         element.getAsJsonObject().getAsJsonObject("placement").addProperty("spacing", structureConfig.spacing());
         element.getAsJsonObject().getAsJsonObject("placement").addProperty("separation", structureConfig.separation());
+        MODIFIED_STRUCTURES++;
     }
 }

@@ -20,7 +20,8 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
     public static final TagKey<Enchantment> ON_RANDOM_SPEEDRUNNER_LOOT = createEnchantmentTag(ofSpeedrunnerMod("on_random_speedrunner_loot"));
     public static final TagKey<Enchantment> RETIRED_SPEEDRUNNER_TRADES = createEnchantmentTag(ofSpeedrunnerMod("retired_speedrunner_trades"));
     public static final TagKey<Enchantment> WITHERED_ENCHANTMENTS = createEnchantmentTag(ofSpeedrunnerMod("withered_enchantments"));
-    public static final TagKey<Enchantment> ON_GOLDEN_SWORD_IN_RUINED_PORTAL = createEnchantmentTag(ofSpeedrunnerMod("on_golden_sword_in_ruined_portal"));
+    public static final TagKey<Enchantment> ON_GOLDEN_SWORD = createEnchantmentTag(ofSpeedrunnerMod("on_golden_sword"));
+    public static final TagKey<Enchantment> FROM_PIGLIN_BARTERING = createEnchantmentTag(ofSpeedrunnerMod("from_piglin_bartering"));
 
     public ModEnchantmentTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, Registries.ENCHANTMENT, lookupProvider);
@@ -69,11 +70,15 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
                 .add(Enchantments.MENDING)
                 .add(ModEnchantments.COOLDOWN);
 
-        tag(ModEnchantmentTags.ON_GOLDEN_SWORD_IN_RUINED_PORTAL)
+        tag(ModEnchantmentTags.ON_GOLDEN_SWORD)
                 .add(Enchantments.LOOTING);
 
         tag(ModEnchantmentTags.WITHERED_ENCHANTMENTS)
                 .add(ModEnchantments.WITHERED);
+
+        tag(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
+                .add(ModEnchantments.DASH)
+                .add(Enchantments.SOUL_SPEED);
 
         tag(EnchantmentTags.NON_TREASURE)
                 .addTag(ModEnchantmentTags.SPEEDRUNNER_ENCHANTMENTS);

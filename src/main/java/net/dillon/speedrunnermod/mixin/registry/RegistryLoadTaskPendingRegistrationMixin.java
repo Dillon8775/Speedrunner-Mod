@@ -6,10 +6,7 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Decoder;
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
-import net.dillon.speedrunnermod.data.JsonIdentifiers;
-import net.dillon.speedrunnermod.data.PlacedFeaturesLoader;
-import net.dillon.speedrunnermod.data.StructuresLoader;
-import net.dillon.speedrunnermod.data.TheEndBiomesLoader;
+import net.dillon.speedrunnermod.data.*;
 import net.minecraft.resources.RegistryLoadTask;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
@@ -36,143 +33,157 @@ public class RegistryLoadTaskPendingRegistrationMixin {
         String elementPath = elementKey.identifier().getPath();
         String fileName = registryPath + "/" + elementPath + ".json";
 
-        /*for (int i = 0; i < EntitySpawnsLoader.biomesWithDefaultMonsters().size(); i++) {
+        LoaderMain loaderMain = new LoaderMain(jsonElement);
+        EntitySpawnsLoader entitySpawnsLoader = new EntitySpawnsLoader(loaderMain);
+        NetherBiomesLoader netherBiomesLoader = new NetherBiomesLoader(entitySpawnsLoader);
+        EndBiomesLoader endBiomesLoader = new EndBiomesLoader(entitySpawnsLoader);
+        PlacedFeaturesLoader placedFeaturesLoader = new PlacedFeaturesLoader(loaderMain);
+        StructuresLoader structuresLoader = new StructuresLoader(loaderMain);
+
+        for (int i = 0; i < EntitySpawnsLoader.biomesWithDefaultMonsters().size(); i++) {
             if (fileName.equals(EntitySpawnsLoader.biomesWithDefaultMonsters().get(i))) {
-                EntitySpawnsLoader.modifyBiomesWithDefaultMonsters(jsonElement);
+                entitySpawnsLoader.putDefaultMonsters();
             }
         }
 
         for (int i = 0; i < EntitySpawnsLoader.biomesWithFarmAnimals().size(); i++) {
             if (fileName.equals(EntitySpawnsLoader.biomesWithFarmAnimals().get(i))) {
-                EntitySpawnsLoader.modifyBiomesWithFarmAnimals(jsonElement);
+                entitySpawnsLoader.putDefaultCreatures();
             }
         }
 
-        if (fileName.equals(JsonIdentifiers.WARM_OCEAN)) {
-            EntitySpawnsLoader.modifyWaterCreatureSpawns(jsonElement);
+        for (int i = 0; i < EntitySpawnsLoader.biomesWithWaterAnimals().size(); i++) {
+            if (fileName.equals(EntitySpawnsLoader.biomesWithWaterAnimals().get(i))) {
+                entitySpawnsLoader.putDefaultWaterCreatures();
+            }
         }
 
         if (fileName.equals(JsonIdentifiers.BASALT_DELTAS)) {
-            NetherBiomesLoader.modifyBasaltDeltas(jsonElement);
+            netherBiomesLoader.modifyBasaltDeltas();
         }
 
         if (fileName.equals(JsonIdentifiers.CRIMSON_FOREST)) {
-            NetherBiomesLoader.modifyCrimsonForest(jsonElement);
+            netherBiomesLoader.modifyCrimsonForest();
         }
 
         if (fileName.equals(JsonIdentifiers.NETHER_WASTES)) {
-            NetherBiomesLoader.modifyNetherWastes(jsonElement);
+            netherBiomesLoader.modifyNetherWastes();
         }
 
         if (fileName.equals(JsonIdentifiers.SOUL_SAND_VALLEY)) {
-            NetherBiomesLoader.modifySoulSandValley(jsonElement);
+            netherBiomesLoader.modifySoulSandValley();
         }
 
         if (fileName.equals(JsonIdentifiers.WARPED_FOREST)) {
-            NetherBiomesLoader.modifyWarpedForest(jsonElement);
+            netherBiomesLoader.modifyWarpedForest();
         }
 
+
         if (fileName.equals(JsonIdentifiers.THE_END)) {
-            TheEndBiomesLoader.modifyTheEnd(jsonElement);
-        }*/
+            endBiomesLoader.modifyTheEnd();
+        }
 
         if (fileName.equals(JsonIdentifiers.END)) {
-            TheEndBiomesLoader.modifyEnd(jsonElement);
+            endBiomesLoader.modifyEnd();
         }
 
         if (fileName.equals(JsonIdentifiers.MONSTER_ROOM) || fileName.equals(JsonIdentifiers.MONSTER_ROOM_DEEP)) {
-            PlacedFeaturesLoader.modifyMonsterRoom(jsonElement);
+            placedFeaturesLoader.modifyMonsterRoom();
         }
 
         if (common().worldgen().commonOres) {
             String oreDiamond = JsonIdentifiers.ORE_DIAMOND;
             if (fileName.equals(oreDiamond) || fileName.equals(JsonIdentifiers.ORE_DIAMOND_BURIED)) {
-                PlacedFeaturesLoader.modifyOreDiamond(fileName, oreDiamond, jsonElement);
+                placedFeaturesLoader.modifyOreDiamond(fileName, oreDiamond);
             }
 
             if (fileName.equals(JsonIdentifiers.ORE_DIAMOND_LARGE)) {
-                PlacedFeaturesLoader.modifyOreDiamondLarge(jsonElement);
+                placedFeaturesLoader.modifyOreDiamondLarge();
             }
 
             String oreLapis = JsonIdentifiers.ORE_LAPIS;
             if (fileName.equals(oreLapis) || fileName.equals(JsonIdentifiers.ORE_LAPIS_BURIED)) {
-                PlacedFeaturesLoader.modifyOreLapis(fileName, oreLapis, jsonElement);
+                placedFeaturesLoader.modifyOreLapis(fileName, oreLapis);
             }
         }
 
         if (common().worldgen().commonPlainTrees) {
             if (fileName.equals(JsonIdentifiers.TREES_PLAINS)) {
-                PlacedFeaturesLoader.modifyTreePlains(jsonElement);
+                placedFeaturesLoader.modifyTreePlains();
             }
         }
 
         if (common().worldgen().makeStructuresMoreCommon) {
+            if (fileName.equals(JsonIdentifiers.ABANDONED_CAMP)) {
+                structuresLoader.modifyAbandonedCamp();
+            }
+
             if (fileName.equals(JsonIdentifiers.ANCIENT_CITIES)) {
-                StructuresLoader.modifyAncientCities(jsonElement);
+                structuresLoader.modifyAncientCities();
             }
 
             if (fileName.equals(JsonIdentifiers.DESERT_PYRAMIDS)) {
-                StructuresLoader.modifyDesertPyramids(jsonElement);
+                structuresLoader.modifyDesertPyramids();
             }
 
             if (fileName.equals(JsonIdentifiers.END_CITIES)) {
-                StructuresLoader.modifyEndCities(jsonElement);
+                structuresLoader.modifyEndCities();
             }
 
             if (fileName.equals(JsonIdentifiers.JUNGLE_TEMPLES)) {
-                StructuresLoader.modifyJunglePyramids(jsonElement);
+                structuresLoader.modifyJunglePyramids();
             }
 
             if (fileName.equals(JsonIdentifiers.MINESHAFTS)) {
-                StructuresLoader.modifyMineshafts(jsonElement);
+                structuresLoader.modifyMineshafts();
             }
 
             if (fileName.equals(JsonIdentifiers.IGLOOS)) {
-                StructuresLoader.modifyIgloos(jsonElement);
+                structuresLoader.modifyIgloos();
             }
 
             if (fileName.equals(JsonIdentifiers.NETHER_COMPLEXES)) {
-                StructuresLoader.modifyNetherComplexes(jsonElement);
+                structuresLoader.modifyNetherComplexes();
             }
 
             if (fileName.equals(JsonIdentifiers.PILLAGER_OUTPOSTS)) {
-                StructuresLoader.modifyPillagerOutposts(jsonElement);
+                structuresLoader.modifyPillagerOutposts();
             }
 
             if (fileName.equals(JsonIdentifiers.RUINED_PORTALS)) {
-                StructuresLoader.modifyRuinedPortals(jsonElement);
+                structuresLoader.modifyRuinedPortals();
             }
 
             if (fileName.equals(JsonIdentifiers.SHIPWRECKS)) {
-                StructuresLoader.modifyShipwrecks(jsonElement);
+                structuresLoader.modifyShipwrecks();
             }
 
             if (fileName.equals(JsonIdentifiers.OCEAN_RUINS)) {
-                StructuresLoader.modifyOceanRuins(jsonElement);
+                structuresLoader.modifyOceanRuins();
             }
 
             if (fileName.equals(JsonIdentifiers.SWAMP_HUTS)) {
-                StructuresLoader.modifySwampHuts(jsonElement);
+                structuresLoader.modifySwampHuts();
             }
 
             if (fileName.equals(JsonIdentifiers.STRONGHOLDS)) {
-                StructuresLoader.modifyStrongholds(jsonElement);
+                structuresLoader.modifyStrongholds();
             }
 
             if (fileName.equals(JsonIdentifiers.TRIAL_CHAMBERS)) {
-                StructuresLoader.modifyTrialChambers(jsonElement);
+                structuresLoader.modifyTrialChambers();
             }
 
             if (fileName.equals(JsonIdentifiers.TRAIL_RUINS)) {
-                StructuresLoader.modifyTrailRuins(jsonElement);
+                structuresLoader.modifyTrailRuins();
             }
 
             if (fileName.equals(JsonIdentifiers.VILLAGES)) {
-                StructuresLoader.modifyVillages(jsonElement);
+                structuresLoader.modifyVillages();
             }
 
             if (fileName.equals(JsonIdentifiers.WOODLAND_MANSIONS)) {
-                StructuresLoader.modifyWoodlandMansions(jsonElement);
+                structuresLoader.modifyWoodlandMansions();
             }
         }
     }

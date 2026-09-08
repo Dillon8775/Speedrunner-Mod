@@ -4,10 +4,6 @@
       "id": "#speedrunnermod:fireproof_boats",
       "required": false
     },
-    {
-      "id": "#speedrunnermod:fireproof_chest_boats",
-      "required": false
-    },
     "minecraft:blaze_rod",
     "minecraft:blaze_powder",
     "minecraft:fire_charge"

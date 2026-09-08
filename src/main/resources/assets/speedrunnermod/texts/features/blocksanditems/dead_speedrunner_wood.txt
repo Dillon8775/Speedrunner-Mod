@@ -2,4 +2,6 @@
 
 #### Acts pretty much like normal wood. §aHowever,§f it §ocan §r§f§catch fire.
 
+### You can §6smelt this wood §fto get the §bregular speedrunner wood variant.
+
 !image:textures/gui/features/blocks/dead_speedrunner_wood.png scale=.1

@@ -1,0 +1,29 @@
+{
+  "fabric:remove": [
+    "minecraft:grove",
+    "minecraft:pale_garden",
+    "minecraft:stony_peaks"
+  ],
+  "values": [
+    {
+      "id": "#minecraft:is_forest",
+      "required": false
+    },
+    {
+      "id": "#minecraft:is_hill",
+      "required": false
+    },
+    {
+      "id": "#minecraft:is_jungle",
+      "required": false
+    },
+    {
+      "id": "#minecraft:is_savanna",
+      "required": false
+    },
+    {
+      "id": "#minecraft:is_taiga",
+      "required": false
+    }
+  ]
+}

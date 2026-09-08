@@ -1,0 +1,96 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2,
+                "min": 1
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:netherite_scrap"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 9,
+                "min": 3
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:coal"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4,
+                "min": 2
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:bone"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "condition": {
+            "type": "minecraft:random_chance_with_enchanted_bonus",
+            "enchanted_chance": {
+              "type": "minecraft:linear",
+              "base": 0.1302,
+              "per_level_above_first": 0.1302
+            },
+            "enchantment": "speedrunnermod:withered",
+            "unenchanted_chance": 0.05
+          },
+          "name": "minecraft:wither_skeleton_skull"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

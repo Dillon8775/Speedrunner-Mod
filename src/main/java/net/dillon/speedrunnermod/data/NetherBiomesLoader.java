@@ -1,274 +1,256 @@
 package net.dillon.speedrunnermod.data;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.dillon.speedrunnermod.option.ModCommonOptions;
+
+import java.util.List;
 
 import static net.dillon.speedrunnermod.option.ModCommonOptions.isDoomMode;
 
 /**
  * Contains all of the {@code nether biomes modifications.}
  */
-public class NetherBiomesLoader {
+public record NetherBiomesLoader(EntitySpawnsLoader entitySpawnsLoader) {
+    public static int MODIFIED_NETHER_BIOMES = 0;
 
     /**
      * Modifies the water color and monster spawns for the {@code basalt deltas} biome.
      */
-    public static void modifyBasaltDeltas(JsonElement jsonElement) {
-        JsonObject basaltDeltasEffects = jsonElement.getAsJsonObject().getAsJsonObject("effects");
-        basaltDeltasEffects.addProperty("water_color", 0xCACFD2);
-        basaltDeltasEffects.addProperty("water_fog_color", 0xD5DBDB);
+    public void modifyBasaltDeltas() {
+        JsonObject effects = entitySpawnsLoader().main().getEffectsObj();
+        effects.addProperty("water_color", 0xCACFD2);
+        effects.addProperty("water_fog_color", 0xD5DBDB);
 
-        JsonObject basaltDeltasSpawners = jsonElement.getAsJsonObject().getAsJsonObject("spawners");
-        JsonArray basaltDeltasMonsters = new JsonArray();
+        entitySpawnsLoader().modifyExistingMonsterSpawns(List.of(
+                MobSpawnEntry.ofMonster(
+                        "minecraft:ghast",
+                        ModCommonOptions.doomOrDefault(50, 25),
+                        1,
+                        1
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:magma_cube",
+                        ModCommonOptions.doomOrDefault(50, 25),
+                        1,
+                        4
+                )
+        ));
 
-        JsonObject ghast = new JsonObject();
-        ghast.addProperty("type", "minecraft:ghast");
-        ghast.addProperty("maxCount", 1);
-        ghast.addProperty("minCount", 1);
-        ghast.addProperty("weight", ModCommonOptions.doomOrDefault(40, 25));
-
-        JsonObject magmaCube = new JsonObject();
-        magmaCube.addProperty("type", "minecraft:magma_cube");
-        magmaCube.addProperty("maxCount", 4);
-        magmaCube.addProperty("minCount", 1);
-        magmaCube.addProperty("weight", ModCommonOptions.doomOrDefault(50, 25));
-
-        JsonObject piglinBrute = new JsonObject();
-        piglinBrute.addProperty("type", "minecraft:piglin_brute");
-        piglinBrute.addProperty("maxCount", 4);
-        piglinBrute.addProperty("minCount", 1);
-        piglinBrute.addProperty("weight", 25);
-
-        JsonObject witherSkeleton = new JsonObject();
-        witherSkeleton.addProperty("type", "minecraft:wither_skeleton");
-        witherSkeleton.addProperty("maxCount", 4);
-        witherSkeleton.addProperty("minCount", 1);
-        witherSkeleton.addProperty("weight", 50);
-
-        basaltDeltasMonsters.add(ghast);
-        basaltDeltasMonsters.add(magmaCube);
         if (isDoomMode()) {
-            basaltDeltasMonsters.add(piglinBrute);
-            basaltDeltasMonsters.add(witherSkeleton);
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:piglin_brute",
+                    25,
+                    1,
+                    4
+            ));
+
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:wither_skeleton",
+                    50,
+                    1,
+                    4
+            ));
         }
 
-        basaltDeltasSpawners.getAsJsonArray("monster").addAll(basaltDeltasMonsters);
+        MODIFIED_NETHER_BIOMES++;
     }
 
     /**
      * Modifies the water color and monster spawns for the {@code crimson forest} biome.
      */
-    public static void modifyCrimsonForest(JsonElement jsonElement) {
-        JsonObject crimsonForestEffects = jsonElement.getAsJsonObject().getAsJsonObject("effects");
-        crimsonForestEffects.addProperty("water_color", 0xCD6155);
-        crimsonForestEffects.addProperty("water_fog_color", 0xE6B0AA);
+    public void modifyCrimsonForest() {
+        JsonObject effects = entitySpawnsLoader().main().getEffectsObj();
+        effects.addProperty("water_color", 0xCD6155);
+        effects.addProperty("water_fog_color", 0xE6B0AA);
 
-        JsonObject crimsonForestSpawners = jsonElement.getAsJsonObject().getAsJsonObject("spawners");
-        JsonArray crimsonForestMonsters = new JsonArray();
+        entitySpawnsLoader().modifyExistingMonsterSpawns(List.of(
+                MobSpawnEntry.ofMonster(
+                       "minecraft:zombified_piglin",
+                       2,
+                       1,
+                       1
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:hoglin",
+                        ModCommonOptions.doomOrDefault(50, 6),
+                        ModCommonOptions.doomOrDefault(4, 1),
+                        ModCommonOptions.doomOrDefault(6, 4)
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:piglin",
+                        ModCommonOptions.doomOrDefault(25, 9),
+                        2,
+                        ModCommonOptions.doomOrDefault(6, 4)
+                )
+        ));
 
-        JsonObject zombifiedPiglin = new JsonObject();
-        zombifiedPiglin.addProperty("type", "minecraft:zombified_piglin");
-        zombifiedPiglin.addProperty("maxCount", 1);
-        zombifiedPiglin.addProperty("minCount", 1);
-        zombifiedPiglin.addProperty("weight", 2);
-
-        JsonObject hoglin = new JsonObject();
-        hoglin.addProperty("type", "minecraft:hoglin");
-        hoglin.addProperty("maxCount", ModCommonOptions.doomOrDefault(6, 4));
-        hoglin.addProperty("minCount", ModCommonOptions.doomOrDefault(4, 1));
-        hoglin.addProperty("weight", ModCommonOptions.doomOrDefault(50, 6));
-
-        JsonObject piglin = new JsonObject();
-        piglin.addProperty("type", "minecraft:piglin");
-        piglin.addProperty("maxCount", ModCommonOptions.doomOrDefault(6, 4));
-        piglin.addProperty("minCount", 2);
-        piglin.addProperty("weight", ModCommonOptions.doomOrDefault(25, 9));
-
-        JsonObject piglinBrute = new JsonObject();
-        piglinBrute.addProperty("type", "minecraft:piglin_brute");
-        piglinBrute.addProperty("maxCount", 4);
-        piglinBrute.addProperty("minCount", 1);
-        piglinBrute.addProperty("weight", 25);
-
-        JsonObject magmaCube = new JsonObject();
-        magmaCube.addProperty("type", "minecraft:magma_cube");
-        magmaCube.addProperty("maxCount", 4);
-        magmaCube.addProperty("minCount", 1);
-        magmaCube.addProperty("weight", 50);
-
-        crimsonForestMonsters.add(zombifiedPiglin);
-        crimsonForestMonsters.add(hoglin);
-        crimsonForestMonsters.add(piglin);
         if (isDoomMode()) {
-            crimsonForestMonsters.add(piglinBrute);
-            crimsonForestMonsters.add(magmaCube);
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:piglin_brute",
+                    25,
+                    1,
+                    4
+            ));
+
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:wither_skeleton",
+                    50,
+                    1,
+                    4
+            ));
         }
 
-        crimsonForestSpawners.getAsJsonArray("monster").addAll(crimsonForestMonsters);
+        MODIFIED_NETHER_BIOMES++;
     }
 
     /**
      * Modifies the water color and monster spawns for the {@code nether wastes} biome.
      */
-    public static void modifyNetherWastes(JsonElement jsonElement) {
-        JsonObject netherWastesEffects = jsonElement.getAsJsonObject().getAsJsonObject("effects");
-        netherWastesEffects.addProperty("water_color", 0xD98880);
-        netherWastesEffects.addProperty("water_fog_color", 0xE6B0AA);
+    public void modifyNetherWastes() {
+        JsonObject effects = entitySpawnsLoader().main().getEffectsObj();
+        effects.addProperty("water_color", 0xD98880);
+        effects.addProperty("water_fog_color", 0xE6B0AA);
 
-        JsonObject netherWastesSpawners = jsonElement.getAsJsonObject().getAsJsonObject("spawners");
-        JsonArray netherWastesMonsters = new JsonArray();
+        entitySpawnsLoader().modifyExistingMonsterSpawns(List.of(
+                MobSpawnEntry.ofMonster(
+                        "minecraft:ghast",
+                        20,
+                        1,
+                        ModCommonOptions.doomOrDefault(1, 4)
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:zombified_piglin",
+                        ModCommonOptions.doomOrDefault(50, 25),
+                        ModCommonOptions.doomOrDefault(4, 1),
+                        4
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:magma_cube",
+                        ModCommonOptions.doomOrDefault(20, 1),
+                        4,
+                        4
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:enderman",
+                        ModCommonOptions.doomOrDefault(20, 1),
+                        4,
+                        4
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:piglin",
+                        ModCommonOptions.doomOrDefault(25, 50),
+                        ModCommonOptions.doomOrDefault(1, 2),
+                        ModCommonOptions.doomOrDefault(2, 4)
+                )
+        ));
 
-        JsonObject ghast = new JsonObject();
-        ghast.addProperty("type", "minecraft:ghast");
-        ghast.addProperty("maxCount", ModCommonOptions.doomOrDefault(1, 4));
-        ghast.addProperty("minCount", 1);
-        ghast.addProperty("weight", 20);
-
-        JsonObject zombifiedPiglin = new JsonObject();
-        zombifiedPiglin.addProperty("type", "minecraft:zombified_piglin");
-        zombifiedPiglin.addProperty("maxCount", 4);
-        zombifiedPiglin.addProperty("minCount", ModCommonOptions.doomOrDefault(4, 1));
-        zombifiedPiglin.addProperty("weight", ModCommonOptions.doomOrDefault(50, 25));
-
-        JsonObject magmaCube = new JsonObject();
-        magmaCube.addProperty("type", "minecraft:magma_cube");
-        magmaCube.addProperty("maxCount", 4);
-        magmaCube.addProperty("minCount", 1);
-        magmaCube.addProperty("weight", ModCommonOptions.doomOrDefault(50, 2));
-
-        JsonObject enderman = new JsonObject();
-        enderman.addProperty("type", "minecraft:enderman");
-        enderman.addProperty("maxCount", 4);
-        enderman.addProperty("minCount", 4);
-        enderman.addProperty("weight", ModCommonOptions.doomOrDefault(20, 1));
-
-        JsonObject piglin = new JsonObject();
-        piglin.addProperty("type", "minecraft:piglin");
-        piglin.addProperty("maxCount", ModCommonOptions.doomOrDefault(2, 4));
-        piglin.addProperty("minCount", ModCommonOptions.doomOrDefault(1, 2));
-        piglin.addProperty("weight", ModCommonOptions.doomOrDefault(25, 50));
-
-        JsonObject piglinBrute = new JsonObject();
-        piglinBrute.addProperty("type", "minecraft:piglin_brute");
-        piglinBrute.addProperty("maxCount", 4);
-        piglinBrute.addProperty("minCount", 1);
-        piglinBrute.addProperty("weight", 25);
-
-        JsonObject hoglin = new JsonObject();
-        hoglin.addProperty("type", "minecraft:hoglin");
-        hoglin.addProperty("maxCount", 4);
-        hoglin.addProperty("minCount", 1);
-        hoglin.addProperty("weight", 100);
-
-        netherWastesMonsters.add(ghast);
-        netherWastesMonsters.add(zombifiedPiglin);
-        netherWastesMonsters.add(magmaCube);
-        netherWastesMonsters.add(enderman);
-        netherWastesMonsters.add(piglin);
         if (isDoomMode()) {
-            netherWastesMonsters.add(piglinBrute);
-            netherWastesMonsters.add(hoglin);
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:piglin_brute",
+                    25,
+                    1,
+                    4
+            ));
+
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:hoglin",
+                    100,
+                    1,
+                    4
+            ));
         }
 
-        netherWastesSpawners.getAsJsonArray("monster").addAll(netherWastesMonsters);
+        MODIFIED_NETHER_BIOMES++;
     }
 
     /**
      * Modifies the water color and monster spawns for the {@code soul sand valley} biome.
      */
-    public static void modifySoulSandValley(JsonElement jsonElement) {
-        JsonObject soulSandValleyEffects = jsonElement.getAsJsonObject().getAsJsonObject("effects");
-        soulSandValleyEffects.addProperty("water_color", 0xD98880);
-        soulSandValleyEffects.addProperty("water_fog_color", 0xE6B0AA);
+    public void modifySoulSandValley() {
+        JsonObject effects = entitySpawnsLoader().main().getEffectsObj();
+        effects.addProperty("water_color", 0xD98880);
+        effects.addProperty("water_fog_color", 0xE6B0AA);
 
-        JsonObject soulSandValleySpawners = jsonElement.getAsJsonObject().getAsJsonObject("spawners");
-        JsonArray soulSandValleyMonsters = new JsonArray();
+        entitySpawnsLoader().modifyExistingMonsterSpawns(List.of(
+                MobSpawnEntry.ofMonster(
+                        "minecraft:skeleton",
+                        ModCommonOptions.doomOrDefault(50, 10),
+                        ModCommonOptions.doomOrDefault(5, 1),
+                        ModCommonOptions.doomOrDefault(5, 4)
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:ghast",
+                        50,
+                        ModCommonOptions.doomOrDefault(4, 1),
+                        4
+                ),
+                MobSpawnEntry.ofMonster(
+                        "minecraft:enderman",
+                        ModCommonOptions.doomOrDefault(10, 5),
+                        4,
+                        4
+                )
+        ));
 
-        JsonObject skeleton = new JsonObject();
-        skeleton.addProperty("type", "minecraft:skeleton");
-        skeleton.addProperty("maxCount", ModCommonOptions.doomOrDefault(5, 4));
-        skeleton.addProperty("minCount", ModCommonOptions.doomOrDefault(5, 1));
-        skeleton.addProperty("weight", ModCommonOptions.doomOrDefault(50, 10));
-
-        JsonObject ghast = new JsonObject();
-        ghast.addProperty("type", "minecraft:ghast");
-        ghast.addProperty("maxCount", 4);
-        ghast.addProperty("minCount", ModCommonOptions.doomOrDefault(4, 1));
-        ghast.addProperty("weight", 50);
-
-        JsonObject enderman = new JsonObject();
-        enderman.addProperty("type", "minecraft:enderman");
-        enderman.addProperty("maxCount", 4);
-        enderman.addProperty("minCount", 4);
-        enderman.addProperty("weight", ModCommonOptions.doomOrDefault(10, 5));
-
-        JsonObject piglinBrute = new JsonObject();
-        piglinBrute.addProperty("type", "minecraft:piglin_brute");
-        piglinBrute.addProperty("maxCount", 4);
-        piglinBrute.addProperty("minCount", 1);
-        piglinBrute.addProperty("weight", 25);
-
-        soulSandValleyMonsters.add(skeleton);
-        soulSandValleyMonsters.add(ghast);
-        soulSandValleyMonsters.add(enderman);
         if (isDoomMode()) {
-            soulSandValleyMonsters.add(piglinBrute);
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:piglin_brute",
+                    25,
+                    1,
+                    4
+            ));
         }
 
-        soulSandValleySpawners.getAsJsonArray("monster").addAll(soulSandValleyMonsters);
+        MODIFIED_NETHER_BIOMES++;
     }
 
     /**
      * Modifies the water color and monster spawns for the {@code warped forest} biome.
      */
-    public static void modifyWarpedForest(JsonElement jsonElement) {
-        JsonObject crimsonForestEffects = jsonElement.getAsJsonObject().getAsJsonObject("effects");
-        crimsonForestEffects.addProperty("water_color", 0x167E86);
-        crimsonForestEffects.addProperty("water_fog_color", 0x14B485);
+    public void modifyWarpedForest() {
+        JsonObject effects = entitySpawnsLoader().main().getEffectsObj();
+        effects.addProperty("water_color", 0x167E86);
+        effects.addProperty("water_fog_color", 0x14B485);
 
-        JsonObject warpedForestSpawners = jsonElement.getAsJsonObject().getAsJsonObject("spawners");
-        JsonArray warpedForestMonsters = new JsonArray();
+        entitySpawnsLoader().modifyExistingMonsterSpawns(List.of(
+                MobSpawnEntry.ofMonster(
+                        "minecraft:enderman",
+                        5,
+                        4,
+                        4
+                )
+        ));
 
-        JsonObject enderman = new JsonObject();
-        enderman.addProperty("type", "minecraft:enderman");
-        enderman.addProperty("maxCount", 4);
-        enderman.addProperty("minCount", 4);
-        enderman.addProperty("weight", 5);
+        entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                "minecraft:piglin",
+                ModCommonOptions.doomOrDefault(25, 5),
+                ModCommonOptions.doomOrDefault(4, 1),
+                4
+        ));
 
-        JsonObject piglin = new JsonObject();
-        piglin.addProperty("type", "minecraft:piglin");
-        piglin.addProperty("maxCount", 4);
-        piglin.addProperty("minCount", ModCommonOptions.doomOrDefault(4, 1));
-        piglin.addProperty("weight", ModCommonOptions.doomOrDefault(25, 5));
-
-        JsonObject hoglin = new JsonObject();
-        hoglin.addProperty("type", "minecraft:hoglin");
-        hoglin.addProperty("maxCount", 4);
-        hoglin.addProperty("minCount", 1);
-        hoglin.addProperty("weight", 50);
-
-        JsonObject piglinBrute = new JsonObject();
-        piglinBrute.addProperty("type", "minecraft:piglin_brute");
-        piglinBrute.addProperty("maxCount", 4);
-        piglinBrute.addProperty("minCount", 1);
-        piglinBrute.addProperty("weight", 25);
-
-        JsonObject magmaCube = new JsonObject();
-        magmaCube.addProperty("type", "minecraft:magma_cube");
-        magmaCube.addProperty("maxCount", 4);
-        magmaCube.addProperty("minCount", 1);
-        magmaCube.addProperty("weight", 50);
-
-        warpedForestMonsters.add(enderman);
-        warpedForestMonsters.add(piglin);
         if (isDoomMode()) {
-            warpedForestMonsters.add(hoglin);
-            warpedForestMonsters.add(piglinBrute);
-            warpedForestMonsters.add(magmaCube);
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:hoglin",
+                    50,
+                    1,
+                    4
+            ));
+
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:piglin_brute",
+                    25,
+                    1,
+                    4
+            ));
+
+            entitySpawnsLoader().addNewSpawn(MobSpawnEntry.ofMonster(
+                    "minecraft:magma_cube",
+                    50,
+                    1,
+                    4
+            ));
         }
 
-        warpedForestSpawners.getAsJsonArray("monster").addAll(warpedForestMonsters);
+        MODIFIED_NETHER_BIOMES++;
     }
 }

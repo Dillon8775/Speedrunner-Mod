@@ -1,6 +1,7 @@
 {
   "type": "minecraft:blasting",
-  "cookingtime": 200,
+  "category": "blocks",
+  "cookingtime": 100,
   "experience": 0.6,
   "group": "igneous_rock",
   "ingredient": "speedrunnermod:deepslate_igneous_ore",

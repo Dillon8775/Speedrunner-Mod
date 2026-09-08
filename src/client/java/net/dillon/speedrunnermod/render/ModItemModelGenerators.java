@@ -142,22 +142,16 @@ public class ModItemModelGenerators extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.IGNEOUS_ROCK, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_SPEEDRUNNER_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.DEAD_SPEEDRUNNER_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.CRIMSON_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_CRIMSON_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.CRIMSON_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_CRIMSON_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.WARPED_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_WARPED_BOAT, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.WARPED_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.FIREPROOF_WARPED_CHEST_BOAT, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.ANNUL_EYE, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNERS_EYE, ModelTemplates.FLAT_ITEM);
@@ -178,7 +172,6 @@ public class ModItemModelGenerators extends FabricModelProvider {
 
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_PADDLE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);

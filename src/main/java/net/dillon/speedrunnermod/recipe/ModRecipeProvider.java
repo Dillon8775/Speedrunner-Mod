@@ -131,19 +131,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlocks("has_speedrunner_sword", this.has(ModItems.SPEEDRUNNER_SWORD))
                         .save(this.output, "dragons_sword_smithing");
 
-                helper.offerBurnableMaterial(IGNEOUS_ORES, ModItems.IGNEOUS_ROCK, 0.6F, "igneous_rock");
-                helper.offerBurnableMaterial(EXPERIENCE_ORES, ModItems.EXPERIENCE_FRAGMENT, 3.0F, "experience_fragment");
-                helper.offerBurnableMaterial(SPEEDRUNNER_ORES_AND_BLOCKS, ModItems.SPEEDRUNNER_INGOT, 0.85F, "speedrunner_ingot");
+                helper.offerOreMaterial(IGNEOUS_ORES, ModItems.IGNEOUS_ROCK, 0.6F, "igneous_rock");
+                helper.offerOreMaterial(EXPERIENCE_ORES, ModItems.EXPERIENCE_FRAGMENT, 3.0F, "experience_fragment");
+                helper.offerOreMaterial(SPEEDRUNNER_ORES_AND_BLOCKS, ModItems.SPEEDRUNNER_INGOT, 0.85F, "speedrunner_ingot");
+
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_LOG, ModBlocks.SPEEDRUNNER_LOG);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_WOOD, ModBlocks.SPEEDRUNNER_WOOD);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_LEAVES, ModBlocks.SPEEDRUNNER_LEAVES);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_SAPLING, ModBlocks.SPEEDRUNNER_SAPLING);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_PLANKS, ModBlocks.SPEEDRUNNER_PLANKS);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_SLAB, ModBlocks.SPEEDRUNNER_SLAB);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_STAIRS, ModBlocks.SPEEDRUNNER_STAIRS);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_FENCE, ModBlocks.SPEEDRUNNER_FENCE);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_FENCE_GATE, ModBlocks.SPEEDRUNNER_FENCE_GATE);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_BUTTON, ModBlocks.SPEEDRUNNER_BUTTON);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_PRESSURE_PLATE, ModBlocks.SPEEDRUNNER_PRESSURE_PLATE);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_TRAPDOOR, ModBlocks.SPEEDRUNNER_TRAPDOOR);
+                helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_DOOR, ModBlocks.SPEEDRUNNER_DOOR);
 
                 helper.createCookableFood(Items.ROTTEN_FLESH, ModItems.COOKED_FLESH);
                 helper.createCookableFood(ModItems.ROTTEN_SPEEDRUNNER_BULK, Items.ROTTEN_FLESH);
                 helper.createCookableFood(ModItems.PIGLIN_PORK, ModItems.COOKED_PIGLIN_PORK);
 
-                helper.createFireproofBoatSet(ModItems.SPEEDRUNNER_BOAT, ModItems.SPEEDRUNNER_CHEST_BOAT, ModItems.FIREPROOF_SPEEDRUNNER_BOAT, ModItems.FIREPROOF_SPEEDRUNNER_CHEST_BOAT, ModBlocks.SPEEDRUNNER_PLANKS, "fireproof_speedrunner_boat");
-                this.woodenBoat(ModItems.DEAD_SPEEDRUNNER_BOAT, ModBlocks.DEAD_SPEEDRUNNER_PLANKS);
-                this.chestBoat(ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT, Items.CHEST);
-                helper.createFireproofBoatSet(ModItems.CRIMSON_BOAT, ModItems.CRIMSON_CHEST_BOAT, ModItems.FIREPROOF_CRIMSON_BOAT, ModItems.FIREPROOF_CRIMSON_CHEST_BOAT, Blocks.CRIMSON_PLANKS, "fireproof_crimson_boat");
-                helper.createFireproofBoatSet(ModItems.WARPED_BOAT, ModItems.WARPED_CHEST_BOAT, ModItems.FIREPROOF_WARPED_BOAT, ModItems.FIREPROOF_WARPED_CHEST_BOAT, Blocks.WARPED_PLANKS, "fireproof_warped_boat");
+                helper.createBoatSet(ModItems.SPEEDRUNNER_BOAT, ModItems.SPEEDRUNNER_CHEST_BOAT, ModBlocks.SPEEDRUNNER_PLANKS);
+                helper.createBoatSet(ModItems.DEAD_SPEEDRUNNER_BOAT, ModItems.DEAD_SPEEDRUNNER_CHEST_BOAT, ModBlocks.DEAD_SPEEDRUNNER_PLANKS);
+                helper.createBoatSet(ModItems.WARPED_BOAT, ModItems.WARPED_CHEST_BOAT, Blocks.WARPED_PLANKS);
+                helper.createBoatSet(ModItems.CRIMSON_BOAT, ModItems.CRIMSON_CHEST_BOAT, Blocks.CRIMSON_PLANKS);
 
                 helper.banner(Items.BANNER.black(), Blocks.WOOL.black());
                 helper.banner(Items.BANNER.blue(), Blocks.WOOL.blue());
@@ -307,7 +320,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                                 CookingBookCategory.MISC,
                                 ModItems.SPEEDRUNNER_NUGGET,
                                 0.2F,
-                                S_asTick(10)
+                                S_asTick(5)
                         )
                         .unlockedBy("has_speedrunner_pickaxe", this.has(ModItems.SPEEDRUNNER_PICKAXE))
                         .unlockedBy("has_speedrunner_shovel", this.has(ModItems.SPEEDRUNNER_SHOVEL))
@@ -367,15 +380,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .requires(ModItems.SPEEDRUNNER_INGOT)
                         .unlockedBy("has_speedrunner_ingot", this.has(ModItemTags.AdvancementCriterions.SPEEDRUNNER_FLINT_AND_STEEL))
                         .group("flint_and_steels")
-                        .save(this.output);
-
-                this.shaped(RecipeCategory.TOOLS, ModItems.SPEEDRUNNER_PADDLE)
-                        .define('I', ModItems.SPEEDRUNNER_PLANKS)
-                        .define('S', ConventionalItemTags.WOODEN_RODS)
-                        .pattern("I")
-                        .pattern("S")
-                        .pattern("I")
-                        .unlockedBy("has_speedrunner_plank", this.has(ModItems.SPEEDRUNNER_PLANKS))
                         .save(this.output);
 
                 this.shaped(RecipeCategory.MISC, ModItems.GOLDEN_UPGRADE_SMITHING_TEMPLATE, 2)

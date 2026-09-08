@@ -10,13 +10,14 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.common;
 /**
  * Contains all of the {@code placed feature modifications.}
  */
-public class PlacedFeaturesLoader {
+public record PlacedFeaturesLoader(LoaderMain main) {
+    public static int MODIFIED_PLACEMENTS = 0;
 
     /**
      * Increases the spawn rate of {@code monster rooms.}
      */
-    public static void modifyMonsterRoom(JsonElement jsonElement) {
-        JsonArray placement = jsonElement.getAsJsonObject().getAsJsonArray("placement");
+    public void modifyMonsterRoom() {
+        JsonArray placement = main().getPlacementArray();
 
         for (JsonElement element : placement) {
             JsonObject placementObj = element.getAsJsonObject();
@@ -25,13 +26,15 @@ public class PlacedFeaturesLoader {
                 break;
             }
         }
+
+        MODIFIED_PLACEMENTS++;
     }
 
     /**
      * Increases the spawn rate of normal-sized diamond ores.
      */
-    public static void modifyOreDiamond(String fileName, String oreDiamond, JsonElement jsonElement) {
-        JsonArray placement = jsonElement.getAsJsonObject().getAsJsonArray("placement");
+    public void modifyOreDiamond(String fileName, String oreDiamond) {
+        JsonArray placement = main().getPlacementArray();
 
         for (JsonElement element : placement) {
             JsonObject placementObj = element.getAsJsonObject();
@@ -40,13 +43,15 @@ public class PlacedFeaturesLoader {
                 break;
             }
         }
+
+        MODIFIED_PLACEMENTS++;
     }
 
     /**
      * Increases the spawn rate of large diamond ore veins.
      */
-    public static void modifyOreDiamondLarge(JsonElement jsonElement) {
-        JsonArray placement = jsonElement.getAsJsonObject().getAsJsonArray("placement");
+    public void modifyOreDiamondLarge() {
+        JsonArray placement = main().getPlacementArray();
 
         for (JsonElement element : placement) {
             JsonObject placementObj = element.getAsJsonObject();
@@ -61,13 +66,15 @@ public class PlacedFeaturesLoader {
                 break;
             }
         }
+
+        MODIFIED_PLACEMENTS++;
     }
 
     /**
      * Increases the spawn rate of lapis ores.
      */
-    public static void modifyOreLapis(String fileName, String oreLapis, JsonElement jsonElement) {
-        JsonArray placement = jsonElement.getAsJsonObject().getAsJsonArray("placement");
+    public void modifyOreLapis(String fileName, String oreLapis) {
+        JsonArray placement = main().getPlacementArray();
 
         for (JsonElement element : placement) {
             JsonObject placementObj = element.getAsJsonObject();
@@ -76,13 +83,15 @@ public class PlacedFeaturesLoader {
                 break;
             }
         }
+
+        MODIFIED_PLACEMENTS++;
     }
 
     /**
      * Increases the spawn rate of plain oak trees in plains biomes.
      */
-    public static void modifyTreePlains(JsonElement jsonElement) {
-        JsonArray placement = jsonElement.getAsJsonObject().getAsJsonArray("placement");
+    public void modifyTreePlains() {
+        JsonArray placement = main().getPlacementArray();
 
         for (JsonElement element : placement) {
             JsonObject placementObj = element.getAsJsonObject();
@@ -94,5 +103,7 @@ public class PlacedFeaturesLoader {
                 break;
             }
         }
+
+        MODIFIED_PLACEMENTS++;
     }
 }

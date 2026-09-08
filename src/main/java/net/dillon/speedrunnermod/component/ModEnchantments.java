@@ -28,6 +28,8 @@ public class ModEnchantments {
     public static final ResourceKey<Enchantment> COOLDOWN = create("cooldown");
     // Inflicts target with wither effect for 3-7 seconds (based on level), and gives increased chance of wither skeleton skulls
     public static final ResourceKey<Enchantment> WITHERED = create("withered");
+    public static final float WITHERED_DROP_CHANCE = 0.05F;
+    public static final float WITHERED_PER_LEVEL_ABOVE_FIRST = 0.1302F;
 
     /**
      * Bootstraps all speedrunner mod enchantments.

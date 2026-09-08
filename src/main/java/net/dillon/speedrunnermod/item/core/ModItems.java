@@ -224,61 +224,38 @@ public class ModItems {
 
     public static final Item SPEEDRUNNER_STICK = registerModItem(ModItemIds.SPEEDRUNNER_STICK, Item::new);
 
+
     public static final Item SPEEDRUNNER_BOAT = registerModItem(ModItemIds.SPEEDRUNNER_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.SPEEDRUNNER_BOAT, true, false, properties));
-
-    public static final Item FIREPROOF_SPEEDRUNNER_BOAT = registerModItem(ModItemIds.FIREPROOF_SPEEDRUNNER_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_SPEEDRUNNER_BOAT, true, true, properties));
+                    ModEntityTypes.SPEEDRUNNER_BOAT, true, properties));
 
     public static final Item SPEEDRUNNER_CHEST_BOAT = registerModItem(ModItemIds.SPEEDRUNNER_CHEST_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.SPEEDRUNNER_CHEST_BOAT, true, false, properties));
-
-    public static final Item FIREPROOF_SPEEDRUNNER_CHEST_BOAT = registerModItem(ModItemIds.FIREPROOF_SPEEDRUNNER_CHEST_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_SPEEDRUNNER_CHEST_BOAT, true, true, properties));
+                    ModEntityTypes.SPEEDRUNNER_CHEST_BOAT, true, properties));
 
     public static final Item DEAD_SPEEDRUNNER_BOAT = registerModItem(ModItemIds.DEAD_SPEEDRUNNER_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.DEAD_SPEEDRUNNER_BOAT, true, false, properties));
+                    ModEntityTypes.DEAD_SPEEDRUNNER_BOAT, true, properties));
 
     public static final Item DEAD_SPEEDRUNNER_CHEST_BOAT = registerModItem(ModItemIds.DEAD_SPEEDRUNNER_CHEST_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.DEAD_SPEEDRUNNER_CHEST_BOAT, true, false, properties));
+                    ModEntityTypes.DEAD_SPEEDRUNNER_CHEST_BOAT, true, properties));
 
     public static final Item CRIMSON_BOAT = registerModItem(ModItemIds.CRIMSON_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.CRIMSON_BOAT, false, false, properties));
-
-    public static final Item FIREPROOF_CRIMSON_BOAT = registerModItem(ModItemIds.FIREPROOF_CRIMSON_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_CRIMSON_BOAT, false, true, properties));
+                    ModEntityTypes.CRIMSON_BOAT, false, properties));
 
     public static final Item CRIMSON_CHEST_BOAT = registerModItem(ModItemIds.CRIMSON_CHEST_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.CRIMSON_CHEST_BOAT, false, false, properties));
-
-    public static final Item FIREPROOF_CRIMSON_CHEST_BOAT = registerModItem(ModItemIds.FIREPROOF_CRIMSON_CHEST_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_CRIMSON_CHEST_BOAT, false, true, properties));
+                    ModEntityTypes.CRIMSON_CHEST_BOAT, false, properties));
 
     public static final Item WARPED_BOAT = registerModItem(ModItemIds.WARPED_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.WARPED_BOAT, false, false, properties));
-
-    public static final Item FIREPROOF_WARPED_BOAT = registerModItem(ModItemIds.FIREPROOF_WARPED_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_WARPED_BOAT, false, true, properties));
+                    ModEntityTypes.WARPED_BOAT, false, properties));
 
     public static final Item WARPED_CHEST_BOAT = registerModItem(ModItemIds.WARPED_CHEST_BOAT, properties ->
             new SpeedrunnerBoatItem(
-                    ModEntityTypes.WARPED_CHEST_BOAT, false, false, properties));
-
-    public static final Item FIREPROOF_WARPED_CHEST_BOAT = registerModItem(ModItemIds.FIREPROOF_WARPED_CHEST_BOAT, properties ->
-            new SpeedrunnerBoatItem(
-                    ModEntityTypes.FIREPROOF_WARPED_CHEST_BOAT, false, true, properties));
+                    ModEntityTypes.WARPED_CHEST_BOAT, false, properties));
 
     public static final Item ENDER_MATTER = registerModItem(ModItemIds.ENDER_MATTER, properties -> new Item(
             properties) {
@@ -289,17 +266,6 @@ public class ModItems {
         }
     }, new Item.Properties()
             .rarity(Rarity.RARE)
-            .stacksTo(16)
-    );
-
-    public static final Item SPEEDRUNNER_PADDLE = registerModItem(ModItemIds.SPEEDRUNNER_PADDLE, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunner_paddle.tooltip"));
-        }
-    }, new Item.Properties()
             .stacksTo(16)
     );
 
@@ -359,11 +325,8 @@ public class ModItems {
     public static final Item DEAD_SPEEDRUNNER_TRAPDOOR = registerModBlock(ModBlockItemIds.DEAD_SPEEDRUNNER_TRAPDOOR, ModBlocks.DEAD_SPEEDRUNNER_TRAPDOOR, p -> p.cookingFuel(ModContextInts.COOKING_TIME_DEAD_SPEEDRUNNER_ITEMS));
     public static final Item DEAD_SPEEDRUNNER_DOOR = registerModBlock(ModBlockItemIds.DEAD_SPEEDRUNNER_DOOR, ModBlocks.DEAD_SPEEDRUNNER_DOOR, DoubleHighBlockItem::new);
 
-    @Deprecated(forRemoval = true)
     public static final Item SPEEDRUNNER_WEIGHTED_PRESSURE_PLATE = registerModBlock(ModBlockItemIds.MEDIATE_WEIGHTED_SPEEDRUNNER_PRESSURE_PLATE, ModBlocks.MEDIATE_WEIGHTED_SPEEDRUNNER_PRESSURE_PLATE);
-    @Deprecated(forRemoval = true)
     public static final Item METAL_SPEEDRUNNER_TRAPDOOR = registerModBlock(ModBlockItemIds.METAL_SPEEDRUNNER_TRAPDOOR, ModBlocks.METAL_SPEEDRUNNER_TRAPDOOR);
-    @Deprecated(forRemoval = true)
     public static final Item METAL_SPEEDRUNNER_DOOR = registerModBlock(ModBlockItemIds.METAL_SPEEDRUNNER_DOOR, ModBlocks.METAL_SPEEDRUNNER_DOOR);
 
     public static final Item SPEEDRUNNERS_WORKBENCH = registerModBlock(ModBlockItemIds.SPEEDRUNNERS_WORKBENCH, ModBlocks.SPEEDRUNNERS_WORKBENCH, (block, properties) -> new BlockItem(ModBlocks.SPEEDRUNNERS_WORKBENCH,

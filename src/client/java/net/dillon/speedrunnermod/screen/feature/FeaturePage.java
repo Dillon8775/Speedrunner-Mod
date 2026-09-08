@@ -34,7 +34,6 @@ public enum FeaturePage {
     RAW_SPEEDRUNNER("raw_speedrunner", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
     SPEEDRUNNER_WOOD("speedrunner_wood", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
     DEAD_SPEEDRUNNER_WOOD("dead_speedrunner_wood", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
-    SPEEDRUNNER_PADDLE("speedrunner_paddle", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
     FIREPROOF_BOATS("fireproof_boats", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
     IGNEOUS_ROCKS("igneous_rocks", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),
     SPEEDRUNNERS_EYE("speedrunners_eye", FeatureScreenCategory.BLOCKS_AND_ITEMS, DefaultBlocksAndItemsFeatureFactory::new),

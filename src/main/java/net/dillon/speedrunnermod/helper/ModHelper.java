@@ -369,26 +369,4 @@ public class ModHelper {
     public static double roundToNearestTenthsPlace(double number) {
         return Math.round(number * 10.0D) / 10.0D;
     }
-
-    /**
-     * Creates an {@code integer list option,} with {@code positive} coordinate values.
-     */
-    public static List<Integer> createListOption(int posX, int posY, int posZ) {
-        return List.of(posX, posY, posZ);
-    }
-
-    /**
-     * Creates an {@code integer list option,} with {@code negative} and {@code positive} coordinate values.
-     */
-    @Deprecated
-    public static List<Integer> createListOption(int negX, int negY, int negZ, int posX, int posY, int posZ) {
-        return List.of(negX, negY, negZ, posX, posY, posZ);
-    }
-
-    /**
-     * Creates a new {@code structure spawn rate option.}
-     */
-    public static List<Integer> createStructureSpawnRateOption(int spacing, int separation) {
-        return List.of(spacing, separation);
-    }
 }

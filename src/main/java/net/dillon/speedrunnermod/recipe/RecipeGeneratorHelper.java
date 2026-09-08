@@ -5,6 +5,7 @@ import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.tag.ModItemTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeProvider;
@@ -12,7 +13,6 @@ import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.SmithingTransformRecipeBuilder;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -33,21 +33,6 @@ public class RecipeGeneratorHelper extends RecipeProvider {
 
     protected RecipeGeneratorHelper(BootstrapContext<Recipe<?>> recipeOutput, BootstrapContext<Advancement> advancementOutput) {
         super(recipeOutput, advancementOutput);
-    }
-
-    /**
-     * Creates a smelting, campfire cooking, and smoker recipe.
-     */
-    protected void createCookableFood(ItemLike input, ItemLike output) {
-        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(3))
-                .unlockedBy("has_item", this.has(input))
-                .save(this.output, output+"_from_campfire_cooking");
-        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, CookingBookCategory.FOOD, output, 0.35F, S_asTick(10))
-                .unlockedBy("has_item", this.has(input))
-                .save(this.output, output+"_from_smelting");
-        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(10))
-                .unlockedBy("has_item", this.has(input))
-                .save(this.output, output+"_from_smoking");
     }
 
     /**
@@ -85,31 +70,55 @@ public class RecipeGeneratorHelper extends RecipeProvider {
     }
 
     /**
-     * Creates a smeltable and blastable material.
+     * Creates a smelting, campfire cooking, and smoker recipe.
      */
-    public void offerBurnableMaterial(List<ItemLike> inputs, ItemLike output, float exp, String group) {
-        offerNewSmelting(inputs, RecipeCategory.MISC, CookingBookCategory.MISC, output, exp, group);
-        offerNewBlasting(inputs, RecipeCategory.MISC, CookingBookCategory.MISC, output, exp, group);
+    protected void createCookableFood(ItemLike input, ItemLike output) {
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(3))
+                .unlockedBy("has_item", this.has(input))
+                .save(this.output, output+"_from_campfire_cooking");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.FOOD, CookingBookCategory.FOOD, output, 0.35F, S_asTick(10))
+                .unlockedBy("has_item", this.has(input))
+                .save(this.output, output+"_from_smelting");
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(input), RecipeCategory.FOOD, output, 0.35F, S_asTick(5))
+                .unlockedBy("has_item", this.has(input))
+                .save(this.output, output+"_from_smoking");
+    }
+
+    /**
+     * Creates a dead speedrunner smeltable material.
+     */
+    public void offerSmeltableDeadSpeedrunner(ItemLike input, ItemLike output) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(input), RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, output, 0.2F, S_asTick(10))
+                .unlockedBy("has_item", this.has(input))
+                .save(this.output, BuiltInRegistries.ITEM.getKey(output.asItem()).getPath() + "_from_smelting_dead_variant");
+    }
+
+    /**
+     * Creates a smeltable and blastable ore material.
+     */
+    public void offerOreMaterial(List<ItemLike> inputs, ItemLike output, float exp, String group) {
+        offerNewSmelting(inputs, RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, output, exp, group, "_from_smelting");
+        offerNewBlasting(inputs, RecipeCategory.BUILDING_BLOCKS, CookingBookCategory.BLOCKS, output, exp, group, "_from_blasting");
     }
 
     /**
      * A helper method for creating a new smelting recipe.
      */
-    protected void offerNewSmelting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group) {
-        this.offerMultipleOptionsH(SmeltingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(10), group, "_from_smelting");
+    private void offerNewSmelting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group, String suffix) {
+        offerMultipleSmeltingOptions(SmeltingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(10), group, suffix);
     }
 
     /**
      * A helper method for creating a new blasting recipe.
      */
-    protected void offerNewBlasting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group) {
-        this.offerMultipleOptionsH(BlastingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(10), group, "_from_blasting");
+    private void offerNewBlasting(List<ItemLike> inputs, RecipeCategory category, CookingBookCategory cookingBookCategory, ItemLike output, float experience, String group, String suffix) {
+        offerMultipleSmeltingOptions(BlastingRecipe::new, inputs, category, cookingBookCategory, output, experience, S_asTick(5), group, suffix);
     }
 
     /**
      * A helper method for creating a new cooking recipe.
      */
-    protected final <T extends AbstractCookingRecipe> void offerMultipleOptionsH(AbstractCookingRecipe.Factory<T> recipeFactory, List<ItemLike> inputs, RecipeCategory craftingCategory, CookingBookCategory cookingBookCategory, ItemLike output, float experience, int cookingTime, String group, String suffix) {
+    private <T extends AbstractCookingRecipe> void offerMultipleSmeltingOptions(AbstractCookingRecipe.Factory<T> recipeFactory, List<ItemLike> inputs, RecipeCategory craftingCategory, CookingBookCategory cookingBookCategory, ItemLike output, float experience, int cookingTime, String group, String suffix) {
         for (ItemLike itemConvertible : inputs) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(itemConvertible), craftingCategory, cookingBookCategory, output, experience, cookingTime, recipeFactory)
                     .group(group)
@@ -122,45 +131,8 @@ public class RecipeGeneratorHelper extends RecipeProvider {
      * Creates a normal {@code boat} and {@code chest boat} recipe.
      */
     protected void createBoatSet(ItemLike boat, ItemLike chestBoat, ItemLike planks) {
-        this.offerFireproofBoatRecipe(boat, planks);
-        this.chestBoat(chestBoat, boat);
-    }
-
-    /**
-     * Creates a fireproof {@code boat} and {@code chest boat} recipe.
-     */
-    protected void createFireproofBoatSet(ItemLike boat, ItemLike chestBoat, ItemLike fireproofBoat, ItemLike fireproofChestBoat, ItemLike planks, String s) {
         this.woodenBoat(boat, planks);
-        this.offerFireproofBoatRecipe(fireproofBoat, planks);
-        this.offerPaddleFireproofBoatRecipe(fireproofBoat, boat, fireproofChestBoat, chestBoat, s);
         this.chestBoat(chestBoat, boat);
-        this.chestBoat(fireproofChestBoat, fireproofBoat);
-    }
-
-    public void offerFireproofBoatRecipe(ItemLike output, ItemLike input) {
-        this.shaped(RecipeCategory.TRANSPORTATION, output)
-                .define('#', input)
-                .define('P', ModItems.SPEEDRUNNER_PADDLE)
-                .pattern("#P#")
-                .pattern("###")
-                .group("boat")
-                .unlockedBy("has_item", this.has(input))
-                .save(this.output);
-    }
-
-    public void offerPaddleFireproofBoatRecipe(ItemLike fireproofBoat, ItemLike boat, ItemLike fireproofChestBoat, ItemLike chestBoat, String s) {
-        this.shapeless(RecipeCategory.TRANSPORTATION, fireproofBoat)
-                .requires(ModItems.SPEEDRUNNER_PADDLE)
-                .requires(boat)
-                .group("boat")
-                .unlockedBy("has_boat", this.has(ItemTags.BOATS))
-                .save(this.output, this.speedrunnerModRecipe(s + "_with_paddle"));
-        this.shapeless(RecipeCategory.TRANSPORTATION, fireproofChestBoat)
-                .requires(ModItems.SPEEDRUNNER_PADDLE)
-                .requires(chestBoat)
-                .group("chest_boat")
-                .unlockedBy("has_boat", this.has(ItemTags.BOATS))
-                .save(this.output, this.speedrunnerModRecipe(s + "_with_chest_paddle"));
     }
 
     /**

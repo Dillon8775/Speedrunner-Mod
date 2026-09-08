@@ -27,7 +27,6 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
     public static final TagKey<Item> DRAGON_PARTICLE_ITEMS = createItemTag(ofSpeedrunnerMod("dragon_particle_items"));
     public static final TagKey<Item> EXPERIENCE_BOTTLE_CRAFTABLES = createItemTag(ofSpeedrunnerMod("experience_bottle_craftables"));
     public static final TagKey<Item> FIREPROOF_BOATS = createItemTag(ofSpeedrunnerMod("fireproof_boats"));
-    public static final TagKey<Item> FIREPROOF_CHEST_BOATS = createItemTag(ofSpeedrunnerMod("fireproof_chest_boats"));
     public static final TagKey<Item> FIREPROOF_ITEMS = createItemTag(ofSpeedrunnerMod("fireproof_items"));
     public static final TagKey<Item> FLESH = createItemTag(ofSpeedrunnerMod("flesh"));
     public static final TagKey<Item> GOLDEN_SPEEDRUNNER_TOOL_MATERIALS = createItemTag(ofSpeedrunnerMod("golden_speedrunner_tool_materials"));
@@ -138,18 +137,15 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
                 .add(ItemIds.ROTTEN_FLESH);
 
         tag(ModItemTags.FIREPROOF_BOATS)
-                .add(ModItemIds.FIREPROOF_SPEEDRUNNER_BOAT)
-                .add(ModItemIds.FIREPROOF_CRIMSON_BOAT)
-                .add(ModItemIds.FIREPROOF_WARPED_BOAT);
-
-        tag(ModItemTags.FIREPROOF_CHEST_BOATS)
-                .add(ModItemIds.FIREPROOF_SPEEDRUNNER_CHEST_BOAT)
-                .add(ModItemIds.FIREPROOF_CRIMSON_CHEST_BOAT)
-                .add(ModItemIds.FIREPROOF_WARPED_CHEST_BOAT);
+                .add(ModItemIds.SPEEDRUNNER_BOAT)
+                .add(ModItemIds.SPEEDRUNNER_CHEST_BOAT)
+                .add(ModItemIds.CRIMSON_BOAT)
+                .add(ModItemIds.CRIMSON_CHEST_BOAT)
+                .add(ModItemIds.WARPED_BOAT)
+                .add(ModItemIds.WARPED_CHEST_BOAT);
 
         tag(ModItemTags.FIREPROOF_ITEMS)
                 .addOptionalTag(ModItemTags.FIREPROOF_BOATS)
-                .addOptionalTag(ModItemTags.FIREPROOF_CHEST_BOATS)
                 .add(ItemIds.BLAZE_ROD)
                 .add(ItemIds.BLAZE_POWDER)
                 .add(ItemIds.FIRE_CHARGE);
@@ -352,21 +348,15 @@ public class ModItemTags extends FabricTagsProvider.ItemTagsProvider {
 
         tag(ItemTags.BOATS)
                 .add(ModItemIds.SPEEDRUNNER_BOAT)
-                .add(ModItemIds.FIREPROOF_SPEEDRUNNER_BOAT)
                 .add(ModItemIds.DEAD_SPEEDRUNNER_BOAT)
                 .add(ModItemIds.CRIMSON_BOAT)
-                .add(ModItemIds.FIREPROOF_CRIMSON_BOAT)
-                .add(ModItemIds.WARPED_BOAT)
-                .add(ModItemIds.FIREPROOF_WARPED_BOAT);
+                .add(ModItemIds.WARPED_BOAT);
 
         tag(ItemTags.CHEST_BOATS)
                 .add(ModItemIds.SPEEDRUNNER_CHEST_BOAT)
-                .add(ModItemIds.FIREPROOF_SPEEDRUNNER_CHEST_BOAT)
                 .add(ModItemIds.DEAD_SPEEDRUNNER_CHEST_BOAT)
                 .add(ModItemIds.CRIMSON_CHEST_BOAT)
-                .add(ModItemIds.FIREPROOF_CRIMSON_CHEST_BOAT)
-                .add(ModItemIds.WARPED_CHEST_BOAT)
-                .add(ModItemIds.FIREPROOF_WARPED_CHEST_BOAT);
+                .add(ModItemIds.WARPED_CHEST_BOAT);
 
         tag(ItemTags.CREEPER_IGNITERS)
                 .add(ModItemIds.SPEEDRUNNER_FLINT_AND_STEEL);

@@ -4,6 +4,7 @@ import net.dillon.speedrunnermod.block.ModBlocks;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -11,12 +12,15 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
@@ -29,6 +33,7 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
 public class ModBlockLoot extends FabricBlockLootSubProvider {
     private static final float[] NEW_SAPLING_DROP_CHANCE = new float[]{0.075F, 0.0800F, 0.093333336F, 0.15F};
     private static final float[] NEW_LEAVES_STICK_DROP_CHANCE = new float[]{0.65F, 0.06555558F, 0.70F, 0.075F, 0.1F};
+    private static final float[] NEW_LEAVES_APPLE_DROP_CHANCE = new float[]{0.50F, 0.05555558F, 0.35F, 0.07F, 0.1F};
 
     public ModBlockLoot(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(packOutput, registriesFuture);
@@ -37,7 +42,7 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
     /**
      * Creates a new speedrunner mod loot table.
      */
-    protected static ResourceKey<LootTable> createLootTable(final String path) {
+    public static ResourceKey<LootTable> createLootTable(final String path) {
         return ResourceKey.create(Registries.LOOT_TABLE, ofSpeedrunnerMod(path));
     }
 
@@ -55,22 +60,18 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         );
         add(
                 ModBlocks.SPEEDRUNNER_LEAVES,
-                block -> speedrunnerLeavesDrops(
+                block -> newLeavesDrops(
                         block,
                         ModItems.SPEEDRUNNER_STICK,
-                        ModBlocks.SPEEDRUNNER_SAPLING,
-                        false,
-                        NEW_SAPLING_DROP_CHANCE
+                        ModItems.SPEEDRUNNER_SAPLING
                 )
         );
         add(
                 ModBlocks.DEAD_SPEEDRUNNER_LEAVES,
-                block -> speedrunnerLeavesDrops(
+                block -> newLeavesDrops(
                         block,
                         ModItems.SPEEDRUNNER_STICK,
-                        ModBlocks.DEAD_SPEEDRUNNER_SAPLING,
-                        false,
-                        NEW_SAPLING_DROP_CHANCE
+                        ModItems.DEAD_SPEEDRUNNER_SAPLING
                 )
         );
 
@@ -82,6 +83,7 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.SPEEDRUNNER_FENCE);
         dropSelf(ModBlocks.SPEEDRUNNER_PLANKS);
         dropSelf(ModBlocks.DEAD_SPEEDRUNNER_PLANKS);
+        dropSelf(ModBlocks.DEAD_SPEEDRUNNER_FENCE);
         dropSelf(ModBlocks.DEAD_SPEEDRUNNER_FENCE);
         dropSelf(ModBlocks.SPEEDRUNNER_FENCE_GATE);
         dropSelf(ModBlocks.DEAD_SPEEDRUNNER_FENCE_GATE);
@@ -110,8 +112,13 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         addOreDrops();
         addWoodDrops();
         addDoomDrops();
+
+        addVanillaDrops();
     }
 
+    /**
+     * Generates all speedrunner ore drops.
+     */
     private void addOreDrops() {
         add(
                 ModBlocks.SPEEDRUNNER_ORE,
@@ -136,13 +143,13 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
 
         add(
                 ModBlocks.IGNEOUS_ORE,
-                block -> igneousOreDrops(block, 2));
+                block -> igneousOreDrop(block, 2));
         add(
                 ModBlocks.DEEPSLATE_IGNEOUS_ORE,
-                block -> igneousOreDrops(block, 2));
+                block -> igneousOreDrop(block, 2));
         add(
                 ModBlocks.NETHER_IGNEOUS_ORE,
-                block -> igneousOreDrops(block, 4));
+                block -> igneousOreDrop(block, 4));
 
         dropWhenSilkTouch(ModBlocks.THRUSTED_BLOCK);
         dropWhenSilkTouch(ModBlocks.EXPERIENCE_ORE);
@@ -150,6 +157,9 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         dropWhenSilkTouch(ModBlocks.NETHER_EXPERIENCE_ORE);
     }
 
+    /**
+     * Generates all speedrunner wood drops.
+     */
     private void addWoodDrops() {
         dropSelf(ModBlocks.SPEEDRUNNER_LOG);
         dropSelf(ModBlocks.SPEEDRUNNER_WOOD);
@@ -158,12 +168,18 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.DEAD_SPEEDRUNNER_WOOD);
     }
 
+    /**
+     * Generates all speedrunner mod doom block drops.
+     */
     private void addDoomDrops() {
         dropWhenSilkTouch(ModBlocks.DOOM_STONE);
         dropWhenSilkTouch(ModBlocks.DOOM_LOG);
     }
 
-    private LootTable.Builder igneousOreDrops(Block dropWithSilkTouch, int min) {
+    /**
+     * Generates an igneous ore saplingItem.
+     */
+    private LootTable.Builder igneousOreDrop(Block dropWithSilkTouch, int min) {
         return createSilkTouchDispatchTable(
                 dropWithSilkTouch,
                 applyExplosionDecay(
@@ -175,21 +191,229 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
         );
     }
 
-    private LootTable.Builder speedrunnerLeavesDrops(Block leaves, Item item, Block drop, boolean goldenApple, float... chance) {
+    /**
+     * Generates a leaves saplingItem.
+     */
+    private LootTable.Builder newLeavesDrops(Block leaves, Item stickItem, Item saplingItem) {
         return createSilkTouchOrShearsDispatchTable(
                 leaves,
                 applyExplosionCondition(
                         leaves,
-                        LootItem.lootTableItem(drop)
+                        LootItem.lootTableItem(saplingItem)
                 )
-                        .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), chance)))
-                .withPool(LootPool.lootPool()
-                        .setRolls(ContextIntProviders.exactly(1))
-                        .when(doesNotHaveShearsOrSilkTouch())
-                        .add(applyExplosionCondition(leaves, LootItem.lootTableItem(goldenApple ? Items.GOLDEN_APPLE : Items.APPLE)))
-                        .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), 0.50F, 0.05555558F, 0.35F, 0.07F, 0.1F))
-                        .add(applyExplosionDecay(leaves, LootItem.lootTableItem(item).apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))))
+                        .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), NEW_SAPLING_DROP_CHANCE)))
+                .withPool(
+                        LootPool.lootPool()
+                                .setRolls(ContextIntProviders.exactly(1))
+                                .add(
+                                        applyExplosionCondition(
+                                                leaves, LootItem.lootTableItem(Items.APPLE)
+                                        )
+                                )
+                                .add(
+                                        applyExplosionDecay(
+                                                leaves, LootItem.lootTableItem(stickItem)
+                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
+                                        )
+                                )
+                        .when(this.doesNotHaveShearsOrSilkTouch())
+                        .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), NEW_LEAVES_APPLE_DROP_CHANCE))
                         .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), NEW_LEAVES_STICK_DROP_CHANCE))
                 );
+    }
+
+    /**
+     * Generates all vanilla block loot tables to be buffed.
+     */
+    private void addVanillaDrops() {
+        add(
+                Blocks.ACACIA_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.ACACIA_SAPLING
+                )
+        );
+        add(
+                Blocks.AZALEA_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.AZALEA
+                )
+        );
+        add(
+                Blocks.BIRCH_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.BIRCH_SAPLING
+                )
+        );
+        add(
+                Blocks.CHERRY_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.CHERRY_SAPLING
+                )
+        );
+        add(
+                Blocks.DARK_OAK_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.DARK_OAK_LEAVES
+                )
+        );
+        add(
+                Blocks.FLOWERING_AZALEA_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.FLOWERING_AZALEA
+                )
+        );
+        add(
+                Blocks.JUNGLE_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.JUNGLE_SAPLING
+                )
+        );
+        add(
+                Blocks.MANGROVE_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.MANGROVE_ROOTS
+                )
+        );
+        add(
+                Blocks.OAK_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.OAK_SAPLING
+                )
+        );
+        add(
+                Blocks.PALE_OAK_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.PALE_OAK_SAPLING
+                )
+        );
+        add(
+                Blocks.SPRUCE_LEAVES,
+                block -> newLeavesDrops(
+                        block,
+                        Items.STICK,
+                        Items.SPRUCE_SAPLING
+                )
+        );
+
+        add(
+                Blocks.GOLD_ORE,
+                block -> createOreDrop(
+                        block,
+                        Items.GOLD_INGOT
+                )
+        );
+        add(
+                Blocks.DEEPSLATE_GOLD_ORE,
+                block -> createOreDrop(
+                        block,
+                        Items.GOLD_INGOT
+                )
+        );
+        add(
+                Blocks.IRON_ORE,
+                block -> createOreDrop(
+                        block,
+                        Items.IRON_INGOT
+                )
+        );
+        add(
+                Blocks.DEEPSLATE_IRON_ORE,
+                block -> createOreDrop(
+                        block,
+                        Items.IRON_INGOT
+                )
+        );
+
+        add(
+                Blocks.GILDED_BLACKSTONE,
+                block -> this.createSilkTouchDispatchTable(
+                        block,
+                        applyExplosionCondition(
+                                block,
+                                LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                        .apply(ApplyBonusCount.addOreBonusCount(this.enchantments.getOrThrow(Enchantments.FORTUNE)))
+                        )
+                )
+        );
+
+        add(
+                Blocks.NETHER_GOLD_ORE,
+                block -> this.createSilkTouchDispatchTable(
+                        block,
+                        applyExplosionDecay(
+                                block,
+                                LootItem.lootTableItem(Items.GOLD_NUGGET)
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(12, 36)))
+                                        .apply(ApplyBonusCount.addOreBonusCount(this.enchantments.getOrThrow(Enchantments.FORTUNE)))
+                        )
+                )
+        );
+
+        add(
+                Blocks.GRAVEL,
+                block -> this.createSilkTouchDispatchTable(
+                        block,
+                        applyExplosionCondition(
+                                block,
+                                LootItem.lootTableItem(Items.FLINT)
+                                        .when(BonusLevelTableCondition.bonusLevelFlatChance(this.enchantments.getOrThrow(Enchantments.FORTUNE), 0.25F, 0.25F, 0.25F, 1.0F))
+                                        .otherwise(LootItem.lootTableItem(block))
+                        )
+                )
+        );
+
+        add(
+                Blocks.DEAD_BUSH,
+                block -> this.createShearsDispatchTable(
+                        block,
+                        this.applyExplosionDecay(
+                                block, LootItem.lootTableItem(Items.STICK)
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                        )
+                )
+        );
+
+        add(
+                Blocks.SWEET_BERRY_BUSH,
+                block -> this.applyExplosionDecay(
+                        block,
+                        LootTable.lootTable()
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .add(LootItem.lootTableItem(Items.SWEET_BERRIES))
+                                                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                .apply(ApplyBonusCount.addUniformBonusCount(this.enchantments.getOrThrow(Enchantments.FORTUNE)))
+                                                .when(MatchBlock.blockMatches(this.blocks, Blocks.SWEET_BERRY_BUSH, StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 3)))
+                                )
+                                .withPool(
+                                        LootPool.lootPool()
+                                                .add(LootItem.lootTableItem(Items.SWEET_BERRIES))
+                                                .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                .apply(ApplyBonusCount.addUniformBonusCount(this.enchantments.getOrThrow(Enchantments.FORTUNE)))
+                                                .when(MatchBlock.blockMatches(this.blocks, Blocks.SWEET_BERRY_BUSH, StatePropertiesPredicate.Builder.properties().hasProperty(SweetBerryBushBlock.AGE, 2)))
+                                )
+                )
+        );
     }
 }

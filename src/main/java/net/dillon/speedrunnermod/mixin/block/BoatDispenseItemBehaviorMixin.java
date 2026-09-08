@@ -21,6 +21,6 @@ public class BoatDispenseItemBehaviorMixin {
     private boolean allowLavaBoats(boolean original, BlockSource source, ItemStack dispensed) {
         FluidState state = source.level().getFluidState(source.pos().relative(source.state().getValue(DispenserBlock.FACING)));
 
-        return original || (state.is(FluidTags.LAVA) && (dispensed.is(ModItemTags.FIREPROOF_BOATS) || dispensed.is(ModItemTags.FIREPROOF_CHEST_BOATS)));
+        return original || (state.is(FluidTags.LAVA) && (dispensed.is(ModItemTags.FIREPROOF_BOATS)));
     }
 }

@@ -20,7 +20,7 @@ public class SheepMixin {
 
      */
     @Inject(method = "finalizeSpawn", at = @At("RETURN"))
-    private void speedrunnermod$setWastelandSheepColor(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnReason, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
+    private void setWastelandSheepColor(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnReason, SpawnGroupData spawnGroupData, CallbackInfoReturnable<SpawnGroupData> cir) {
         Sheep sheep = (Sheep)(Object)this;
 
         if (sheep.getColor().equals(DyeColor.PINK) || !level.getBiome(sheep.blockPosition()).is(ModBiomes.SPEEDRUNNERS_WASTELAND)) {

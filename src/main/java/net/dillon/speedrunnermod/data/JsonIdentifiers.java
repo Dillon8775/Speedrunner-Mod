@@ -3,8 +3,7 @@ package net.dillon.speedrunnermod.data;
 /**
  * A class used specifically to get the names of certain Minecraft ".json" files.
  */
-public final class JsonIdentifiers {
-    public static final String WARM_OCEAN = ofBiome("warm_ocean");
+public class JsonIdentifiers {
     public static final String BASALT_DELTAS = ofBiome("basalt_deltas");
     public static final String CRIMSON_FOREST = ofBiome("crimson_forest");
     public static final String NETHER_WASTES = ofBiome("nether_wastes");
@@ -21,6 +20,7 @@ public final class JsonIdentifiers {
     public static final String ORE_LAPIS_BURIED = ofPlacedFeature("ore_lapis_buried");
     public static final String TREES_PLAINS = ofPlacedFeature("trees_plains");
 
+    public static final String ABANDONED_CAMP = ofStructureSet("abandoned_camp");
     public static final String ANCIENT_CITIES = ofStructureSet("ancient_cities");
     public static final String DESERT_PYRAMIDS = ofStructureSet("desert_pyramids");
     public static final String END_CITIES = ofStructureSet("end_cities");
@@ -44,21 +44,21 @@ public final class JsonIdentifiers {
     /**
      * Returns the filename for a biome in the "worldgen/biome" folder.
      */
-    private static String ofBiome(String biomeKey) {
-        return "worldgen/biome/" + biomeKey + ".json";
+    protected static String ofBiome(String key) {
+        return "worldgen/biome/" + key + ".json";
     }
 
     /**
      * Returns the filename for a placed feature in the "worldgen/placed_feature" folder.
      */
-    private static String ofPlacedFeature(String placedFeatureKey) {
-        return "worldgen/placed_feature/" + placedFeatureKey + ".json";
+    private static String ofPlacedFeature(String key) {
+        return "worldgen/placed_feature/" + key + ".json";
     }
 
     /**
      * Returns the filename for a structure in the "worldgen/structure_set" folder.
      */
-    private static String ofStructureSet(String structureSetKey) {
-        return "worldgen/structure_set/" + structureSetKey + ".json";
+    private static String ofStructureSet(String key) {
+        return "worldgen/structure_set/" + key + ".json";
     }
 }

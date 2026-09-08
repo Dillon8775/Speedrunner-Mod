@@ -15,7 +15,7 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
  */
 public class SpeedrunnerBoatItem extends BoatItem {
 
-    public SpeedrunnerBoatItem(EntityType<? extends AbstractBoat> entityType, boolean fast, boolean fireproof, Properties properties) {
+    public SpeedrunnerBoatItem(EntityType<? extends AbstractBoat> entityType, boolean fast, Properties properties) {
         ItemAttributeModifiers.Builder attributes = ItemAttributeModifiers.builder();
 
         if (fast) {
@@ -25,13 +25,11 @@ public class SpeedrunnerBoatItem extends BoatItem {
                     EquipmentSlotGroup.ANY
             );
         }
-        if (fireproof) {
-            attributes.add(
-                    ModAttributes.LAVA_INVULNERABILITY,
-                    new AttributeModifier(ofSpeedrunnerMod("lava_invulnerability_speedrunner_boat"), 1.0F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
-                    EquipmentSlotGroup.ANY
-            );
-        }
+        attributes.add(
+                ModAttributes.LAVA_INVULNERABILITY,
+                new AttributeModifier(ofSpeedrunnerMod("lava_invulnerability_speedrunner_boat"), 1.0F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
+                EquipmentSlotGroup.ANY
+        );
 
         super(entityType, properties
                 .stacksTo(1)

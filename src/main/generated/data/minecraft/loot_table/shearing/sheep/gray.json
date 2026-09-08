@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:shearing",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gray_wool"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 9,
+        "min": 3
+      }
+    }
+  ]
+}

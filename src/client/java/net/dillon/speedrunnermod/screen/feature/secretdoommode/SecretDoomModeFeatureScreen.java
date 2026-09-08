@@ -54,6 +54,11 @@ public class SecretDoomModeFeatureScreen extends FeatureScreen {
         return super.keyPressed(input);
     }
 
+    @Override
+    protected boolean shouldRenderTitleText() {
+        return false;
+    }
+
     protected void getButtonFunction() {
         openScreen(this.getNextScreen());
     }

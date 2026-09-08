@@ -1,0 +1,16 @@
+{
+  "fabric:remove": [
+    "minecraft:lush_caves",
+    "minecraft:sulfur_caves",
+    "minecraft:mushroom_fields",
+    "minecraft:deep_dark",
+    "minecraft:pale_garden",
+    "minecraft:stony_peaks"
+  ],
+  "values": [
+    {
+      "id": "#minecraft:is_overworld",
+      "required": false
+    }
+  ]
+}

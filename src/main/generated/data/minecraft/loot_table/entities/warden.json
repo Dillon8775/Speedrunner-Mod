@@ -1,0 +1,278 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 7,
+                "min": 3
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:ender_pearl",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 6,
+                "min": 2
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:golden_apple",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 11,
+                "min": 3
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:diamond",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "condition": {
+            "type": "minecraft:killed_by_player"
+          },
+          "modifier": {
+            "type": "minecraft:enchanted_count_increase",
+            "count": 1.0,
+            "enchantment": "minecraft:looting"
+          },
+          "name": "speedrunnermod:dragon_upgrade_smithing_template",
+          "weight": 3
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3,
+        "min": 1
+      }
+    },
+    {
+      "condition": {
+        "type": "minecraft:random_chance_with_enchanted_bonus",
+        "enchanted_chance": {
+          "type": "minecraft:linear",
+          "base": 0.15,
+          "per_level_above_first": 0.1
+        },
+        "enchantment": "minecraft:looting",
+        "unenchanted_chance": 0.05
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 35,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "speedrunnermod:speedrunner_chestplate"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "condition": {
+        "type": "minecraft:killed_by_player"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2,
+                "min": 1
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:enchanted_golden_apple"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1,
+        "min": 0
+      }
+    },
+    {
+      "condition": {
+        "type": "minecraft:random_chance_with_enchanted_bonus",
+        "enchanted_chance": {
+          "type": "minecraft:linear",
+          "base": 0.135,
+          "per_level_above_first": 0.09
+        },
+        "enchantment": "minecraft:looting",
+        "unenchanted_chance": 0.045
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 35,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:diamond_sword"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "condition": {
+        "type": "minecraft:killed_by_player"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 2,
+                "min": 1
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "minecraft:netherite_ingot"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 4,
+                "min": 1
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "speedrunnermod:speedrunners_eye"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:random_chance_with_enchanted_bonus",
+            "enchanted_chance": {
+              "type": "minecraft:linear",
+              "base": 0.092999995,
+              "per_level_above_first": 0.06
+            },
+            "enchantment": "minecraft:looting",
+            "unenchanted_chance": 0.033
+          },
+          {
+            "type": "minecraft:killed_by_player"
+          }
+        ]
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:inventory_preserver",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunners_totem",
+          "weight": 5
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 12,
+                "min": 4
+              }
+            },
+            {
+              "type": "minecraft:enchanted_count_increase",
+              "count": 1.0,
+              "enchantment": "minecraft:looting"
+            }
+          ],
+          "name": "speedrunnermod:ender_matter"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1,
+        "min": 0
+      }
+    }
+  ]
+}

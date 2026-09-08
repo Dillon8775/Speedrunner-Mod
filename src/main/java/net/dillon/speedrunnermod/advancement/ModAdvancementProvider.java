@@ -53,6 +53,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         HolderGetter<EntityType<?>> entityLookup = wrapperLookup.lookupOrThrow(Registries.ENTITY_TYPE);
         HolderGetter<Item> itemLookup = wrapperLookup.lookupOrThrow(Registries.ITEM);
         HolderGetter<DamageType> damageType = wrapperLookup.lookupOrThrow(Registries.DAMAGE_TYPE);
+
         AdvancementHolder root = Advancement.Builder.advancement()
                 .rootDisplay(
                         ModItems.SPEEDRUNNERS_WORKBENCH,

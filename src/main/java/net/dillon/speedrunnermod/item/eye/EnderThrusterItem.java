@@ -78,7 +78,7 @@ public class EnderThrusterItem extends Item implements SpeedrunnerItem {
 
                 this.removeObstructions(world, topPos);
 
-                player.randomTeleport(topPos.getX() + 0.5F, topY, topPos.getZ() + 0.5F, false, state -> true);
+                player.teleportTo(topPos.getX() + 0.5F, topY, topPos.getZ() + 0.5F);
                 player.awardStat(Stats.ITEM_USED.get(this));
                 player.swing(hand, SwingAnimation.DEFAULT, true);
                 world.broadcastEntityEvent(player, ModStatuses.ADD_BLUE_PORTAL_PARTICLES);

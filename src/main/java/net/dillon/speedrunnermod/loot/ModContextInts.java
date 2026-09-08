@@ -29,8 +29,8 @@ public class ModContextInts {
         Holder.Reference<ContextIntProvider> normalBurnTime = context.lookup(Registries.CONTEXT_INT_PROVIDER).getOrThrow(COOKING_NORMAL_BURN_TIME_REDUCTION_FACTOR);
         Holder.Reference<ContextIntProvider> fastBurnTime = context.lookup(Registries.CONTEXT_INT_PROVIDER).getOrThrow(COOKING_FAST_BURN_TIME_REDUCTION_FACTOR);
 
-        context.register(COOKING_TIME_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(20)));
-        context.register(COOKING_TIME_DEAD_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(10)));
+        context.register(COOKING_TIME_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(10)));
+        context.register(COOKING_TIME_DEAD_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(5)));
     }
 
     /**

@@ -15,7 +15,7 @@ public class StrongholdPortalRoomMixin {
      * Increases the chances of there being an eye prefilled in an end portal block.
      */
     @ModifyConstant(method = "postProcess", constant = @Constant(floatValue = 0.9F))
-    private float changePrefilledEyeChance(float constant) {
-        return doomOrDefault(0.99F, isEasyMode() ? 0.6F : 0.9F);
+    private float changePrefilledEyeChance(float original) {
+        return doomOrDefault(0.99F, isEasyMode() ? 0.6F : original);
     }
 }

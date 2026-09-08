@@ -6,15 +6,10 @@ import net.dillon.speedrunnermod.helper.ModConstants;
  * All Speedrunner Mod {@code external links.}
  */
 public class ModLinks {
-    public static final String CURSEFORGE = "https://www.curseforge.com/minecraft/mc-mods/speedrunner-mod";
     public static final String MODRINTH = "https://modrinth.com/mod/speedrunner-mod";
     public static final String MODRINTH_VERSIONS = "https://modrinth.com/mod/speedrunner-mod/versions";
-    public static final String GITHUB = "https://github.com/Dillon8775/Speedrunner-Mod";
     public static final String SHOWCASE_VIDEO = "https://youtu.be/08z9VvnFacw";
     public static final String RELEASE_TRAILER = "https://youtu.be/u37ujBiCMCw";
-    public static final String LEADERBOARDS = "https://sites.google.com/view/dillon8775/leaderboards";
-    public static final String LEADERBOARDS_SUBMISSION = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScnw-e4gkYyHGEVztWY-DLmm64jIbnqLw_LCIBkF2uQFfqVTg/viewform";
-    public static final String LEADERBOARDS_SPREADSHEET = "https://docs.google.com/spreadsheets/d/1JHiHHzRrcQnEeLCqxcjx9znPBJbCVDkhZ6ump9VtKHY";
 
     public static final String SODIUM = link("https://modrinth.com/mod/sodium");
     public static final String LITHIUM = link("https://modrinth.com/mod/lithium");

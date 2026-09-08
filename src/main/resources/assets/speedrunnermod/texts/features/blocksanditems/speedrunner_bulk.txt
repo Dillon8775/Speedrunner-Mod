@@ -2,4 +2,4 @@
 
 #### Found only in loot chests.
 
-!image:textures/gui/features/items/speedrunner_bulk.png scale=.3
+!image:items/speedrunner_bulk.png scale=.3

@@ -2,4 +2,4 @@
 
 #### This includes §aexperience from ores §fand §amobs,§f §9mob drops,§f and more!
 
-!image:textures/gui/features/screenshots/tripled_drops.png scale=.14
+!image:screenshots/tripled_drops.png scale=.14

@@ -4,7 +4,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
 import net.dillon.speedrunnermod.data.*;
-import net.dillon.speedrunnermod.util.RandomChance;
+import net.dillon.speedrunnermod.loot.ModFloatProviders;
 import net.dillon.speedrunnermod.util.TaskScheduler;
 import net.minecraft.core.Holder;
 import net.minecraft.server.MinecraftServer;
@@ -88,7 +88,7 @@ public abstract class MinecraftServerMixin {
         clock.ifPresent(worldClockHolder -> {
             if (!serverLevelData.isInitialized()) {
                 level.clockManager().setTotalTicks(worldClockHolder, 13000L);
-                if (level.getRandom().nextFloat() < RandomChance.floatInclusive(0.25F, 0.33F)) {
+                if (level.getRandom().nextFloat() < ModFloatProviders.getFloatUnsafe(ModFloatProviders.CHANCE_THAT_A_STORM_SPAWNS_ON_DOOM_MODE, level)) {
                     int ticks = M_asTick(10);
                     this.setWeatherParameters(0, ticks, true, true);
                     TaskScheduler.schedule(ticks, () -> this.setWeatherParameters(0, 0, false, false));

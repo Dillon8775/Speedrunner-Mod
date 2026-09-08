@@ -2,4 +2,4 @@
 
 Just like in §cbedwars...
 
-!image:textures/gui/features/screenshots/throwable_fireballs.png scale=.14
+!image:screenshots/throwable_fireballs.png scale=.14

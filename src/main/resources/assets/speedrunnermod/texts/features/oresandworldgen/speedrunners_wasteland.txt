@@ -2,4 +2,4 @@
 
 #### A §lgreat place§r for §bspeedrunning,§r because §amobs spawn less, §denderman spawn more, §9it doesn't rain, §bdiamonds§f and §9lapis§f generate §r§amore commonly, and §2large amounts §fof §bspeedrunner trees§r are found here.
 
-!image:textures/gui/features/screenshots/speedrunners_wasteland_biome.png scale=.13
+!image:screenshots/speedrunners_wasteland_biome.png scale=.13

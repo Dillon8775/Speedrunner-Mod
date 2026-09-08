@@ -4,9 +4,10 @@ import net.dillon.speedrunnermod.entity.goliath.GoliathAttackGoal;
 import net.dillon.speedrunnermod.entity.goliath.GoliathBase;
 import net.dillon.speedrunnermod.entity.goliath.MinionBase;
 import net.dillon.speedrunnermod.helper.ModAttributeHelper;
-import net.dillon.speedrunnermod.helper.ModConstants;
 import net.dillon.speedrunnermod.helper.ModHelper;
 import net.dillon.speedrunnermod.item.core.ModItems;
+import net.dillon.speedrunnermod.loot.ModIntProviders;
+import net.dillon.speedrunnermod.mixin.accessor.GoalInvoker;
 import net.dillon.speedrunnermod.tag.ModEntityTypeTags;
 import net.dillon.speedrunnermod.util.RandomChance;
 import net.minecraft.ChatFormatting;
@@ -525,7 +526,7 @@ public class Goliath extends Monster implements GoliathBase {
                 ItemStack stack = MinionBase.zombiesFireball(level.getRandom().nextFloat() < 0.15F ? ModItems.DRAGON_FIREBALL : Items.FIRE_CHARGE);
                 zombie.setItemSlot(EquipmentSlot.MAINHAND, stack);
                 ((MinionBase)zombie).setGoliathMinion(true);
-                ((MinionBase)zombie).setFireballChargeTime(ModConstants.DEFAULT_MINION_FIREBALL_CHARGE_SPEED);
+                ((MinionBase)zombie).setFireballChargeTime(ModIntProviders.getIntUnsafe(ModIntProviders.ZOMBIE_FIREBALL_CHARGE_SPEED_ON_DOOM_MODE, GoalInvoker.getServerLevel(this)));
 
                 zombie.setGlowingTag(true);
                 zombie.snapTo(pos.x, this.getY(), pos.z, this.getYRot(), 0.0F);

@@ -1,3 +1,3 @@
 ### Give yourself a §ahead start§f in §bevery speedrun§f with an §7unbreakable elytra §fand a §lstack§r of §cflight duration 3 firework rockets!
 
-!image:textures/gui/features/screenshots/icarus_mode.png scale=.14
+!image:screenshots/icarus_mode.png scale=.14

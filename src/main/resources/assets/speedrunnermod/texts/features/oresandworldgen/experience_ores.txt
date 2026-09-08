@@ -6,4 +6,4 @@
 
 ##### The §aamount of experience dropped§f can be increased with the §5fortune enchantment, §fand the block itself can be obtained with §bsilk touch.
 
-!image:textures/gui/features/screenshots/experience_ores.png scale=.13
+!image:screenshots/experience_ores.png scale=.13

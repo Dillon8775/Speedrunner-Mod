@@ -2,4 +2,4 @@
 
 #### Additionally, the §atext§f on the §cdeath screen§f has been modified to fit the theme of §bspeedrunning.
 
-!image:textures/gui/features/screenshots/better_death_screen.png scale=.14
+!image:screenshots/better_death_screen.png scale=.14

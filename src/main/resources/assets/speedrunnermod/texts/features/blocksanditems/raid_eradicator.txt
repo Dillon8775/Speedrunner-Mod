@@ -4,4 +4,4 @@
 
 ### §eEvokers §rwon't be §ckilled, §r§finstead, they will §dteleport §r§fto the player.
 
-!image:textures/gui/features/recipes/raid_eradicator_crafting_recipe.png scale=.55
+!image:recipes/raid_eradicator_crafting_recipe.png scale=.55

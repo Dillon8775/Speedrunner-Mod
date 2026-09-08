@@ -2,5 +2,5 @@
 
 You can configure this keybind in the §lControl §rsettings.
 
-!image:textures/gui/features/keybinds/toggle_chunk_borders_keybind.png scale=.5
-!image:textures/gui/features/keybinds/toggle_hitboxes_keybind.png scale=.5
+!image:keybinds/toggle_chunk_borders_keybind.png scale=.5
+!image:keybinds/toggle_hitboxes_keybind.png scale=.5

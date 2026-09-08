@@ -2,5 +2,5 @@
 
 ### §aAdditionally, §eBottles o' enchanting §fgive §amore experience.
 
-!image:textures/gui/features/screenshots/more_experience_from_ores.png scale=.11
-!image:textures/gui/features/screenshots/more_experience_from_xp_bottles.png scale=.11
+!image:screenshots/more_experience_from_ores.png scale=.11
+!image:screenshots/more_experience_from_xp_bottles.png scale=.11

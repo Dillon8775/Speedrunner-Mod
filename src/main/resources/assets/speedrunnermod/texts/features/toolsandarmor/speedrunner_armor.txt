@@ -4,7 +4,7 @@
 
 ### It is §c§onot §r§fstronger than §bdiamond armor, §r§fbut §aeach piece has a special buff.
 
-!image:textures/gui/features/other/speedrunner_armor.png scale=.17
+!image:other/speedrunner_armor.png scale=.17
 ## §bSpeedrunner Helmets §fgive:
 #### §b● increased air recovery from water
 #### §9● increased submerged mining speed

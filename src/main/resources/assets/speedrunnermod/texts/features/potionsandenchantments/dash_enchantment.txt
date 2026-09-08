@@ -2,4 +2,4 @@
 
 #### Found in various different §bloot chests§f and via §6piglin bartering.
 
-!image:textures/gui/features/gui/dash_enchantment_on_speedrunner_boots.png scale=.5
+!image:gui/dash_enchantment_on_speedrunner_boots.png scale=.5

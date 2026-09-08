@@ -4,4 +4,4 @@
 
 You can configure this keybind in the §lControl §fsettings.
 
-!image:textures/gui/features/keybinds/toggle_fullbright_keybind.png scale=.5
+!image:keybinds/toggle_fullbright_keybind.png scale=.5

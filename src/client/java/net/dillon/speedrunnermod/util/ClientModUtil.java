@@ -64,6 +64,20 @@ public class ClientModUtil {
     }
 
     /**
+     * Creates the create new world featuresButton.
+     */
+    public static UpdatableSpriteButton createNewWorldButton() {
+        return ClientTasks.createMenuButton(
+                "Speedrunner Mod Reset World",
+                ofSpeedrunnerMod("widget/boots"),
+                onPress -> ClientModUtil.createNewWorld(getMinecraft()),
+                Map.of(),
+                client().worldCreation().instantWorldCreation ? ModTexts.CREATE_WORLD_BUTTON_TOOLTIP : ModTexts.CREATE_WORLD_BUTTON_DISABLED_TOOLTIP,
+                true
+        );
+    }
+
+    /**
      * Creates the features featuresButton.
      */
     public static Button createFeaturesButton(Screen parent, int x, int y) {
@@ -72,22 +86,6 @@ public class ClientModUtil {
         }).tooltip(
                 Tooltip.create(Component.translatable("speedrunnermod.menu.features.tooltip"))
         ).bounds(x, y, 20, 20).build();
-    }
-
-    /**
-     * Creates the create new world featuresButton.
-     */
-    public static Button createNewWorldButton(Screen parent, int x, int y) {
-        return Button.builder(Texts.BLANK, (buttonWidget) -> ClientModUtil.createNewWorld(getMinecraft()))
-                .bounds(x, y, 20, 20)
-                .tooltip(
-                        Tooltip.create(
-                                client().worldCreation().instantWorldCreation ?
-                                        ModTexts.CREATE_WORLD_BUTTON_TOOLTIP :
-                                        ModTexts.CREATE_WORLD_BUTTON_DISABLED_TOOLTIP
-                        )
-                )
-                .build();
     }
 
     /**
@@ -101,29 +99,6 @@ public class ClientModUtil {
                 y,
                 big ? 258 : 129,
                 big ? 32 : 16
-        );
-    }
-
-    /**
-     * Draws the speedrunner boots texture on the {@code create world featuresButton}.
-     */
-    public static void renderSpeedrunnerBoots(GuiGraphicsExtractor graphics, Button createWorldButton) {
-        renderSpeedrunnerBoots(
-                graphics,
-                createWorldButton,
-                1.0F
-        );
-    }
-
-    /**
-     * Draws the speedrunner boots texture on the {@code create world featuresButton} with a custom alpha fade.
-     */
-    public static void renderSpeedrunnerBoots(GuiGraphicsExtractor graphics, Button createWorldButton, float f) {
-        blitSmallTexture(
-                graphics,
-                ofSpeedrunnerMod("textures/item/speedrunner_boots.png"),
-                createWorldButton,
-                f
         );
     }
 

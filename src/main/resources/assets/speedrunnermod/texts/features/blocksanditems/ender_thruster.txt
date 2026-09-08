@@ -2,4 +2,4 @@
 
 #### Especially useful when §7underground §for in a §acave §fthat doesn't have a §bclear exit.
 
-!image:textures/gui/features/recipes/ender_thruster_crafting_recipe.png scale=.5
+!image:recipes/ender_thruster_crafting_recipe.png scale=.5

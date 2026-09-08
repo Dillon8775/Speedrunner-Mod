@@ -4,4 +4,4 @@
 
 ### Upon entering §dthe end, you will have to face the §dEnder Dragon, §fa §7Wither§r, and a §anew boss, known as §2§lGoliath§r§2.
 
-!image:textures/gui/features/doom_mode/difficulty_doom.png scale=.5
+!image:doom_mode/difficulty_doom.png scale=.5

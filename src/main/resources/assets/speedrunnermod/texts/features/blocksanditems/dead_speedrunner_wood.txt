@@ -4,4 +4,4 @@
 
 ### You can §6smelt this wood §fto get the §bregular speedrunner wood variant.
 
-!image:textures/gui/features/blocks/dead_speedrunner_wood.png scale=.1
+!image:blocks/dead_speedrunner_wood.png scale=.1

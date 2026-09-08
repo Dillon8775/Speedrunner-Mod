@@ -1,7 +1,13 @@
 package net.dillon.speedrunnermod.option;
 
 import net.dillon.dillonlib.util.Arithmetics;
+import net.dillon.speedrunnermod.loot.ModFloatProviders;
+import net.dillon.speedrunnermod.loot.ModIntProviders;
 import net.dillon.speedrunnermod.option.eum.Mode;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProvider;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
 
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.common;
 
@@ -396,5 +402,19 @@ public class ModCommonOptions {
      */
     public static float doomOrDefault(float doomValue, float defaultValue) {
         return isDoomMode() ? doomValue : defaultValue;
+    }
+
+    /**
+     * @return a {@link ContextIntProvider} value based on doom mode.
+     */
+    public static int doomOrDefaultUnsafeInt(ResourceKey<ContextIntProvider> doomValue, ResourceKey<ContextIntProvider> defaultValue, ServerLevel serverLevel) {
+        return isDoomMode() ? ModIntProviders.getIntUnsafe(doomValue, serverLevel) : ModIntProviders.getIntUnsafe(defaultValue, serverLevel);
+    }
+
+    /**
+     * @return a {@link ContextFloatProvider} value based on doom mode.
+     */
+    public static float doomOrDefaultUnsafeFloat(ResourceKey<ContextFloatProvider> doomValue, ResourceKey<ContextFloatProvider> defaultValue, ServerLevel serverLevel) {
+        return isDoomMode() ? ModFloatProviders.getFloatUnsafe(doomValue, serverLevel) : ModFloatProviders.getFloatUnsafe(defaultValue, serverLevel);
     }
 }

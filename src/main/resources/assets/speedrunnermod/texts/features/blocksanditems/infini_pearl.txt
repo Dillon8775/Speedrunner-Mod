@@ -4,5 +4,5 @@
 
 #### These can §aalso §fbe obtained from the §b§lRetired Speedrunner §r§bvillager profession.
 
-!image:textures/gui/features/recipes/infini_pearl_crafting_recipe.png scale=.5
-!image:textures/gui/features/loot/infini_pearl_retired_speedrunner.png scale=.15
+!image:recipes/infini_pearl_crafting_recipe.png scale=.5
+!image:loot/infini_pearl_retired_speedrunner.png scale=.15

@@ -5,8 +5,15 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProvider;
+
+import java.util.Optional;
 
 import static net.dillon.dillonlib.util.Arithmetics.S_asTick;
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
@@ -17,9 +24,11 @@ import static net.minecraft.world.level.storage.loot.providers.number.ints.Conte
 /**
  * All speedrunner mod int providers.
  */
-public class ModContextInts {
+public class ModIntProviders {
     public static final ResourceKey<ContextIntProvider> COOKING_TIME_SPEEDRUNNER_ITEMS = createIntProvider("speedrunner_items");
     public static final ResourceKey<ContextIntProvider> COOKING_TIME_DEAD_SPEEDRUNNER_ITEMS = createIntProvider("dead_speedrunner_items");
+    public static final ResourceKey<ContextIntProvider> ZOMBIE_FIREBALL_CHARGE_SPEED_ON_DOOM_MODE = createIntProvider("zombie_fireball_charge_speed_on_doom_mode");
+    public static final ResourceKey<ContextIntProvider> ZOMBIE_FIREBALL_CHARGE_SPEED_DEFAULT = createIntProvider("zombie_fireball_charge_speed_default");
 
     /**
      * Bootstraps mod int providers.
@@ -31,6 +40,25 @@ public class ModContextInts {
 
         context.register(COOKING_TIME_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(10)));
         context.register(COOKING_TIME_DEAD_SPEEDRUNNER_ITEMS, invokeCooking(predicates, normalBurnTime, fastBurnTime, S_asTick(5)));
+        context.register(ZOMBIE_FIREBALL_CHARGE_SPEED_ON_DOOM_MODE, new ConstantValue(40));
+        context.register(ZOMBIE_FIREBALL_CHARGE_SPEED_DEFAULT, new ConstantValue(100));
+    }
+
+    /**
+     * Gets an int from a specified {@link ContextIntProvider}.
+     */
+    public static int getIntUnsafe(final ResourceKey<ContextIntProvider> key, final ServerLevel serverLevel) {
+        LootParams lootParams = new LootParams.Builder(serverLevel).create(LootContextParamSets.EMPTY);
+        LootContext context = new LootContext.Builder(lootParams)
+                .create(Optional.empty());
+
+        ContextIntProvider provider = context
+                .getResolver()
+                .lookupOrThrow(Registries.CONTEXT_INT_PROVIDER)
+                .getOrThrow(key)
+                .value();
+
+        return provider.getIntUnsafe(context);
     }
 
     /**

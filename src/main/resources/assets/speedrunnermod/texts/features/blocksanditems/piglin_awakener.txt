@@ -4,4 +4,4 @@
 
 ### §aCan be crafted §fwith §emost "piglin loved" items, §fan §9ender pearl, §for §6blaze powder.
 
-!image:textures/gui/features/recipes/piglin_awakener_crafting_recipe.png scale=.5
+!image:recipes/piglin_awakener_crafting_recipe.png scale=.5

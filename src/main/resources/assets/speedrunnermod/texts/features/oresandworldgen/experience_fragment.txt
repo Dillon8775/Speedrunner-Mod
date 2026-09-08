@@ -2,5 +2,5 @@
 
 ## You can use these §afragments §r§fto craft §eBottles o' Enchanting!
 
-!image:textures/gui/features/recipes/bottle_of_enchanting_crafting_recipe.png scale=.4
-!image:textures/gui/features/recipes/experience_fragment.png scale=.15
+!image:recipes/bottle_of_enchanting_crafting_recipe.png scale=.4
+!image:recipes/experience_fragment.png scale=.15

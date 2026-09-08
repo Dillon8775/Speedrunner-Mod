@@ -18,10 +18,12 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
 public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
     public static final TagKey<Enchantment> SPEEDRUNNER_ENCHANTMENTS = createEnchantmentTag(ofSpeedrunnerMod("speedrunner_enchantments"));
     public static final TagKey<Enchantment> ON_RANDOM_SPEEDRUNNER_LOOT = createEnchantmentTag(ofSpeedrunnerMod("on_random_speedrunner_loot"));
+    public static final TagKey<Enchantment> ON_GOLDEN_SWORD = createEnchantmentTag(ofSpeedrunnerMod("on_golden_sword"));
+    public static final TagKey<Enchantment> FORTUNE_STRONGHOLD_LIBRARY_BOOK = createEnchantmentTag(ofSpeedrunnerMod("fortune_stronghold_library_book"));
+    public static final TagKey<Enchantment> ON_STRONGHOLD_LIBRARY_BOOK = createEnchantmentTag(ofSpeedrunnerMod("on_stronghold_library_book"));
+    public static final TagKey<Enchantment> FROM_PIGLIN_BARTERING = createEnchantmentTag(ofSpeedrunnerMod("from_piglin_bartering"));
     public static final TagKey<Enchantment> RETIRED_SPEEDRUNNER_TRADES = createEnchantmentTag(ofSpeedrunnerMod("retired_speedrunner_trades"));
     public static final TagKey<Enchantment> WITHERED_ENCHANTMENTS = createEnchantmentTag(ofSpeedrunnerMod("withered_enchantments"));
-    public static final TagKey<Enchantment> ON_GOLDEN_SWORD = createEnchantmentTag(ofSpeedrunnerMod("on_golden_sword"));
-    public static final TagKey<Enchantment> FROM_PIGLIN_BARTERING = createEnchantmentTag(ofSpeedrunnerMod("from_piglin_bartering"));
 
     public ModEnchantmentTags(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(output, Registries.ENCHANTMENT, lookupProvider);
@@ -57,6 +59,20 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
                 .add(Enchantments.FROST_WALKER)
                 .addTag(ModEnchantmentTags.SPEEDRUNNER_ENCHANTMENTS);
 
+        tag(ModEnchantmentTags.ON_GOLDEN_SWORD)
+                .add(Enchantments.LOOTING);
+
+        tag(ModEnchantmentTags.FORTUNE_STRONGHOLD_LIBRARY_BOOK)
+                .add(Enchantments.FORTUNE);
+
+        tag(ModEnchantmentTags.ON_STRONGHOLD_LIBRARY_BOOK)
+                .add(ModEnchantments.DASH)
+                .add(ModEnchantments.COOLDOWN);
+
+        tag(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
+                .add(ModEnchantments.DASH)
+                .add(Enchantments.SOUL_SPEED);
+
         tag(ModEnchantmentTags.RETIRED_SPEEDRUNNER_TRADES)
                 .add(Enchantments.PROTECTION)
                 .add(Enchantments.FEATHER_FALLING)
@@ -70,15 +86,8 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
                 .add(Enchantments.MENDING)
                 .add(ModEnchantments.COOLDOWN);
 
-        tag(ModEnchantmentTags.ON_GOLDEN_SWORD)
-                .add(Enchantments.LOOTING);
-
         tag(ModEnchantmentTags.WITHERED_ENCHANTMENTS)
                 .add(ModEnchantments.WITHERED);
-
-        tag(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
-                .add(ModEnchantments.DASH)
-                .add(Enchantments.SOUL_SPEED);
 
         tag(EnchantmentTags.NON_TREASURE)
                 .addTag(ModEnchantmentTags.SPEEDRUNNER_ENCHANTMENTS);

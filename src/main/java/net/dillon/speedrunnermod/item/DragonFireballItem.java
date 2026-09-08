@@ -21,7 +21,7 @@ public class DragonFireballItem extends Item {
      */
     @Override
     public InteractionResult use(Level world, Player player, InteractionHand hand) {
-        if (ThrowableFireball.createFireballEntity(true, player, hand)) {
+        if (ThrowableFireball.createFireballEntity(player, hand)) {
             return InteractionResult.SUCCESS_SERVER;
         }
         return super.use(world, player, hand);

@@ -24,10 +24,6 @@ public class ModConstants {
     );
     public static final String MC_VERSION = FabricLoader.getInstance().getRawGameVersion();
 
-    public static final int DEFAULT_DOOM_ZOMBIE_FIREBALL_CHARGE_SPEED = 40;
-    public static final int DEFAULT_ZOMBIE_FIREBALL_CHARGE_SPEED = 100;
-    public static final int DEFAULT_MINION_FIREBALL_CHARGE_SPEED = 120;
-
     /**
      * Initializes all constant variables.
      */
@@ -50,6 +46,6 @@ public class ModConstants {
      * @return how much damage a fireball does when hitting an entity (each 0.5 = half a heart).
      */
     public static float getSmallFireballDamageValue() {
-        return doomOrDefault(RandomChance.intInclusive(3, 5), 1.0F);
+        return doomOrDefault(RandomChance.intInclusive(3, 4), 1.0F);
     }
 }

@@ -2,4 +2,4 @@
 
 #### §aShift + click§f to cycle structures.
 
-!image:textures/gui/features/recipes/speedrunners_eye_crafting_recipe.png scale=.5
+!image:recipes/speedrunners_eye_crafting_recipe.png scale=.5

@@ -4,4 +4,4 @@
 
 The chance can be increased with §alooting.
 
-!image:textures/gui/features/items/ender_matter.png scale=.4
+!image:items/ender_matter.png scale=.4

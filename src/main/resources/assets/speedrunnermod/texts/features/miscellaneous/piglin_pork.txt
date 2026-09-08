@@ -1,3 +1,3 @@
 ### When §6piglin§f (or §6piglin brutes)§r are killed, they will drop a §enew food item,§f called §6§lPiglin Pork.
 
-!image:textures/gui/features/items/piglin_pork.png scale=.25
+!image:items/piglin_pork.png scale=.25

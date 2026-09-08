@@ -2,4 +2,4 @@
 
 #### §aShift + click§f to cycle structures.
 
-!image:textures/gui/features/recipes/eye_of_inferno_crafting_recipe.png scale=.5
+!image:recipes/eye_of_inferno_crafting_recipe.png scale=.5

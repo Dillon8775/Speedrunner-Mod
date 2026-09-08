@@ -29,4 +29,4 @@
 
 ## §cIf you're up for the challenge, §c§oI wish you luck.
 
-!image:textures/gui/features/doom_mode/hardest_difficulty.png scale=.14
+!image:doom_mode/hardest_difficulty.png scale=.14

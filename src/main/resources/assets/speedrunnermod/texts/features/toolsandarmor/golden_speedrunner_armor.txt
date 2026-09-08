@@ -6,4 +6,4 @@
 
 #### Each piece of §6golden speedrunner armor §fgive the §asame buffs §fthat §bnormal speedrunner armor gives.
 
-!image:textures/gui/features/other/golden_speedrunner_armor.png scale=.17
+!image:other/golden_speedrunner_armor.png scale=.17

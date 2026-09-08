@@ -2,4 +2,4 @@
 
 #### Found §a§oonly §r§fin the §b§lSpeedrunner's Wasteland §r§bbiome§r, and §cthe nether.
 
-!image:textures/gui/features/screenshots/igneous_ores.png scale=.14
+!image:screenshots/igneous_ores.png scale=.14

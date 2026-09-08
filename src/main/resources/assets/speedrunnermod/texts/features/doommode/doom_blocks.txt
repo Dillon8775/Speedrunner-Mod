@@ -6,7 +6,7 @@
 
 ### §aTip: §fdrink a §2luck §apotion §fto have a §ahigher chance §fat §bgetting loot!
 
-!image:textures/gui/features/doom_mode/doom_block.png scale=.14
+!image:doom_mode/doom_block.png scale=.14
 ### §cDoom Stone §fcan also be crafted with §78 end stone, §fand a §eflesh block.
 
-!image:textures/gui/features/recipes/doom_stone.png scale=.5
+!image:recipes/doom_stone.png scale=.5

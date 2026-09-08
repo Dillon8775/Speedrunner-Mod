@@ -10,6 +10,7 @@
   "mixins": [
     "accessor.BlazeAttackGoalAccessor",
     "accessor.CrossbowItemAccessor",
+    "accessor.GoalInvoker",
     "accessor.InventoryAccessor",
     "accessor.LivingEntityAccessor",
     "accessor.ContextIntProvidersInvoker",

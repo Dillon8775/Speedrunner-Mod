@@ -1,6 +1,8 @@
 package net.dillon.speedrunnermod.loot.context;
 
 import net.dillon.speedrunnermod.loot.mc.chest.RuinedPortalLoot;
+import net.dillon.speedrunnermod.loot.mc.chest.StrongholdCrossingLoot;
+import net.dillon.speedrunnermod.loot.mc.chest.StrongholdLibraryLoot;
 import net.dillon.speedrunnermod.mixin.accessor.SimpleFabricLootTableSubProviderAccessor;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableSubProvider;
@@ -30,6 +32,9 @@ public class ModChestLootTables extends SimpleFabricLootTableSubProvider {
         HolderGetter<Enchantment> enchantments = provider.lookupOrThrow(Registries.ENCHANTMENT);
 
         RuinedPortalLoot.generateLoot(context, enchantments);
+
+        StrongholdCrossingLoot.generateLoot(context, enchantments);
+        StrongholdLibraryLoot.generateLoot(context, enchantments);
     }
 
     @Override

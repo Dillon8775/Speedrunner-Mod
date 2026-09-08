@@ -4,4 +4,4 @@
 
 §c§oUnless you're on doom mode... then they spawn everywhere.
 
-!image:textures/gui/features/other/piglin_brute.png scale=.18
+!image:other/piglin_brute.png scale=.18

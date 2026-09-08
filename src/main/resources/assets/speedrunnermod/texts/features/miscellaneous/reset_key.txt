@@ -4,4 +4,4 @@
 
 You can configure this keybind in the §lControl §rsettings, and configure the §aworld creation settings§r in the §bspeedrunner mod options menu.
 
-!image:textures/gui/features/keybinds/fast_world_creation_keybind.png scale=.5
+!image:keybinds/fast_world_creation_keybind.png scale=.5

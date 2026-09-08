@@ -92,7 +92,7 @@ public abstract class AbstractScrollableScreen extends AbstractModScreen {
                 }
             }
 
-            Identifier imageId = ofSpeedrunnerMod(imagePath);
+            Identifier imageId = ofSpeedrunnerMod("textures/gui/sprites/features/" + imagePath);
 
             try {
                 NativeImage image = NativeImage.read(this.minecraft.getResourceManager().open(imageId));

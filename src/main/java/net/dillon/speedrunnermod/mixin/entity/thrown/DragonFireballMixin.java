@@ -46,7 +46,7 @@ public class DragonFireballMixin extends AbstractHurtingProjectile {
             return;
         }
 
-        if (areaEffectCloudEntity.getOwner() instanceof LivingEntity living) {
+        if (areaEffectCloudEntity.getOwner() instanceof LivingEntity) {
             areaEffectCloudEntity.setRadius(4.5F);
             areaEffectCloudEntity.setDuration(M_asTick(1));
             areaEffectCloudEntity.setRadiusPerTick((15.5F - areaEffectCloudEntity.getRadius()) / areaEffectCloudEntity.getDuration());
@@ -55,7 +55,7 @@ public class DragonFireballMixin extends AbstractHurtingProjectile {
                     areaEffectCloudEntity.getX(),
                     areaEffectCloudEntity.getY(),
                     areaEffectCloudEntity.getZ(),
-                    ThrowableFireball.getExplosionPower(true, living),
+                    ThrowableFireball.getExplosionPower(true),
                     Level.ExplosionInteraction.BLOCK);
         }
     }

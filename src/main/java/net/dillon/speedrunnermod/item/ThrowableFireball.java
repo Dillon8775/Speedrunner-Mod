@@ -1,14 +1,14 @@
 package net.dillon.speedrunnermod.item;
 
 import net.dillon.speedrunnermod.advancement.ModPredicates;
-import net.dillon.speedrunnermod.entity.goliath.MinionBase;
 import net.dillon.speedrunnermod.helper.ModHelper;
-import net.dillon.speedrunnermod.util.RandomChance;
+import net.dillon.speedrunnermod.item.core.ModItems;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.monster.zombie.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.hurtingprojectile.AbstractHurtingProjectile;
@@ -22,7 +22,6 @@ import net.minecraft.world.phys.Vec3;
 
 import static net.dillon.dillonlib.util.Arithmetics.S_asTick;
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.common;
-import static net.dillon.speedrunnermod.option.ModCommonOptions.isDoomMode;
 
 /**
  * A fireball, which can be thrown.
@@ -32,17 +31,17 @@ public interface ThrowableFireball {
     /**
      * Creates a fireball entity.
      */
-    static boolean createFireballEntity(boolean dragon, LivingEntity thrower, InteractionHand hand) {
+    static boolean createFireballEntity(LivingEntity thrower, InteractionHand hand) {
         Level level = thrower.level();
         ItemStack stack = thrower.getItemInHand(hand);
 
         boolean zombie = thrower instanceof Zombie;
 
         if (!level.isClientSide()) {
+            boolean dragon = thrower instanceof EnderDragon || thrower.isHolding(heldItem -> heldItem.is(ModItems.DRAGON_FIREBALL));
+            int explosionPower = getExplosionPower(dragon);
+
             Vec3 lookVec = thrower.getViewVector(1.0F);
-
-            int explosionPower = getExplosionPower(dragon, thrower);
-
             AbstractHurtingProjectile fireball = dragon
                     ? new DragonFireball(level, thrower, lookVec.normalize())
                     : new LargeFireball(level, thrower, lookVec.normalize(), explosionPower);
@@ -83,26 +82,12 @@ public interface ThrowableFireball {
     }
 
     /**
-     * @return the explosion power when a fireball impacts the ground.
+     * @return the explosion defaultPower when a fireball impacts the ground.
      */
-    static int getExplosionPower(boolean dragon, LivingEntity thrower) {
-        boolean isZombie = thrower instanceof Zombie;
-        boolean isMinion = thrower instanceof MinionBase minion && minion.isGoliathMinion();
+    static int getExplosionPower(boolean dragon) {
+        int defaultPower = common().general().fireballExplosionPower;
+        final int dragonPower = (int)(defaultPower * 1.5F);
 
-        final int maxDragonPower = 5;
-        int maxPower = 10;
-        if (isMinion || isZombie) {
-            maxPower = 3;
-        }
-
-        int power = isDoomMode()
-                ? RandomChance.intInclusive(1, maxPower)
-                : common().general().fireballExplosionPower;
-
-        if (dragon && power > maxDragonPower) {
-            power = 5;
-        }
-
-        return dragon ? (int)(power * 1.5F) : power;
+        return dragon ? dragonPower : defaultPower;
     }
 }

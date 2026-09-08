@@ -4,4 +4,4 @@
 
 ### Found even §amore commonly in the §b§lSpeedrunner's Wasteland§r biome!
 
-!image:textures/gui/features/screenshots/speedrunner_ores.png scale=.13
+!image:screenshots/speedrunner_ores.png scale=.13

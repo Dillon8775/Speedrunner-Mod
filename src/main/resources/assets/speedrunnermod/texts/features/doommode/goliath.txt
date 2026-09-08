@@ -1,6 +1,6 @@
 ## §a§lGoliath §r§fwill target §canything §r§fin his path, and §cslowly regenerate §r§fat §aall times.
 
-!image:textures/gui/features/doom_mode/goliath_in_action.png scale=.14
+!image:doom_mode/goliath_in_action.png scale=.14
 #### §c● He cannot be killed from the void. §fHe will simply §dteleport §r§fto the §r§dmiddle of the end island §fif §cknocked into the void.
 #### §c● §bRanged weapons §fare §cno good §fonce he reaches §c1/2 health.
 #### §c● §fHe is §ccompletely immune §fto §cexplosives, §afall damage §fand §6fire.
@@ -14,7 +14,7 @@
 ### §a§lGoliath§r§f can also be summoned with §e2 flesh blocks§r§f and a §azombie head.
 ##### This works on §aany mode!
 
-!image:textures/gui/features/screenshots/summon_goliath.png scale=.14
+!image:screenshots/summon_goliath.png scale=.14
 ### In order to craft a §eflesh block, §r§fyou need §b9 pieces§r§f of §6rotten§r§f/§ecooked§r§f flesh.
 
-!image:textures/gui/features/recipes/flesh_block_crafting_recipe.png scale=.5
+!image:recipes/flesh_block_crafting_recipe.png scale=.5

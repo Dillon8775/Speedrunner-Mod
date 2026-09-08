@@ -2,4 +2,4 @@
 
 #### §oConfigurable in the §bSpeedrunner Mod options menu.
 
-!image:textures/gui/features/screenshots/structures.png scale=.14
+!image:screenshots/structures.png scale=.14

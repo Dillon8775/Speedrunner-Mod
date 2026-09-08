@@ -2,4 +2,4 @@
 
 #### Acts like any other type of wood; it §ocan §r§fbe used as a §7fuel source,§r but it §6cannot catch fire from fire or lava.
 
-!image:textures/gui/features/blocks/speedrunner_wood.png scale=.1
+!image:blocks/speedrunner_wood.png scale=.1

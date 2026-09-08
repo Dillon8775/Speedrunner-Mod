@@ -113,7 +113,7 @@ public class ZombieMixin extends Monster implements MinionBase {
      */
     @Inject(method = "finalizeSpawn", at = @At("RETURN"))
     private void giveZombiesFireballs(ServerLevelAccessor level, DifficultyInstance difficulty, EntitySpawnReason spawnReason, SpawnGroupData groupData, CallbackInfoReturnable<SpawnGroupData> cir) {
-        if (level.getRandom().nextFloat() < MinionBase.spawnWithFireballChance()) {
+        if (level.getRandom().nextFloat() < MinionBase.spawnWithFireballChance((Zombie)(Object)this)) {
             this.setItemSlot(EquipmentSlot.MAINHAND, MinionBase.zombiesFireball(Items.FIRE_CHARGE));
             ModAttributeHelper.modifyMaxHealth(this, this.getAttributeValue(Attributes.MAX_HEALTH) / 2);
             ModAttributeHelper.modifyArmor(this, this.getAttributeValue(Attributes.ATTACK_DAMAGE) / 2);

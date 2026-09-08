@@ -2,5 +2,5 @@
 
 ### §aCan also be obtained §ffrom the §b§lRetired Speedrunner §r§bvillager.
 
-!image:textures/gui/features/recipes/dragons_fireball_crafting_recipe.png scale=.5
-!image:textures/gui/features/loot/dragon_fireball_retired_speedrunner.png scale=.15
+!image:recipes/dragons_fireball_crafting_recipe.png scale=.5
+!image:loot/dragon_fireball_retired_speedrunner.png scale=.15

@@ -24,7 +24,7 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerModClient.client;
 @Mixin(TitleScreen.class)
 public class TitleScreenMixin extends Screen {
     @Unique
-    private Button featuresButton, createWorldButton;
+    private Button featuresButton;
 
     public TitleScreenMixin(Component title) {
         super(title);
@@ -39,19 +39,22 @@ public class TitleScreenMixin extends Screen {
                 ClientModUtil.createMenuButton(this)
         );
         optionsButton.setX(this.width / 2 - 124);
-        optionsButton.setY(this.height / 4 + 96);
+        int height = this.height / 4 + 96;
+        optionsButton.setY(height);
         optionsButton.setWidth(20);
+        height -= 24;
+
+        Button createNewWorldButton = this.addRenderableWidget(
+                ClientModUtil.createNewWorldButton()
+        );
+        createNewWorldButton.setX(optionsButton.getX());
+        createNewWorldButton.setY(height);
+        createNewWorldButton.active = client().worldCreation().instantWorldCreation;
+        height -= 24;
 
         this.featuresButton = this.addRenderableWidget(
-                ClientModUtil.createFeaturesButton(this, optionsButton.getX(), optionsButton.getY() - 48)
+                ClientModUtil.createFeaturesButton(this, optionsButton.getX(), height)
         );
-
-        if (client().general().showResetButton) {
-            this.createWorldButton = this.addRenderableWidget(
-                    ClientModUtil.createNewWorldButton(this, optionsButton.getX(), optionsButton.getY() - 24)
-            );
-            this.createWorldButton.active = client().worldCreation().instantWorldCreation;
-        }
     }
 
     /**
@@ -60,10 +63,6 @@ public class TitleScreenMixin extends Screen {
     @Inject(method = "extractRenderState", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/GuiGraphicsExtractor;text(Lnet/minecraft/client/gui/Font;Ljava/lang/String;III)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void renderSpeedrunnerModButtonTexturesAndText(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float delta, CallbackInfo ci, float f) {
         graphics.text(this.font, "The Speedrunner Mod " + ModConstants.MOD_VERSION.getString(), 2, this.height - 20, ARGB.color(f, 0x55FFFF));
-
-        if (client().general().showResetButton) {
-            ClientModUtil.renderSpeedrunnerBoots(graphics, this.createWorldButton, f);
-        }
         ClientModUtil.renderSpeedrunnerSmithingTemplate(graphics, this.featuresButton, f);
     }
 

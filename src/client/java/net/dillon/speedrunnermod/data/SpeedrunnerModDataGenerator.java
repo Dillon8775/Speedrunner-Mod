@@ -3,8 +3,9 @@ package net.dillon.speedrunnermod.data;
 import net.dillon.speedrunnermod.advancement.ModAdvancementProvider;
 import net.dillon.speedrunnermod.component.ModEnchantments;
 import net.dillon.speedrunnermod.loot.ModBlockLoot;
-import net.dillon.speedrunnermod.loot.ModContextInts;
 import net.dillon.speedrunnermod.loot.ModEntityLoot;
+import net.dillon.speedrunnermod.loot.ModFloatProviders;
+import net.dillon.speedrunnermod.loot.ModIntProviders;
 import net.dillon.speedrunnermod.loot.context.ModBlockLootTables;
 import net.dillon.speedrunnermod.loot.context.ModChestLootTables;
 import net.dillon.speedrunnermod.loot.context.ModPiglinBarterLootTables;
@@ -86,6 +87,7 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
      */
     @Override
     public void buildReloadableRegistry(RegistrySetBuilder registryBuilder) {
-        registryBuilder.add(Registries.CONTEXT_INT_PROVIDER, ModContextInts::bootstrap);
+        registryBuilder.add(Registries.CONTEXT_INT_PROVIDER, ModIntProviders::bootstrap);
+        registryBuilder.add(Registries.CONTEXT_FLOAT_PROVIDER, ModFloatProviders::bootstrap);
     }
 }

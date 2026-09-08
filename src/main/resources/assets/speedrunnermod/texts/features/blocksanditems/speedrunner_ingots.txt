@@ -4,5 +4,5 @@
 
 Acts like an §liron ingot§r§f in any crafting recipe.
 
-!image:textures/gui/features/items/speedrunner_ingot.png scale=.3
-!image:textures/gui/features/recipes/speedrunner_ingot_crafting_recipe.png scale=.4
+!image:items/speedrunner_ingot.png scale=.3
+!image:recipes/speedrunner_ingot_crafting_recipe.png scale=.4

@@ -6,4 +6,4 @@
 
 ### The §dender dragon§r §ccannot be killed §fif §a§lGoliath§r§f or §7The Wither§r§f are alive.
 
-!image:textures/gui/features/doom_mode/bosses.png
+!image:doom_mode/bosses.png

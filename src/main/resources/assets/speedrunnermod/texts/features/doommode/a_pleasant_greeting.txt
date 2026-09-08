@@ -2,4 +2,4 @@
 
 ### To §ehelp the player out §fjust a §alittle bit, §fthey will get a §bhead start §fwith §a§l2 §r§aminutes §fof §cregeneration §fand §7resistance.
 
-!image:textures/gui/features/doom_mode/a_pleasant_greeting.png scale=.14
+!image:doom_mode/a_pleasant_greeting.png scale=.14

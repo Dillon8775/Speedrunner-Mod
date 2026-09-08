@@ -2,4 +2,4 @@
 
 §o(even more commonly in the §b§l§oSpeedrunner's Wasteland §r§b§obiome!§r§f)
 
-!image:textures/gui/features/screenshots/common_ores.png scale=.14
+!image:screenshots/common_ores.png scale=.14

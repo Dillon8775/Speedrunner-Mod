@@ -2,4 +2,4 @@
 
 ### Also locates §dend cities §fin §dthe end.
 
-!image:textures/gui/features/recipes/eye_of_annul_crafting_recipe.png scale=.5
+!image:recipes/eye_of_annul_crafting_recipe.png scale=.5

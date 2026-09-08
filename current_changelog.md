@@ -29,6 +29,7 @@
 - The mod's built-in "fog" option is now disabled by default (meaning Minecraft's fog will be disabled by default).
 - Tweaked how long certain speedrunner items last in a furnace as fuel.
 - Doom blocks now function the same on easy and balanced mode as they do on doom mode.
+- New number providers (floats and integers).
 - Finally wiped the leaderboards from the mod entirely.
 - Removed the mod's safe boot screen and links screen.
 - Removed stronghold configuration options.

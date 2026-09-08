@@ -4,4 +4,4 @@
 
 #### Additionally, the §bSpeedrunner Boat§f and §3Dead Speedrunner Boat§f §aride faster §r§fin §9§oany fluid.
 
-!image:textures/gui/features/screenshots/more_boats.png scale=.14
+!image:screenshots/more_boats.png scale=.14

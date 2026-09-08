@@ -4,5 +4,5 @@
 
 Acts like a §liron nugget§r§f in any crafting recipe.
 
-!image:textures/gui/features/items/speedrunner_nugget.png scale=.5
-!image:textures/gui/features/recipes/speedrunner_nugget_crafting_recipe.png scale=.3
+!image:items/speedrunner_nugget.png scale=.5
+!image:recipes/speedrunner_nugget_crafting_recipe.png scale=.3

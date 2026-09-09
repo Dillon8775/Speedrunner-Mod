@@ -167,6 +167,11 @@ public record UnderwaterRuinLoot(LootTableData data) {
                                                         .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 12)))
                                         )
                                         .add(
+                                                LootItem.lootTableItem(Items.BREAD)
+                                                        .setWeight(10)
+                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                        )
+                                        .add(
                                                 LootItem.lootTableItem(Items.COPPER_NAUTILUS_ARMOR)
                                                         .setWeight(2)
                                         )
@@ -185,11 +190,6 @@ public record UnderwaterRuinLoot(LootTableData data) {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NAUTILUS_ARMOR)
                                                         .setWeight(9)
-                                        )
-                                        .add(
-                                                LootItem.lootTableItem(Items.BREAD)
-                                                        .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
                                         )
                         )
         );

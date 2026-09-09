@@ -1,10 +1,7 @@
 package net.dillon.speedrunnermod.loot.context;
 
 import net.dillon.speedrunnermod.loot.mc.LootTableData;
-import net.dillon.speedrunnermod.loot.mc.chest.RuinedPortalLoot;
-import net.dillon.speedrunnermod.loot.mc.chest.StrongholdLoot;
-import net.dillon.speedrunnermod.loot.mc.chest.UnderwaterRuinLoot;
-import net.dillon.speedrunnermod.loot.mc.chest.WoodlandMansionLoot;
+import net.dillon.speedrunnermod.loot.mc.chest.*;
 import net.dillon.speedrunnermod.mixin.accessor.SimpleFabricLootTableSubProviderAccessor;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableSubProvider;
@@ -39,6 +36,13 @@ public class ModChestLootTables extends SimpleFabricLootTableSubProvider {
 
         RuinedPortalLoot ruinedPortalLoot = new RuinedPortalLoot(data);
         ruinedPortalLoot.generateLoot();
+
+        ShipwreckLoot shipwreckLoot = new ShipwreckLoot(data);
+        shipwreckLoot.generateSupplyLoot();
+        shipwreckLoot.generateTreasureLoot();
+
+        SimpleDungeonLoot simpleDungeonLoot = new SimpleDungeonLoot(data);
+        simpleDungeonLoot.generateLoot();
 
         StrongholdLoot strongholdLoot = new StrongholdLoot(data);
         strongholdLoot.generateCorridorLoot();

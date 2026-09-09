@@ -31,17 +31,72 @@ import static net.dillon.dillonlib.mixin.accessor.ItemsInvoker.registerModItem;
  */
 public class ModItems {
 
-    public static final Item SPEEDRUNNER_INGOT = registerModItem(ModItemIds.SPEEDRUNNER_INGOT, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunner_ingot.tooltip"));
-        }
-    });
-
+    public static final Item SPEEDRUNNER_INGOT = registerModItem(ModItemIds.SPEEDRUNNER_INGOT, properties -> new TooltipItem(properties,
+            Component.translatable("item.speedrunnermod.speedrunner_ingot.tooltip")));
     public static final Item SPEEDRUNNER_NUGGET = registerModItem(ModItemIds.SPEEDRUNNER_NUGGET, Item::new);
     public static final Item RAW_SPEEDRUNNER = registerModItem(ModItemIds.RAW_SPEEDRUNNER, Item::new);
+    public static final Item SPEEDRUNNER_STICK = registerModItem(ModItemIds.SPEEDRUNNER_STICK, Item::new);
+    public static final Item GOLDEN_UPGRADE_SMITHING_TEMPLATE = ItemsInvoker.registerModItem(ModItemIds.GOLDEN_UPGRADE_SMITHING_TEMPLATE, GoldenUpgradeSmithingTemplateItem::new);
+    public static final Item DRAGON_UPGRADE_SMITHING_TEMPLATE = ItemsInvoker.registerModItem(ModItemIds.DRAGON_UPGRADE_SMITHING_TEMPLATE, DragonUpgradeSmithingTemplateItem::new);
+    public static final Item INVENTORY_PRESERVER = registerModItem(ModItemIds.INVENTORY_PRESERVER, InventoryPreserverItem::new);
+    public static final Item ANNUL_EYE = registerModItem(ModItemIds.ANNUL_EYE, AnnulEyeItem::new);
+    public static final Item SPEEDRUNNERS_EYE = registerModItem(ModItemIds.SPEEDRUNNERS_EYE, SpeedrunnersEyeItem::new);
+    public static final Item INFERNO_EYE = registerModItem(ModItemIds.INFERNO_EYE, InfernoEyeItem::new);
+    public static final Item PIGLIN_AWAKENER = registerModItem(ModItemIds.PIGLIN_AWAKENER, PiglinAwakenerItem::new);
+    public static final Item BLAZE_SPOTTER = registerModItem(ModItemIds.BLAZE_SPOTTER, BlazeSpotterItem::new);
+    public static final Item RAID_ERADICATOR = registerModItem(ModItemIds.RAID_ERADICATOR, RaidEradicatorItem::new);
+    public static final Item ENDER_THRUSTER = registerModItem(ModItemIds.ENDER_THRUSTER, EnderThrusterItem::new);
+    public static final Item DRAGONS_SWORD = registerModItem(ModItemIds.DRAGONS_SWORD, DragonsSwordItem::new);
+    public static final Item DRAGONS_PEARL = registerModItem(ModItemIds.DRAGONS_PEARL, DragonsPearlItem::new);
+    public static final Item INFINI_PEARL = registerModItem(ModItemIds.INFINI_PEARL, InfiniPearlItem::new);
+    public static final Item KNOCKBACK_STICK = registerModItem(ModItemIds.KNOCKBACK_STICK, KnockbackStickItem::new);
+    public static final Item SPEEDRUNNERS_TOTEM = registerModItem(ModItemIds.SPEEDRUNNERS_TOTEM, SpeedrunnersTotemItem::new);
+    public static final Item DRAGON_FIREBALL = registerModItem(ModItemIds.DRAGON_FIREBALL, DragonFireballItem::new);
+
+    public static final Item ENDER_MATTER = registerModItem(ModItemIds.ENDER_MATTER, properties -> new TooltipItem(
+            properties
+                    .rarity(Rarity.RARE)
+                    .stacksTo(16),
+            Component.translatable("item.speedrunnermod.ender_matter.tooltip")));
+
+    public static final Item IGNEOUS_ROCK = registerModItem(ModItemIds.IGNEOUS_ROCK, properties -> new TooltipItem(properties,
+            Component.translatable("item.speedrunnermod.igneous_rock.tooltip")));
+
+    public static final Item EXPERIENCE_FRAGMENT = registerModItem(ModItemIds.EXPERIENCE_FRAGMENT, properties -> new TooltipItem(
+            properties
+                    .rarity(Rarity.UNCOMMON),
+            Component.translatable("item.speedrunnermod.experience_fragment.tooltip")));
+
+    public static final Item SPEEDRUNNER_BULK = registerModItem(ModItemIds.SPEEDRUNNER_BULK, properties -> new TooltipItem(properties
+            .rarity(Rarity.RARE)
+            .food(ModConsumables.SPEEDRUNNER_BULK, ModDataComponentTypes.SPEEDRUNNER_BULK),
+            Component.translatable("item.speedrunnermod.speedrunner_bulk.tooltip")));
+
+    public static final Item ROTTEN_SPEEDRUNNER_BULK = registerModItem(ModItemIds.ROTTEN_SPEEDRUNNER_BULK, Item::new,
+            new Item.Properties()
+                    .food(ModConsumables.ROTTEN_SPEEDRUNNER_BULK, ModDataComponentTypes.ROTTEN_SPEEDRUNNER_BULK)
+    );
+
+    public static final Item COOKED_FLESH = registerModItem(ModItemIds.COOKED_FLESH, Item::new,
+            new Item.Properties()
+                    .food(ModConsumables.COOKED_FLESH)
+    );
+
+    public static final Item PIGLIN_PORK = registerModItem(ModItemIds.PIGLIN_PORK, Item::new,
+            new Item.Properties()
+                    .food(ModConsumables.PIGLIN_PORK)
+    );
+
+    public static final Item COOKED_PIGLIN_PORK = registerModItem(ModItemIds.COOKED_PIGLIN_PORK, Item::new,
+            new Item.Properties()
+                    .food(ModConsumables.COOKED_PIGLIN_PORK)
+    );
+
+    public static final Item GOLIATH_SPAWN_EGG = registerModItem(ModItemIds.GOLIATH_SPAWN_EGG, SpawnEggItem::new,
+            new Item.Properties()
+                    .rarity(Rarity.UNCOMMON)
+                    .spawnEgg(EntityTypes.GIANT)
+    );
 
     public static final Item SPEEDRUNNER_SPEAR = registerModItem(ModItemIds.SPEEDRUNNER_SPEAR, properties -> new SpeedrunnerSpearItem(
             properties,
@@ -117,8 +172,11 @@ public class ModItems {
                     properties, ModEquipmentAssetKeys.SPEEDRUNNER_HARDNESS, 0.5F));
 
     public static final Item SPEEDRUNNER_BOW = registerModItem(ModItemIds.SPEEDRUNNER_BOW, SpeedrunnerBowItem::new);
+
     public static final Item SPEEDRUNNER_CROSSBOW = registerModItem(ModItemIds.SPEEDRUNNER_CROSSBOW, SpeedrunnerCrossbowItem::new);
+
     public static final Item SPEEDRUNNER_SHEARS = registerModItem(ModItemIds.SPEEDRUNNER_SHEARS, SpeedrunnerShearsItem::new);
+
     public static final Item SPEEDRUNNER_FLINT_AND_STEEL = registerModItem(ModItemIds.SPEEDRUNNER_FLINT_AND_STEEL, IgnitableFactory.FlintAndSteel::new,
             new Item.Properties().stacksTo(1).durability(128));
 
@@ -162,9 +220,6 @@ public class ModItems {
             new SpeedrunnerBootsItem(
                     ModArmorMaterials.GOLDEN_SPEEDRUNNER, properties, true));
 
-    public static final Item GOLDEN_UPGRADE_SMITHING_TEMPLATE = ItemsInvoker.registerModItem(ModItemIds.GOLDEN_UPGRADE_SMITHING_TEMPLATE, GoldenUpgradeSmithingTemplateItem::new);
-    public static final Item DRAGON_UPGRADE_SMITHING_TEMPLATE = ItemsInvoker.registerModItem(ModItemIds.DRAGON_UPGRADE_SMITHING_TEMPLATE, DragonUpgradeSmithingTemplateItem::new);
-
     public static final Item GOLDEN_SPEEDRUNNER_NAUTILUS_ARMOR = registerModItem(ModItemIds.GOLDEN_SPEEDRUNNER_NAUTILUS_ARMOR, properties ->
             new SpeedrunnerNautilusArmorItem(
                     properties, ModArmorMaterials.GOLDEN_SPEEDRUNNER, 0.07F, 1.0F)
@@ -174,56 +229,6 @@ public class ModItems {
             new SpeedrunnerHarnessItem(
                     properties, ModEquipmentAssetKeys.GOLDEN_SPEEDRUNNER_HARDNESS, 0.7F)
     );
-
-    public static final Item SPEEDRUNNER_BULK = registerModItem(ModItemIds.SPEEDRUNNER_BULK, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunner_bulk.tooltip"));
-        }
-    }, new Item.Properties()
-            .rarity(Rarity.RARE)
-            .food(ModConsumables.SPEEDRUNNER_BULK, ModDataComponentTypes.SPEEDRUNNER_BULK)
-    );
-
-    public static final Item ROTTEN_SPEEDRUNNER_BULK = registerModItem(ModItemIds.ROTTEN_SPEEDRUNNER_BULK, Item::new,
-            new Item.Properties()
-                    .food(ModConsumables.ROTTEN_SPEEDRUNNER_BULK, ModDataComponentTypes.ROTTEN_SPEEDRUNNER_BULK)
-    );
-
-    public static final Item COOKED_FLESH = registerModItem(ModItemIds.COOKED_FLESH, Item::new,
-            new Item.Properties()
-                    .food(ModConsumables.COOKED_FLESH)
-    );
-
-    public static final Item PIGLIN_PORK = registerModItem(ModItemIds.PIGLIN_PORK, Item::new,
-            new Item.Properties()
-                    .food(ModConsumables.PIGLIN_PORK)
-    );
-
-    public static final Item COOKED_PIGLIN_PORK = registerModItem(ModItemIds.COOKED_PIGLIN_PORK, Item::new,
-            new Item.Properties()
-                    .food(ModConsumables.COOKED_PIGLIN_PORK)
-    );
-
-    public static final Item GOLIATH_SPAWN_EGG = registerModItem(ModItemIds.GOLIATH_SPAWN_EGG, SpawnEggItem::new,
-            new Item.Properties()
-                    .rarity(Rarity.UNCOMMON)
-                    .spawnEgg(EntityTypes.GIANT)
-    );
-
-    public static final Item IGNEOUS_ROCK = registerModItem(ModItemIds.IGNEOUS_ROCK, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.igneous_rock.tooltip"));
-        }
-    });
-
-    public static final Item SPEEDRUNNER_STICK = registerModItem(ModItemIds.SPEEDRUNNER_STICK, Item::new);
-
 
     public static final Item SPEEDRUNNER_BOAT = registerModItem(ModItemIds.SPEEDRUNNER_BOAT, properties ->
             new SpeedrunnerBoatItem(
@@ -256,45 +261,6 @@ public class ModItems {
     public static final Item WARPED_CHEST_BOAT = registerModItem(ModItemIds.WARPED_CHEST_BOAT, properties ->
             new SpeedrunnerBoatItem(
                     ModEntityTypes.WARPED_CHEST_BOAT, false, properties));
-
-    public static final Item ENDER_MATTER = registerModItem(ModItemIds.ENDER_MATTER, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.ender_matter.tooltip"));
-        }
-    }, new Item.Properties()
-            .rarity(Rarity.RARE)
-            .stacksTo(16)
-    );
-
-    public static final Item EXPERIENCE_FRAGMENT = registerModItem(ModItemIds.EXPERIENCE_FRAGMENT, properties -> new Item(
-            properties) {
-
-        @Override
-        public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-            SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.experience_fragment.tooltip"));
-        }
-    }, new Item.Properties()
-            .rarity(Rarity.UNCOMMON)
-    );
-
-    public static final Item INVENTORY_PRESERVER = registerModItem(ModItemIds.INVENTORY_PRESERVER, InventoryPreserverItem::new);
-
-    public static final Item ANNUL_EYE = registerModItem(ModItemIds.ANNUL_EYE, AnnulEyeItem::new);
-    public static final Item SPEEDRUNNERS_EYE = registerModItem(ModItemIds.SPEEDRUNNERS_EYE, SpeedrunnersEyeItem::new);
-    public static final Item INFERNO_EYE = registerModItem(ModItemIds.INFERNO_EYE, InfernoEyeItem::new);
-    public static final Item PIGLIN_AWAKENER = registerModItem(ModItemIds.PIGLIN_AWAKENER, PiglinAwakenerItem::new);
-    public static final Item BLAZE_SPOTTER = registerModItem(ModItemIds.BLAZE_SPOTTER, BlazeSpotterItem::new);
-    public static final Item RAID_ERADICATOR = registerModItem(ModItemIds.RAID_ERADICATOR, RaidEradicatorItem::new);
-    public static final Item ENDER_THRUSTER = registerModItem(ModItemIds.ENDER_THRUSTER, EnderThrusterItem::new);
-    public static final Item DRAGONS_SWORD = registerModItem(ModItemIds.DRAGONS_SWORD, DragonsSwordItem::new);
-    public static final Item DRAGONS_PEARL = registerModItem(ModItemIds.DRAGONS_PEARL, DragonsPearlItem::new);
-    public static final Item INFINI_PEARL = registerModItem(ModItemIds.INFINI_PEARL, InfiniPearlItem::new);
-    public static final Item KNOCKBACK_STICK = registerModItem(ModItemIds.KNOCKBACK_STICK, KnockbackStickItem::new);
-    public static final Item SPEEDRUNNERS_TOTEM = registerModItem(ModItemIds.SPEEDRUNNERS_TOTEM, SpeedrunnersTotemItem::new);
-    public static final Item DRAGON_FIREBALL = registerModItem(ModItemIds.DRAGON_FIREBALL, DragonFireballItem::new);
 
     public static final Item SPEEDRUNNER_LOG = registerModBlock(ModBlockItemIds.SPEEDRUNNER_LOG, ModBlocks.SPEEDRUNNER_LOG, p -> p.cookingFuel(ModIntProviders.COOKING_TIME_SPEEDRUNNER_ITEMS));
     public static final Item SPEEDRUNNER_WOOD = registerModBlock(ModBlockItemIds.SPEEDRUNNER_WOOD, ModBlocks.SPEEDRUNNER_WOOD, p -> p.cookingFuel(ModIntProviders.COOKING_TIME_SPEEDRUNNER_ITEMS));
@@ -335,6 +301,7 @@ public class ModItems {
         @Override
         public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
             SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunners_workbench.tooltip"));
+            super.appendHoverText(stack, context, displayComponent, textConsumer, type);
         }
     });
 

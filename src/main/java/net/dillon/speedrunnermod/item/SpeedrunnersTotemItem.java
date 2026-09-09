@@ -8,13 +8,7 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
-
-import java.util.function.Consumer;
 
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
 
@@ -22,16 +16,12 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
  * A totem that works anywhere in the players' inventory, stacks to 16, and has better effects upon use.
  */
 @Author(Authors.YELEEFFF)
-public class SpeedrunnersTotemItem extends Item {
+public class SpeedrunnersTotemItem extends TooltipItem {
 
     public SpeedrunnersTotemItem(Properties settings) {
         super(settings.stacksTo(3).rarity(Rarity.RARE).component(DataComponents.DEATH_PROTECTION, ModDataComponentTypes.SPEEDRUNNERS_TOTEM_EFFECTS)
-                .setId(ResourceKey.create(Registries.ITEM, ofSpeedrunnerMod("speedrunners_totem"))));
-    }
-
-    @Override
-    public void appendHoverText(ItemStack stack, Item.TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-        SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunners_totem.tooltip.line1"));
-        SpeedrunnerItem.addWrappedTooltip(textConsumer, Component.translatable("item.speedrunnermod.speedrunners_totem.tooltip.line2").withStyle(ChatFormatting.WHITE));
+                        .setId(ResourceKey.create(Registries.ITEM, ofSpeedrunnerMod("speedrunners_totem"))),
+                Component.translatable("item.speedrunnermod.speedrunners_totem.tooltip.line1"),
+                Component.translatable("item.speedrunnermod.speedrunners_totem.tooltip.line2").withStyle(ChatFormatting.WHITE));
     }
 }

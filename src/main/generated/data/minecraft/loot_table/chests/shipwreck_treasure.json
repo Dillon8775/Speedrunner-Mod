@@ -1,0 +1,232 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:ender_matter"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 1,
+        "min": 0
+      }
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:luck"
+          },
+          "name": "minecraft:potion",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_bulk",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 2
+            }
+          },
+          "name": "minecraft:diamond",
+          "weight": 13
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 4
+            }
+          },
+          "name": "speedrunnermod:speedrunner_ingot",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 4
+            }
+          },
+          "name": "minecraft:gold_ingot",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 14,
+              "min": 9
+            }
+          },
+          "name": "speedrunnermod:speedrunner_nugget",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 4
+            }
+          },
+          "name": "minecraft:iron_ingot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 1
+            }
+          },
+          "name": "minecraft:emerald",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 2
+            }
+          },
+          "name": "minecraft:experience_bottle",
+          "weight": 3
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 4,
+        "min": 2
+      }
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:luck"
+          },
+          "name": "minecraft:potion",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_bulk",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 13,
+              "min": 7
+            }
+          },
+          "name": "speedrunnermod:speedrunner_nugget",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 27,
+              "min": 9
+            }
+          },
+          "name": "minecraft:iron_nugget",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 27,
+              "min": 9
+            }
+          },
+          "name": "minecraft:gold_ingot",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 18,
+              "min": 6
+            }
+          },
+          "name": "minecraft:lapis_lazuli",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_nautilus_armor",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nautilus_armor",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_nautilus_armor",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_nautilus_armor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_nautilus_armor",
+          "weight": 9
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3,
+        "min": 2
+      }
+    }
+  ]
+}

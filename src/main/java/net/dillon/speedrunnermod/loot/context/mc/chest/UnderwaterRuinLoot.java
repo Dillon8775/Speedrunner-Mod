@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.mixin.accessor.VanillaChestLootInvoker;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.tags.StructureTags;
@@ -22,12 +23,22 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for underwater ruins.
  */
-public record UnderwaterRuinLoot(LootTableData data) {
+public class UnderwaterRuinLoot extends GeneratableLootTable {
+
+    public UnderwaterRuinLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
+    public void generateLoot() {
+        generateBigLoot();
+        generateSmallLoot();
+    }
 
     /**
      * @see BuiltInLootTables#UNDERWATER_RUIN_BIG
      */
-    public void generateBigLoot() {
+    private void generateBigLoot() {
         data.context().accept(
                 BuiltInLootTables.UNDERWATER_RUIN_BIG,
                 LootTable.lootTable()
@@ -120,7 +131,7 @@ public record UnderwaterRuinLoot(LootTableData data) {
     /**
      * @see BuiltInLootTables#UNDERWATER_RUIN_SMALL
      */
-    public void generateSmallLoot() {
+    private void generateSmallLoot() {
         data.context().accept(
                 BuiltInLootTables.UNDERWATER_RUIN_SMALL,
                 LootTable.lootTable()

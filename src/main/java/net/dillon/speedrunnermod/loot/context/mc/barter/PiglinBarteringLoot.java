@@ -1,13 +1,12 @@
-package net.dillon.speedrunnermod.loot.mc.barter;
+package net.dillon.speedrunnermod.loot.context.mc.barter;
 
 import net.dillon.speedrunnermod.block.ModBlocks;
 import net.dillon.speedrunnermod.item.core.ModItems;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
-import net.minecraft.core.HolderGetter;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -18,15 +17,18 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
-import java.util.function.BiConsumer;
-
 /**
  * Stores the loot table for piglin bartering.
  */
-public class PiglinBarteringLoot {
+public class PiglinBarteringLoot extends GeneratableLootTable {
 
-    public static void generateLoot(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> context, HolderGetter<Enchantment> enchantments) {
-        context.accept(
+    public PiglinBarteringLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
+    public void generateLoot() {
+        data.context().accept(
                 BuiltInLootTables.PIGLIN_BARTERING,
                 LootTable.lootTable()
                         .withPool(
@@ -120,9 +122,9 @@ public class PiglinBarteringLoot {
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_BOOTS)
                                                         .setWeight(6)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(enchantments)
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments())
                                                                 .withOptions(
-                                                                        enchantments.getOrThrow(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
+                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
                                                                 )
                                                         )
                                         )
@@ -134,18 +136,18 @@ public class PiglinBarteringLoot {
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(5)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(enchantments)
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments())
                                                                 .withOptions(
-                                                                        enchantments.getOrThrow(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
+                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
                                                                 )
                                                         )
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_SWORD)
                                                         .setWeight(5)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(enchantments, ContextIntProviders.exactly(30))
+                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
                                                                 .withOptions(
-                                                                        enchantments.getOrThrow(ModEnchantmentTags.ON_GOLDEN_SWORD)
+                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_GOLDEN_SWORD)
                                                                 )
                                                         )
                                         )

@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -15,11 +16,16 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for underground dungeons.
  */
-public record SimpleDungeonLoot(LootTableData data) {
+public class SimpleDungeonLoot extends GeneratableLootTable {
+
+    public SimpleDungeonLoot(LootTableData data) {
+        super(data);
+    }
 
     /**
      * @see BuiltInLootTables#SIMPLE_DUNGEON
      */
+    @Override
     public void generateLoot() {
         data.context().accept(
                 BuiltInLootTables.SIMPLE_DUNGEON,

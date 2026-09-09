@@ -1,4 +1,4 @@
-package net.dillon.speedrunnermod.loot.mc;
+package net.dillon.speedrunnermod.loot.context.mc;
 
 import net.minecraft.core.HolderGetter;
 import net.minecraft.resources.ResourceKey;
@@ -9,7 +9,11 @@ import net.minecraft.world.level.storage.loot.LootTable;
 import java.util.function.BiConsumer;
 
 /**
- * Stores data required for making loot tables.
+ * Stores required data fields for making loot tables.
  */
-public record LootTableData(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> context, HolderGetter<Enchantment> enchantments, HolderGetter<Structure> structures) {
+public record LootTableData(
+        BiConsumer<ResourceKey<LootTable>, LootTable.Builder> context,
+        HolderGetter<Enchantment> enchantments,
+        HolderGetter<Structure> structures
+) {
 }

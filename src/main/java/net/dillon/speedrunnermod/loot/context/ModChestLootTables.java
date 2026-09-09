@@ -1,7 +1,7 @@
 package net.dillon.speedrunnermod.loot.context;
 
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
-import net.dillon.speedrunnermod.loot.mc.chest.*;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.chest.*;
 import net.dillon.speedrunnermod.mixin.accessor.SimpleFabricLootTableSubProviderAccessor;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableSubProvider;
@@ -34,27 +34,25 @@ public class ModChestLootTables extends SimpleFabricLootTableSubProvider {
 
         LootTableData data = new LootTableData(context, enchantments, structure);
 
-        RuinedPortalLoot ruinedPortalLoot = new RuinedPortalLoot(data);
-        ruinedPortalLoot.generateLoot();
-
-        ShipwreckLoot shipwreckLoot = new ShipwreckLoot(data);
-        shipwreckLoot.generateSupplyLoot();
-        shipwreckLoot.generateTreasureLoot();
-
-        SimpleDungeonLoot simpleDungeonLoot = new SimpleDungeonLoot(data);
-        simpleDungeonLoot.generateLoot();
-
-        StrongholdLoot strongholdLoot = new StrongholdLoot(data);
-        strongholdLoot.generateCorridorLoot();
-        strongholdLoot.generateCrossingLoot();
-        strongholdLoot.generateLibraryLoot();
-
-        UnderwaterRuinLoot underwaterRuinLoot = new UnderwaterRuinLoot(data);
-        underwaterRuinLoot.generateBigLoot();
-        underwaterRuinLoot.generateSmallLoot();
-
-        WoodlandMansionLoot woodlandMansionLoot = new WoodlandMansionLoot(data);
-        woodlandMansionLoot.generateLoot();
+        new AbandonedCampLoot(data).generateLoot();
+        new AbandonedMineshaftLoot(data).generateLoot();
+        new AncientCityLoot(data).generateLoot();
+        new BastionLoot(data).generateLoot();
+        new BuriedTreasureLoot(data).generateLoot();
+        new DesertPyramidLoot(data).generateLoot();
+        new EndCityLoot(data).generateLoot();
+        new IglooLoot(data).generateLoot();
+        new JungleTempleLoot(data).generateLoot();
+        new NetherFortressLoot(data).generateLoot();
+        new PillagerOutpostLoot(data).generateLoot();
+        new RuinedPortalLoot(data).generateLoot();
+        new ShipwreckLoot(data).generateLoot();
+        new SimpleDungeonLoot(data).generateLoot();
+        new StrongholdLoot(data).generateLoot();
+        new TrialChamberLoot(data).generateLoot();
+        new UnderwaterRuinLoot(data).generateLoot();
+        new VillageLoot(data).generateLoot();
+        new WoodlandMansionLoot(data).generateLoot();
     }
 
     @Override

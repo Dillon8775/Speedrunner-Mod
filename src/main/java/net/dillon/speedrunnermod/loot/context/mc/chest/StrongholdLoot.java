@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
@@ -17,12 +18,23 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for strongholds.
  */
-public record StrongholdLoot(LootTableData data) {
+public class StrongholdLoot extends GeneratableLootTable {
+
+    public StrongholdLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
+    public void generateLoot() {
+        generateCorridorLoot();
+        generateCrossingLoot();
+        generateLibraryLoot();
+    }
 
     /**
      * @see BuiltInLootTables#STRONGHOLD_CORRIDOR
      */
-    public void generateCorridorLoot() {
+    private void generateCorridorLoot() {
         data.context().accept(
                 BuiltInLootTables.STRONGHOLD_CORRIDOR,
                 LootTable.lootTable()
@@ -120,7 +132,7 @@ public record StrongholdLoot(LootTableData data) {
     /**
      * @see BuiltInLootTables#STRONGHOLD_CROSSING
      */
-    public void generateCrossingLoot() {
+    private void generateCrossingLoot() {
         data.context().accept(
                 BuiltInLootTables.STRONGHOLD_CROSSING,
                 LootTable.lootTable()
@@ -194,7 +206,7 @@ public record StrongholdLoot(LootTableData data) {
     /**
      * @see BuiltInLootTables#STRONGHOLD_LIBRARY
      */
-    public void generateLibraryLoot() {
+    private void generateLibraryLoot() {
         data.context().accept(
                 BuiltInLootTables.STRONGHOLD_LIBRARY,
                 LootTable.lootTable()

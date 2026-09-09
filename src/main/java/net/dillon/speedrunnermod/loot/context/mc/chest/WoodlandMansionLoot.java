@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
@@ -16,8 +17,13 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for woodland mansions.
  */
-public record WoodlandMansionLoot(LootTableData data) {
+public class WoodlandMansionLoot extends GeneratableLootTable {
 
+    public WoodlandMansionLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
     public void generateLoot() {
         data.context().accept(
                 BuiltInLootTables.WOODLAND_MANSION,

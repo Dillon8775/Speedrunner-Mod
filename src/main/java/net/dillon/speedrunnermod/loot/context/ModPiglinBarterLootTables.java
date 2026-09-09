@@ -1,6 +1,7 @@
 package net.dillon.speedrunnermod.loot.context;
 
-import net.dillon.speedrunnermod.loot.mc.barter.PiglinBarteringLoot;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.barter.PiglinBarteringLoot;
 import net.dillon.speedrunnermod.mixin.accessor.SimpleFabricLootTableSubProviderAccessor;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableSubProvider;
@@ -29,7 +30,9 @@ public class ModPiglinBarterLootTables extends SimpleFabricLootTableSubProvider 
         HolderLookup.Provider provider = ((SimpleFabricLootTableSubProviderAccessor)this).getRegistryLookupFuture().join();
         HolderGetter<Enchantment> enchantments = provider.lookupOrThrow(Registries.ENCHANTMENT);
 
-        PiglinBarteringLoot.generateLoot(context, enchantments);
+        LootTableData data = new LootTableData(context, enchantments, null);
+
+        new PiglinBarteringLoot(data).generateLoot();
     }
 
     @Override

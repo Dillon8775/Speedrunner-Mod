@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
@@ -18,12 +19,22 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for shipwrecks.
  */
-public record ShipwreckLoot(LootTableData data) {
+public class ShipwreckLoot extends GeneratableLootTable {
+
+    public ShipwreckLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
+    public void generateLoot() {
+        generateSupplyLoot();
+        generateTreasureLoot();
+    }
 
     /**
      * @see BuiltInLootTables#SHIPWRECK_SUPPLY
      */
-    public void generateSupplyLoot() {
+    private void generateSupplyLoot() {
         data.context().accept(
                 BuiltInLootTables.SHIPWRECK_SUPPLY,
                 LootTable.lootTable()
@@ -116,22 +127,22 @@ public record ShipwreckLoot(LootTableData data) {
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_HELMET)
                                                         .setWeight(3)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data().enchantments()))
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments()))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_CHESTPLATE)
                                                         .setWeight(3)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data().enchantments()))
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments()))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_LEGGINGS)
                                                         .setWeight(3)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data().enchantments()))
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments()))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_BOOTS)
                                                         .setWeight(3)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data().enchantments()))
+                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments()))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COPPER_NAUTILUS_ARMOR)
@@ -160,7 +171,7 @@ public record ShipwreckLoot(LootTableData data) {
     /**
      * @see BuiltInLootTables#SHIPWRECK_TREASURE
      */
-    public void generateTreasureLoot() {
+    private void generateTreasureLoot() {
         data.context().accept(
                 BuiltInLootTables.SHIPWRECK_TREASURE,
                 LootTable.lootTable()

@@ -1,7 +1,8 @@
-package net.dillon.speedrunnermod.loot.mc.chest;
+package net.dillon.speedrunnermod.loot.context.mc.chest;
 
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.loot.mc.LootTableData;
+import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
@@ -16,8 +17,13 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 /**
  * Stores the loot tables for ruined portals.
  */
-public record RuinedPortalLoot(LootTableData data) {
+public class RuinedPortalLoot extends GeneratableLootTable {
 
+    public RuinedPortalLoot(LootTableData data) {
+        super(data);
+    }
+
+    @Override
     public void generateLoot() {
         data.context().accept(
                 BuiltInLootTables.RUINED_PORTAL,

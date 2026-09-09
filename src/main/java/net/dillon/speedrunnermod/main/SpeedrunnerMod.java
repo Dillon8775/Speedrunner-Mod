@@ -109,13 +109,6 @@ public class SpeedrunnerMod implements ModInitializer {
     }
 
     /**
-     * Saves all speedrunner mod option changes on the dedicated {@code server-side}
-     */
-    public static void saveDedicatedServerChanges() {
-        commonConfigHandler().save();
-    }
-
-    /**
      * Returns a new {@link Identifier} with the {@code Speedrunner Mod's namespace.}
      */
     public static Identifier ofSpeedrunnerMod(String path) {

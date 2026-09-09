@@ -19,6 +19,7 @@
 - Abandoned camps generate more commonly.
 - Forest and taiga abandoned camps can generate in the Speedrunner's Wasteland biome.
 - More mobs now drop more loot, and modified some existing buffed loot tables, including piglin bartering and abandoned camps.
+- Underwater ruins will now always contain a golden speedrunner helmets and a buried treasure map.
 - Various mob spawning changes, and removed "Creature Spawn Rate" option.
 
 ## Fireball Changes

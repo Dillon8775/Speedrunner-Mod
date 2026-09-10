@@ -197,12 +197,6 @@ Found in various loot table chests, this food item fills **6 hunger bars,** and 
 
 ---
 
-### Rotten Speedrunner Bulk
-Found in various loot table chests, but it gives a bunch of negative effects upon use. Don't eat it!
-
-<img src="https://github.com/Dillon8775/ImageGIFs/blob/the-speedrunner-mod/Items/rotten%20speedrunner%20bulk.png?raw=true" width="85" height="80" alt="Rotten speedrunner bulk.">
-
-
 ---
 ### The Speedrunner's Eye
 Locates and gives the exact distance of all overworld structures.

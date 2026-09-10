@@ -2,8 +2,114 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "entries": [],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 11,
+              "min": 6
+            }
+          },
+          "name": "minecraft:obsidian"
+        }
+      ],
       "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 1
+            }
+          },
+          "name": "minecraft:diamond",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 1
+            }
+          },
+          "name": "minecraft:iron_ingot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 1
+            }
+          },
+          "name": "minecraft:gold_ingot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 1
+            }
+          },
+          "name": "minecraft:flint_and_steel",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 7,
+              "min": 3
+            }
+          },
+          "name": "minecraft:nether_wart",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:saddle",
+          "weight": 5
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_horse_armor",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_randomly",
+            "options": "speedrunnermod:withered"
+          },
+          "name": "minecraft:book",
+          "weight": 6
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 4,
+        "min": 2
+      }
     }
   ]
 }

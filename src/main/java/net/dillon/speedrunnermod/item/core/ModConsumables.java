@@ -11,7 +11,6 @@ import static net.dillon.speedrunnermod.main.SpeedrunnerMod.common;
  */
 public class ModConsumables {
     protected static final FoodProperties SPEEDRUNNER_BULK;
-    protected static final FoodProperties ROTTEN_SPEEDRUNNER_BULK;
     protected static final FoodProperties COOKED_FLESH;
     protected static final FoodProperties PIGLIN_PORK;
     protected static final FoodProperties COOKED_PIGLIN_PORK;
@@ -54,7 +53,6 @@ public class ModConsumables {
 
     static {
         SPEEDRUNNER_BULK = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2F).alwaysEdible().build();
-        ROTTEN_SPEEDRUNNER_BULK = new FoodProperties.Builder().nutrition(4).saturationModifier(0.1F).build();
         COOKED_FLESH = new FoodProperties.Builder().nutrition(6).saturationModifier(0.8F).build();
         PIGLIN_PORK = common().general().betterFoods ? new FoodProperties.Builder().nutrition(4).saturationModifier(0.3F).build() : new FoodProperties.Builder().nutrition(3).saturationModifier(0.2F).build();
         COOKED_PIGLIN_PORK = common().general().betterFoods ? new FoodProperties.Builder().nutrition(8).saturationModifier(0.8F).build() : new FoodProperties.Builder().nutrition(8).saturationModifier(0.7F).build();

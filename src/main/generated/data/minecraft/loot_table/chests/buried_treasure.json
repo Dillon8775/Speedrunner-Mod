@@ -2,8 +2,193 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "entries": [],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_bulk"
+        }
+      ],
       "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_spear"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 37,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:book"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:golden_upgrade_smithing_template"
+        }
+      ],
+      "rolls": 1
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 10,
+              "min": 5
+            }
+          },
+          "name": "minecraft:cooked_cod",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 3
+            }
+          },
+          "name": "minecraft:diamond",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 3
+            }
+          },
+          "name": "speedrunnermod:speedrunner_ingot",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 5
+            }
+          },
+          "name": "minecraft:gold_ingot",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 8,
+              "min": 3
+            }
+          },
+          "name": "minecraft:iron_ingot",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:luck"
+          },
+          "name": "minecraft:potion",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 9,
+              "min": 3
+            }
+          },
+          "name": "minecraft:tnt",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:ender_matter",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:dragon_upgrade_smithing_template",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_nautilus_armor",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_nautilus_armor",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_nautilus_armor",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:diamond_nautilus_armor",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_nautilus_armor",
+          "weight": 10
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 8,
+        "min": 5
+      }
+    },
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_potion",
+            "id": "minecraft:water_breathing"
+          },
+          "name": "minecraft:potion"
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 2,
+        "min": 0
+      }
     }
   ]
 }

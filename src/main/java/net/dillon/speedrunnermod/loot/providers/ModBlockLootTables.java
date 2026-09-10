@@ -11,7 +11,7 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
-import static net.dillon.speedrunnermod.loot.ModBlockLoot.createLootTable;
+import static net.dillon.speedrunnermod.loot.data.GeneratableLootTable.createLootTable;
 
 public class ModBlockLootTables extends SimpleModLootTableSubProvider {
     public static final ResourceKey<LootTable> DOOM_BLOCK_LOOT = createLootTable("world/block/doom_block");

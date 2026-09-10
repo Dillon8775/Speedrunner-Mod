@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:archaeology",
+  "pools": [
+    {
+      "entries": [],
+      "rolls": 1
+    }
+  ]
+}

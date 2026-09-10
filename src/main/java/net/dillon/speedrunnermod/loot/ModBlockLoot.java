@@ -11,8 +11,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -30,8 +28,6 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntPr
 
 import java.util.concurrent.CompletableFuture;
 
-import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
-
 /**
  * Generates normal block loot tables.
  */
@@ -42,13 +38,6 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
 
     public ModBlockLoot(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(packOutput, registriesFuture);
-    }
-
-    /**
-     * Creates a new speedrunner mod loot table.
-     */
-    public static ResourceKey<LootTable> createLootTable(final String path) {
-        return ResourceKey.create(Registries.LOOT_TABLE, ofSpeedrunnerMod(path));
     }
 
     @Override

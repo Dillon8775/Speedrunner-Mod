@@ -150,7 +150,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 helper.offerSmeltableDeadSpeedrunner(ModBlocks.DEAD_SPEEDRUNNER_DOOR, ModBlocks.SPEEDRUNNER_DOOR);
 
                 helper.createCookableFood(Items.ROTTEN_FLESH, ModItems.COOKED_FLESH);
-                helper.createCookableFood(ModItems.ROTTEN_SPEEDRUNNER_BULK, Items.ROTTEN_FLESH);
                 helper.createCookableFood(ModItems.PIGLIN_PORK, ModItems.COOKED_PIGLIN_PORK);
 
                 helper.createBoatSet(ModItems.SPEEDRUNNER_BOAT, ModItems.SPEEDRUNNER_CHEST_BOAT, ModBlocks.SPEEDRUNNER_PLANKS);

@@ -70,19 +70,6 @@ public class ModDataComponentTypes {
             )
             .build();
 
-    public static final Consumable ROTTEN_SPEEDRUNNER_BULK = defaultFood()
-            .onConsume(
-                    new ApplyStatusEffectsConsumeEffect(
-                            new MobEffectInstance(MobEffects.HUNGER, 400, 0), 0.5F
-                    )
-            )
-            .onConsume(
-                    new ApplyStatusEffectsConsumeEffect(
-                            new MobEffectInstance(MobEffects.SLOWNESS, 300, 0), 0.1F
-                    )
-            )
-            .build();
-
     /**
      * Initializes all speedrunner mod data components.
      */

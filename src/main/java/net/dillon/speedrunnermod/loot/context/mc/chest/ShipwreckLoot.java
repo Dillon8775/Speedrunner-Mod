@@ -110,7 +110,7 @@ public class ShipwreckLoot extends GeneratableLootTable {
                                                         .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
                                         )
                                         .add(
-                                                LootItem.lootTableItem(ModItems.ROTTEN_SPEEDRUNNER_BULK)
+                                                LootItem.lootTableItem(Items.ROTTEN_FLESH)
                                                         .setWeight(5)
                                                         .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 24)))
                                         )

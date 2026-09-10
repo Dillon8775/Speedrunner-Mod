@@ -46,7 +46,6 @@ public class ModItemIds {
     public static final ResourceKey<Item> GOLDEN_SPEEDRUNNER_NAUTILUS_ARMOR = create("golden_speedrunner_nautilus_armor");
     public static final ResourceKey<Item> GOLDEN_SPEEDRUNNER_HARNESS = create("golden_speedrunner_harness");
     public static final ResourceKey<Item> SPEEDRUNNER_BULK = create("speedrunner_bulk");
-    public static final ResourceKey<Item> ROTTEN_SPEEDRUNNER_BULK = create("rotten_speedrunner_bulk");
     public static final ResourceKey<Item> COOKED_FLESH = create("cooked_flesh");
     public static final ResourceKey<Item> PIGLIN_PORK = create("piglin_pork");
     public static final ResourceKey<Item> COOKED_PIGLIN_PORK = create("cooked_piglin_pork");

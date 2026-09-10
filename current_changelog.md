@@ -12,6 +12,7 @@
 - All Dead Speedrunner Blocks can now be smelted in regular Speedrunner Blocks.
 - Speedrunner ingots, nuggets and blocks can no longer be used to craft some vanilla items.
 - Due to redundancy, all stripped speedrunner logs have been removed from the mod.
+- Rotten Speedrunner Bulk has been removed.
 
 ## Loot and Worldgen
 - The mod's Structure Spawn Rate option is now a simple toggle switch, which has been renamed to the legacy "Make Structures More Common" option, and custom structure spawn rates are only possible via the config (and if Make Structures More Common option is enabled).

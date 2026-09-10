@@ -6,6 +6,7 @@ import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -215,9 +216,9 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
-                                                        .apply(EnchantRandomlyFunction.randomEnchantment()
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.FORTUNE_STRONGHOLD_LIBRARY_BOOK)
+                                                        .apply(new EnchantRandomlyFunction.Builder()
+                                                                .withEnchantment(
+                                                                        data.enchantments().getOrThrow(Enchantments.FORTUNE)
                                                                 )
                                                         )
                                         )

@@ -134,7 +134,6 @@ public class ModItemModelGenerators extends FabricModelProvider {
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_FLINT_AND_STEEL, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerator.generateFlatItem(ModItems.SPEEDRUNNER_BULK, ModelTemplates.FLAT_ITEM);
-        itemModelGenerator.generateFlatItem(ModItems.ROTTEN_SPEEDRUNNER_BULK, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COOKED_FLESH, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.PIGLIN_PORK, ModelTemplates.FLAT_ITEM);
         itemModelGenerator.generateFlatItem(ModItems.COOKED_PIGLIN_PORK, ModelTemplates.FLAT_ITEM);

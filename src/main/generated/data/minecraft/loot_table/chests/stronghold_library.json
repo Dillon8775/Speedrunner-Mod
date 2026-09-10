@@ -7,7 +7,7 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_randomly",
-            "options": "#speedrunnermod:fortune_stronghold_library_book"
+            "options": "minecraft:fortune"
           },
           "name": "minecraft:book"
         }

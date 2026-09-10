@@ -12,7 +12,6 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
@@ -139,15 +138,6 @@ public class PiglinBarteringLoot extends GeneratableLootTable {
                                                         .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments())
                                                                 .withOptions(
                                                                         data.enchantments().getOrThrow(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
-                                                                )
-                                                        )
-                                        )
-                                        .add(
-                                                LootItem.lootTableItem(Items.GOLDEN_SWORD)
-                                                        .setWeight(5)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_GOLDEN_SWORD)
                                                                 )
                                                         )
                                         )

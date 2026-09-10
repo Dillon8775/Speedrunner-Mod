@@ -70,7 +70,7 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_randomly",
-            "options": "#speedrunnermod:on_golden_sword"
+            "options": "minecraft:looting"
           },
           "name": "minecraft:golden_sword"
         }

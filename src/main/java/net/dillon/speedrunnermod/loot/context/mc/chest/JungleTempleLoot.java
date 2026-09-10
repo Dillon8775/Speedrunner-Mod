@@ -17,14 +17,6 @@ public class JungleTempleLoot extends GeneratableLootTable {
 
     @Override
     public void generateLoot() {
-        generateTempleLoot();
-        generateDispenserLoot();
-    }
-
-    /**
-     * @see BuiltInLootTables#JUNGLE_TEMPLE
-     */
-    private void generateTempleLoot() {
         data.context().accept(
                 BuiltInLootTables.JUNGLE_TEMPLE,
                 LootTable.lootTable()
@@ -32,6 +24,7 @@ public class JungleTempleLoot extends GeneratableLootTable {
                                 LootPool.lootPool()
                         )
         );
+        generateDispenserLoot();
     }
 
     /**

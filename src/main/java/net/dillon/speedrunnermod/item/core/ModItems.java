@@ -72,11 +72,6 @@ public class ModItems {
             .food(ModConsumables.SPEEDRUNNER_BULK, ModDataComponentTypes.SPEEDRUNNER_BULK),
             Component.translatable("item.speedrunnermod.speedrunner_bulk.tooltip")));
 
-    public static final Item ROTTEN_SPEEDRUNNER_BULK = registerModItem(ModItemIds.ROTTEN_SPEEDRUNNER_BULK, Item::new,
-            new Item.Properties()
-                    .food(ModConsumables.ROTTEN_SPEEDRUNNER_BULK, ModDataComponentTypes.ROTTEN_SPEEDRUNNER_BULK)
-    );
-
     public static final Item COOKED_FLESH = registerModItem(ModItemIds.COOKED_FLESH, Item::new,
             new Item.Properties()
                     .food(ModConsumables.COOKED_FLESH)

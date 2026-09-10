@@ -5,6 +5,7 @@ import net.dillon.speedrunnermod.loot.context.mc.GeneratableLootTable;
 import net.dillon.speedrunnermod.loot.context.mc.LootTableData;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -75,9 +76,9 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_SWORD)
-                                                        .apply(EnchantRandomlyFunction.randomApplicableEnchantment(data.enchantments())
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_GOLDEN_SWORD)
+                                                        .apply(new EnchantRandomlyFunction.Builder()
+                                                                .withEnchantment(
+                                                                        data.enchantments().getOrThrow(Enchantments.LOOTING)
                                                                 )
                                                         )
                                         )

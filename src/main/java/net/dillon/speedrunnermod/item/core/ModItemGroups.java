@@ -125,7 +125,6 @@ public class ModItemGroups {
                         entries.accept(ModItems.PIGLIN_PORK);
                         entries.accept(ModItems.COOKED_PIGLIN_PORK);
                         entries.accept(ModItems.SPEEDRUNNER_BULK);
-                        entries.accept(ModItems.ROTTEN_SPEEDRUNNER_BULK);
                         entries.accept(ModItems.COOKED_FLESH);
                         entries.accept(ModItems.FLESH_BLOCK);
                         entries.accept(Items.ZOMBIE_HEAD);
@@ -237,7 +236,6 @@ public class ModItemGroups {
 
         Factories.factorItemLikesIntoCreativeTab(CreativeModeTabs.FOOD_AND_DRINKS, List.of(
                 ModItems.SPEEDRUNNER_BULK,
-                ModItems.ROTTEN_SPEEDRUNNER_BULK,
                 ModItems.COOKED_FLESH,
                 ModItems.PIGLIN_PORK,
                 ModItems.COOKED_PIGLIN_PORK

@@ -2,8 +2,92 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "entries": [],
-      "rolls": 1
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 16,
+              "min": 4
+            }
+          },
+          "name": "minecraft:diamond",
+          "weight": 14
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 4,
+              "min": 1
+            }
+          },
+          "name": "speedrunnermod:ender_matter",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 26,
+              "min": 8
+            }
+          },
+          "name": "minecraft:golden_carrot",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 30,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:diamond_axe",
+          "weight": 12
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 30,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:diamond_pickaxe",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 30,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:diamond_sword",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:enchant_with_levels",
+            "levels": 30,
+            "options": "#speedrunnermod:on_random_speedrunner_loot"
+          },
+          "name": "minecraft:diamond_boots",
+          "weight": 9
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 3,
+        "min": 1
+      }
     }
   ]
 }

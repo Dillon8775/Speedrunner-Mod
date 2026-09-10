@@ -289,19 +289,6 @@
         }
       ],
       "rolls": 1
-    },
-    {
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:gold_block"
-        }
-      ],
-      "rolls": {
-        "type": "minecraft:uniform",
-        "max": 1,
-        "min": -6
-      }
     }
   ]
 }

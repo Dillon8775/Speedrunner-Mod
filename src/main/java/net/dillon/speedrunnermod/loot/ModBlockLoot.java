@@ -1,7 +1,12 @@
 package net.dillon.speedrunnermod.loot;
 
 import net.dillon.speedrunnermod.block.ModBlocks;
+import net.dillon.speedrunnermod.component.ModPotions;
 import net.dillon.speedrunnermod.item.core.ModItems;
+import net.dillon.speedrunnermod.loot.data.GeneratableLootTable;
+import net.dillon.speedrunnermod.loot.data.LootTableData;
+import net.dillon.speedrunnermod.loot.providers.ModBlockLootTables;
+import net.dillon.speedrunnermod.tag.ModPotionTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
@@ -17,10 +22,10 @@ import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.*;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
+import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
@@ -415,5 +420,108 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                                 )
                 )
         );
+    }
+
+    /**
+     * Generates the loot for when mining a doom block.
+     */
+    public static class DoomBlockLoot extends GeneratableLootTable {
+
+        public DoomBlockLoot(LootTableData data) {
+            super(data);
+        }
+
+        @Override
+        public void generateLoot() {
+            data.output().accept(
+                    ModBlockLootTables.DOOM_BLOCK_LOOT,
+                    LootTable.lootTable()
+                            .withPool(LootPool.lootPool()
+                                    .setRolls(
+                                            ContextIntProviders.exactly(1)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.DIAMOND_SWORD)
+                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(20, 33)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.NETHERITE_CHESTPLATE)
+                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(27, 33)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.BOW)
+                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(30, 33)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.CROSSBOW)
+                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(27, 33)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.IRON_CHESTPLATE)
+                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(24, 28)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.GOLDEN_APPLE)
+                                                    .setWeight(4)
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(ModItems.RAID_ERADICATOR)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(ModItems.SPEEDRUNNERS_TOTEM)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.FIRE_CHARGE)
+                                                    .setWeight(3)
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(ModItems.DRAGON_FIREBALL)
+                                                    .setWeight(2)
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
+                                                    .setWeight(3)
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 11)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.ELYTRA)
+                                                    .apply(SetItemDamageFunction.setDamage(ContextFloatProviders.between(0.18F, 0.45F)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(ModItems.KNOCKBACK_STICK)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.POTION)
+                                                    .setWeight(2)
+                                                    .apply(SetRandomPotionFunction.fromTagKey(
+                                                            data.potions().getOrThrow(ModPotionTags.DOOM_BLOCK_POTIONS))
+                                                    )
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.POTION)
+                                                    .apply(SetPotionFunction.setPotion(ModPotions.DRAGONS_AURA))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(ModItems.DRAGONS_PEARL)
+                                                    .setWeight(2)
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.WIND_CHARGE)
+                                                    .setWeight(2)
+                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 16)))
+                                    )
+                                    .add(
+                                            LootItem.lootTableItem(Items.MACE)
+                                                    .apply(SetItemDamageFunction.setDamage(ContextFloatProviders.between(0.12F, 0.23F)))
+                                    )
+                            )
+            );
+        }
     }
 }

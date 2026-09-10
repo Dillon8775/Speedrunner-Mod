@@ -6,10 +6,7 @@ import net.dillon.speedrunnermod.loot.ModBlockLoot;
 import net.dillon.speedrunnermod.loot.ModEntityLoot;
 import net.dillon.speedrunnermod.loot.ModFloatProviders;
 import net.dillon.speedrunnermod.loot.ModIntProviders;
-import net.dillon.speedrunnermod.loot.context.ModBlockLootTables;
-import net.dillon.speedrunnermod.loot.context.ModChestLootTables;
-import net.dillon.speedrunnermod.loot.context.ModPiglinBarterLootTables;
-import net.dillon.speedrunnermod.loot.context.ModShearingLootTables;
+import net.dillon.speedrunnermod.loot.providers.*;
 import net.dillon.speedrunnermod.recipe.ModRecipeProvider;
 import net.dillon.speedrunnermod.render.ModEquipmentAssetProvider;
 import net.dillon.speedrunnermod.render.ModItemModelGenerators;
@@ -42,7 +39,9 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModBlockLoot::new);
         pack.addProvider(ModEntityLoot::new);
         pack.addProvider(ModBlockLootTables::new);
+        pack.addProvider(ModArchaeologyLootTables::new);
         pack.addProvider(ModChestLootTables::new);
+        pack.addProvider(ModFishingLootTables::new);
         pack.addProvider(ModPiglinBarterLootTables::new);
         pack.addProvider(ModShearingLootTables::new);
 

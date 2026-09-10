@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:fishing",
+  "pools": [
+    {
+      "entries": [],
+      "rolls": 1
+    }
+  ]
+}

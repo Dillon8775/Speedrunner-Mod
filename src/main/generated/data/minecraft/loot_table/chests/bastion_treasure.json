@@ -46,13 +46,17 @@
               "type": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 0.1,
                 "min": 0.8
               }
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -66,13 +70,17 @@
               "type": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 0.1,
                 "min": 0.8
               }
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -86,13 +94,17 @@
               "type": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 0.1,
                 "min": 0.8
               }
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -106,13 +118,17 @@
               "type": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 0.1,
                 "min": 0.8
               }
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -126,13 +142,17 @@
               "type": "minecraft:set_damage",
               "damage": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 0.1,
                 "min": 0.8
               }
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -154,10 +174,6 @@
         },
         {
           "type": "minecraft:item",
-          "modifier": {
-            "type": "minecraft:set_count",
-            "count": 1
-          },
           "name": "minecraft:ancient_debris",
           "weight": 12
         },
@@ -172,10 +188,6 @@
         },
         {
           "type": "minecraft:item",
-          "modifier": {
-            "type": "minecraft:set_count",
-            "count": 1
-          },
           "name": "minecraft:netherite_scrap",
           "weight": 9
         },

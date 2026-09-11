@@ -20,10 +20,12 @@ import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.*;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
+import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
+import net.minecraft.world.level.storage.loot.functions.SetRandomPotionFunction;
 import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
-import net.minecraft.world.level.storage.loot.providers.number.floats.ContextFloatProviders;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
@@ -426,28 +428,26 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                     ModBlockLootTables.DOOM_BLOCK_LOOT,
                     LootTable.lootTable()
                             .withPool(LootPool.lootPool()
-                                    .setRolls(
-                                            ContextIntProviders.exactly(1)
-                                    )
+                                    .setRolls(ContextIntProviders.exactly(1))
                                     .add(
                                             LootItem.lootTableItem(Items.DIAMOND_SWORD)
-                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(20, 33)))
+                                                    .apply(enchantBetweenLevels(20, 33))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.NETHERITE_CHESTPLATE)
-                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(27, 33)))
+                                                    .apply(enchantBetweenLevels(27, 33))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.BOW)
-                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(30, 33)))
+                                                    .apply(enchantBetweenLevels(30, 33))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.CROSSBOW)
-                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(27, 33)))
+                                                    .apply(enchantBetweenLevels(27, 33))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.IRON_CHESTPLATE)
-                                                    .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.between(24, 28)))
+                                                    .apply(enchantBetweenLevels(24, 28))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE)
@@ -455,7 +455,7 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                                     .add(
                                             LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                     .setWeight(4)
-                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                    .apply(setCount(1, 3))
                                     )
                                     .add(
                                             LootItem.lootTableItem(ModItems.RAID_ERADICATOR)
@@ -466,21 +466,21 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                                     .add(
                                             LootItem.lootTableItem(Items.FIRE_CHARGE)
                                                     .setWeight(3)
-                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                    .apply(setCount(2, 5))
                                     )
                                     .add(
                                             LootItem.lootTableItem(ModItems.DRAGON_FIREBALL)
                                                     .setWeight(2)
-                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                    .apply(setCount(1, 3))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                                     .setWeight(3)
-                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 11)))
+                                                    .apply(setCount(2, 11))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.ELYTRA)
-                                                    .apply(SetItemDamageFunction.setDamage(ContextFloatProviders.between(0.18F, 0.45F)))
+                                                    .apply(setDamage(0.18F, 0.45F))
                                     )
                                     .add(
                                             LootItem.lootTableItem(ModItems.KNOCKBACK_STICK)
@@ -503,11 +503,11 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                                     .add(
                                             LootItem.lootTableItem(Items.WIND_CHARGE)
                                                     .setWeight(2)
-                                                    .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 16)))
+                                                    .apply(setCount(4, 16))
                                     )
                                     .add(
                                             LootItem.lootTableItem(Items.MACE)
-                                                    .apply(SetItemDamageFunction.setDamage(ContextFloatProviders.between(0.12F, 0.23F)))
+                                                    .apply(setDamage(0.12F, 0.23F))
                                     )
                             )
             );

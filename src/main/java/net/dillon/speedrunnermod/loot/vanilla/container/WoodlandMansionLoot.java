@@ -3,15 +3,12 @@ package net.dillon.speedrunnermod.loot.vanilla.container;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.loot.data.GeneratableLootTable;
 import net.dillon.speedrunnermod.loot.data.LootTableData;
-import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 /**
@@ -46,35 +43,27 @@ public class WoodlandMansionLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(13)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 8)))
+                                                        .apply(setCount(4, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
+                                                        .apply(setCount(4, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                         .setWeight(20)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND_CHESTPLATE)
                                                         .setWeight(25)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                       data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(33))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(18)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(35))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(EnchantmentTags.ON_RANDOM_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithLevelsAndKey(EnchantmentTags.ON_RANDOM_LOOT, 35))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.ENCHANTED_GOLDEN_APPLE)
@@ -91,27 +80,27 @@ public class WoodlandMansionLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 10)))
+                                                        .apply(setCount(4, 10))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 12)))
+                                                        .apply(setCount(5, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 15)))
+                                                        .apply(setCount(5, 15))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BUCKET)
@@ -124,22 +113,22 @@ public class WoodlandMansionLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.STRING)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 16)))
+                                                        .apply(setCount(4, 16))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.FLESH_BLOCK)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 5)))
+                                                        .apply(setCount(1, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.ROTTEN_FLESH)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 12)))
+                                                        .apply(setCount(3, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.COOKED_FLESH)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                         )
         );

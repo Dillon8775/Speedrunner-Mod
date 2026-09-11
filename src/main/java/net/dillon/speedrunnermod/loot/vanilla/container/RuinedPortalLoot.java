@@ -3,16 +3,12 @@ package net.dillon.speedrunnermod.loot.vanilla.container;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.loot.data.GeneratableLootTable;
 import net.dillon.speedrunnermod.loot.data.LootTableData;
-import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 /**
@@ -48,7 +44,7 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.OBSIDIAN)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 8)))
+                                                        .apply(setCount(5, 8))
                                         )
                         )
                         .withPool(
@@ -56,9 +52,7 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_AXE)
-                                                        .apply(
-                                                                EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                        )
+                                                        .apply(enchantWithLevels(33))
                                         )
                         )
                         .withPool(
@@ -66,9 +60,7 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_PICKAXE)
-                                                        .apply(
-                                                                EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                        )
+                                                        .apply(enchantWithLevels(33))
                                         )
                         )
                         .withPool(
@@ -76,11 +68,7 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_SWORD)
-                                                        .apply(new EnchantRandomlyFunction.Builder()
-                                                                .withEnchantment(
-                                                                        data.enchantments().getOrThrow(Enchantments.LOOTING)
-                                                                )
-                                                        )
+                                                        .apply(withEnchantment(Enchantments.LOOTING))
                                         )
                         )
                         .withPool(
@@ -93,47 +81,42 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_CARROT)
                                                         .setWeight(21)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(7, 15)))
-                                        )
-                                        .add(
-                                                LootItem.lootTableItem(ModItems.SPEEDRUNNER_BULK)
-                                                        .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1)))
+                                                        .apply(setCount(7, 15))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GLOWSTONE)
                                                         .setWeight(1)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 7)))
+                                                        .apply(setCount(4, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 18)))
+                                                        .apply(setCount(9, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_NUGGET)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 18)))
+                                                        .apply(setCount(9, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.FIRE_CHARGE)
                                                         .setWeight(18)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
+                                                        .apply(setCount(1, 2))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_NUGGET)
                                                         .setWeight(14)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 18)))
+                                                        .apply(setCount(9, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(20)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 27)))
+                                                        .apply(setCount(9, 27))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
@@ -144,54 +127,42 @@ public class RuinedPortalLoot extends GeneratableLootTable {
                                                         .setWeight(9)
                                         )
                                         .add(
+                                                LootItem.lootTableItem(ModItems.SPEEDRUNNER_BULK)
+                                                        .setWeight(7)
+                                        )
+                                        .add(
                                                 LootItem.lootTableItem(Items.GOLD_BLOCK)
                                                         .setWeight(25)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 4)))
+                                                        .apply(setCount(1, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_HOE)
                                                         .setWeight(2)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(30))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_SHOVEL)
                                                         .setWeight(3)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(30))
+
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_BOOTS)
                                                         .setWeight(3)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(30))
+
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_HELMET)
                                                         .setWeight(3)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(30))
+
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_LEGGINGS)
                                                         .setWeight(3)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(30))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(30))
+
                                         )
                         )
         );

@@ -43,7 +43,11 @@
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -63,7 +67,11 @@
             },
             {
               "type": "minecraft:enchant_with_levels",
-              "levels": 33,
+              "levels": {
+                "type": "minecraft:uniform",
+                "max": 33,
+                "min": 33
+              },
               "options": "#speedrunnermod:on_random_speedrunner_loot"
             }
           ],
@@ -74,7 +82,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_sword",
@@ -84,7 +96,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_helmet",
@@ -94,7 +110,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_chestplate",
@@ -104,7 +124,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_leggings",
@@ -114,7 +138,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_boots",
@@ -124,7 +152,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_axe",
@@ -236,16 +268,6 @@
         },
         {
           "type": "minecraft:item",
-          "name": "speedrunnermod:speedrunner_bulk",
-          "weight": 11
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:respawn_anchor",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:set_count",
             "count": {
@@ -256,6 +278,16 @@
           },
           "name": "minecraft:gilded_blackstone",
           "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_bulk",
+          "weight": 11
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:respawn_anchor",
+          "weight": 5
         }
       ],
       "rolls": {
@@ -333,14 +365,24 @@
         },
         {
           "type": "minecraft:item",
-          "modifier": {
-            "type": "minecraft:set_count",
-            "count": {
-              "type": "minecraft:uniform",
-              "max": 36,
-              "min": 9
+          "modifier": [
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 36,
+                "min": 9
+              }
+            },
+            {
+              "type": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 36,
+                "min": 9
+              }
             }
-          },
+          ],
           "name": "minecraft:gold_nugget",
           "weight": 18
         },

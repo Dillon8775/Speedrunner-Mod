@@ -8,7 +8,6 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 /**
@@ -57,27 +56,27 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 4)))
+                                                        .apply(setCount(3, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))
+                                                        .apply(setCount(3, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_HELMET)
@@ -104,42 +103,42 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_PORKCHOP)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_BEEF)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_MUTTON)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 7)))
+                                                        .apply(setCount(2, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WHEAT)
                                                         .setWeight(3)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 16)))
+                                                        .apply(setCount(4, 16))
                                         )
                         )
         );
@@ -155,27 +154,27 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.OAK_LOG)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.STICK)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))
+                                                        .apply(setCount(3, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 14)))
+                                                        .apply(setCount(6, 14))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                         )
         );
@@ -191,32 +190,32 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_LOG)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 14)))
+                                                        .apply(setCount(9, 14))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DEAD_BUSH)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                         )
         );
@@ -232,32 +231,32 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_COD)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_SALMON)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 14)))
+                                                        .apply(setCount(9, 14))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 4)))
+                                                        .apply(setCount(1, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WATER_BUCKET)
@@ -277,32 +276,32 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.ARROW)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 16)))
+                                                        .apply(setCount(5, 16))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.STICK)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.FEATHER)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.FLINT)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                         )
         );
@@ -325,17 +324,17 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 3)))
+                                                        .apply(setCount(2, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_PICKAXE)
@@ -344,12 +343,12 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                         )
         );
@@ -365,37 +364,37 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_LOG)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))
+                                                        .apply(setCount(3, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_NUGGET)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 17)))
+                                                        .apply(setCount(9, 17))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 7)))
+                                                        .apply(setCount(2, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.APPLE)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(3)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                         )
         );
@@ -411,27 +410,27 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_LOG)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))
+                                                        .apply(setCount(3, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 7)))
+                                                        .apply(setCount(2, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WATER_BUCKET)
@@ -455,52 +454,52 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.OAK_LOG)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 5)))
+                                                        .apply(setCount(3, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 9)))
+                                                        .apply(setCount(6, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WOOL.white())
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WOOL.black())
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(3)))
+                                                        .apply(setCount(3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WOOL.gray())
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(3)))
+                                                        .apply(setCount(3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WOOL.brown())
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(3)))
+                                                        .apply(setCount(3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WOOL.lightGray())
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(3)))
+                                                        .apply(setCount(3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.SHEARS)
@@ -524,32 +523,32 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.STRIPPED_SPRUCE_LOG)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.FURNACE)
@@ -569,42 +568,42 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.DEAD_SPEEDRUNNER_LOG)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.SPRUCE_LOG)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_NUGGET)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 18)))
+                                                        .apply(setCount(9, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 12)))
+                                                        .apply(setCount(5, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 7)))
+                                                        .apply(setCount(2, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.SWEET_BERRIES)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                         )
         );
@@ -620,27 +619,27 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.LEATHER)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 3)))
+                                                        .apply(setCount(2, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.SADDLE)
@@ -676,32 +675,32 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.LAPIS_LAZULI)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 14)))
+                                                        .apply(setCount(3, 14))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                         )
         );
@@ -730,7 +729,7 @@ public class VillageLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.OBSIDIAN)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(10, 14)))
+                                                        .apply(setCount(10, 14))
                                         )
                         )
                         .withPool(
@@ -739,52 +738,52 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 11)))
+                                                        .apply(setCount(4, 11))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(13)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 10)))
+                                                        .apply(setCount(4, 10))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.STICK)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
+                                                        .apply(setCount(4, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
+                                                        .apply(setCount(1, 2))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_SHOVEL)
@@ -832,7 +831,7 @@ public class VillageLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.OBSIDIAN)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(10, 14)))
+                                                        .apply(setCount(10, 14))
                                         )
                         )
                         .withPool(
@@ -841,37 +840,37 @@ public class VillageLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 11)))
+                                                        .apply(setCount(4, 11))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(13)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
+                                                        .apply(setCount(4, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.HAY_BLOCK)
                                                         .setWeight(4)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 2)))
+                                                        .apply(setCount(1, 2))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_PICKAXE)

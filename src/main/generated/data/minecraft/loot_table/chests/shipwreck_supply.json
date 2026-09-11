@@ -38,8 +38,8 @@
                 "type": "minecraft:night_vision",
                 "duration": {
                   "type": "minecraft:uniform",
-                  "max": 10,
-                  "min": 7
+                  "max": 20,
+                  "min": 8
                 }
               },
               {
@@ -51,35 +51,19 @@
                 }
               },
               {
-                "type": "minecraft:weakness",
+                "type": "minecraft:saturation",
                 "duration": {
                   "type": "minecraft:uniform",
-                  "max": 8,
-                  "min": 6
-                }
-              },
-              {
-                "type": "minecraft:blindness",
-                "duration": {
-                  "type": "minecraft:uniform",
-                  "max": 7,
-                  "min": 5
-                }
-              },
-              {
-                "type": "minecraft:poison",
-                "duration": {
-                  "type": "minecraft:uniform",
-                  "max": 20,
+                  "max": 15,
                   "min": 10
                 }
               },
               {
-                "type": "minecraft:saturation",
+                "type": "minecraft:regeneration",
                 "duration": {
                   "type": "minecraft:uniform",
-                  "max": 10,
-                  "min": 7
+                  "max": 20,
+                  "min": 10
                 }
               }
             ]

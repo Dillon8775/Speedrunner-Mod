@@ -20,6 +20,7 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
     public static final TagKey<Enchantment> ON_RANDOM_SPEEDRUNNER_BOOK = createEnchantmentTag(ofSpeedrunnerMod("on_random_speedrunner_book"));
     public static final TagKey<Enchantment> ON_RANDOM_SPEEDRUNNER_LOOT = createEnchantmentTag(ofSpeedrunnerMod("on_random_speedrunner_loot"));
     public static final TagKey<Enchantment> FROM_PIGLIN_BARTERING = createEnchantmentTag(ofSpeedrunnerMod("from_piglin_bartering"));
+    public static final TagKey<Enchantment> FROM_OMINOUS_CHAMBER_RARE = createEnchantmentTag(ofSpeedrunnerMod("from_ominous_chamber_rare"));
     public static final TagKey<Enchantment> RETIRED_SPEEDRUNNER_TRADES = createEnchantmentTag(ofSpeedrunnerMod("retired_speedrunner_trades"));
     public static final TagKey<Enchantment> WITHERED_ENCHANTMENTS = createEnchantmentTag(ofSpeedrunnerMod("withered_enchantments"));
 
@@ -64,6 +65,10 @@ public class ModEnchantmentTags extends FabricTagsProvider<Enchantment> {
         tag(ModEnchantmentTags.FROM_PIGLIN_BARTERING)
                 .add(ModEnchantments.DASH)
                 .add(Enchantments.SOUL_SPEED);
+
+        tag(ModEnchantmentTags.FROM_OMINOUS_CHAMBER_RARE)
+                .add(Enchantments.BREACH)
+                .add(Enchantments.DENSITY);
 
         tag(ModEnchantmentTags.RETIRED_SPEEDRUNNER_TRADES)
                 .add(Enchantments.PROTECTION)

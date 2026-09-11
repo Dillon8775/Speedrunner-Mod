@@ -7,7 +7,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 24,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 24,
+              "min": 24
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:book",

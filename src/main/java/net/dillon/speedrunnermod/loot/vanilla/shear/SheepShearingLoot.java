@@ -32,7 +32,10 @@ public class SheepShearingLoot extends GeneratableLootTable {
                                                 .withPool(
                                                         LootPool.lootPool()
                                                                 .setRolls(ContextIntProviders.between(3, 9))
-                                                                .add(LootItem.lootTableItem(wool)))
+                                                                .add(
+                                                                        LootItem.lootTableItem(wool)
+                                                                )
+                                                )
                                 )
         );
     }

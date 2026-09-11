@@ -2,8 +2,122 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "entries": [],
-      "rolls": 1
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_stew_effect",
+            "effects": [
+              {
+                "type": "minecraft:night_vision",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 20,
+                  "min": 8
+                }
+              },
+              {
+                "type": "minecraft:jump_boost",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
+                }
+              },
+              {
+                "type": "minecraft:saturation",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 15,
+                  "min": 10
+                }
+              },
+              {
+                "type": "minecraft:regeneration",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 20,
+                  "min": 10
+                }
+              }
+            ]
+          },
+          "name": "minecraft:suspicious_stew",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 4
+            }
+          },
+          "name": "minecraft:golden_carrot",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 5,
+              "min": 1
+            }
+          },
+          "name": "minecraft:diamond",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 4
+            }
+          },
+          "name": "speedrunnermod:speedrunner_ingot",
+          "weight": 9
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 12,
+              "min": 4
+            }
+          },
+          "name": "minecraft:snowball",
+          "weight": 6
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_apple",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:ender_matter",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:inventory_preserver",
+          "weight": 2
+        }
+      ],
+      "rolls": {
+        "type": "minecraft:uniform",
+        "max": 10,
+        "min": 4
+      }
     }
   ]
 }

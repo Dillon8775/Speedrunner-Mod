@@ -107,7 +107,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:diamond_spear",
@@ -117,7 +121,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "speedrunnermod:speedrunner_spear",
@@ -127,7 +135,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_axe",
@@ -137,7 +149,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_sword",
@@ -147,7 +163,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_boots",
@@ -157,7 +177,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_chestplate",
@@ -167,7 +191,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_leggings",
@@ -177,7 +205,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_helmet",
@@ -187,7 +219,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_pickaxe",
@@ -197,7 +233,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_shovel",

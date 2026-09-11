@@ -56,7 +56,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_pickaxe",
@@ -66,7 +70,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_sword",
@@ -76,7 +84,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_boots",

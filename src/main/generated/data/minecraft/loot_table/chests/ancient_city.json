@@ -111,7 +111,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:book",
@@ -134,7 +138,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 35,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 35
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "speedrunnermod:speedrunner_boots",
@@ -144,7 +152,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 35,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 35
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "speedrunnermod:speedrunner_chestplate",
@@ -154,7 +166,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 35,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 35
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_sword",
@@ -164,7 +180,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 35,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 35
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:diamond_leggings",

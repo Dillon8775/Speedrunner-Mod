@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.context.ContextKeySet;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.storage.loot.LootTable;
 
@@ -22,6 +23,7 @@ public abstract class SimpleModLootTableSubProvider extends SimpleFabricLootTabl
     protected final HolderGetter<Enchantment> enchantments;
     protected final HolderGetter<Structure> structures;
     protected final HolderGetter<Potion> potions;
+    protected final HolderGetter<Biome> biomes;
 
     public SimpleModLootTableSubProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture, ContextKeySet contextParamSet) {
         super(output, registryLookupFuture, contextParamSet);
@@ -29,10 +31,11 @@ public abstract class SimpleModLootTableSubProvider extends SimpleFabricLootTabl
         this.enchantments = this.provider.lookupOrThrow(Registries.ENCHANTMENT);
         this.structures = this.provider.lookupOrThrow(Registries.STRUCTURE);
         this.potions = this.provider.lookupOrThrow(Registries.POTION);
+        this.biomes = this.provider.lookupOrThrow(Registries.BIOME);
     }
 
     protected LootTableData getLootTableData(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> context) {
-        return new LootTableData(context, this.enchantments, this.structures, this.potions);
+        return new LootTableData(this.provider, context, this.enchantments, this.structures, this.potions, this.biomes);
     }
 
     @Override

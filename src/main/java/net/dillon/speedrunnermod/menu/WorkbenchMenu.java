@@ -24,6 +24,8 @@ import org.jspecify.annotations.NonNull;
 import java.util.HashMap;
 import java.util.Map;
 
+import static net.dillon.speedrunnermod.helper.ModHelper.atMost;
+
 /**
  * Screen and enchantment transferring handling for the {@code Speedrunner's Workbench.}
  */
@@ -190,7 +192,7 @@ public class WorkbenchMenu extends ItemCombinerMenu {
                 // If second slot has a lower level, upgrade it
                 if (secondSlotLevel <= firstSlotLevel) {
                     EnchantmentHelper.updateEnchantments(output, builder -> builder.upgrade(entry.getKey(),
-                            secondSlotLevel == firstSlotLevel ? firstSlotLevel + 1 : firstSlotLevel));
+                            secondSlotLevel == firstSlotLevel ? atMost(firstSlotLevel + 1, 10) : firstSlotLevel));
                 }
                 // No further action needed if the levels are equal or second slot has a higher level
             } else {

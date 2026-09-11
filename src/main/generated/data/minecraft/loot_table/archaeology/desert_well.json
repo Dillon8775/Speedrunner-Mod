@@ -2,7 +2,101 @@
   "type": "minecraft:archaeology",
   "pools": [
     {
-      "entries": [],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:arms_up_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:brewer_pottery_sherd"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 2,
+              "min": 1
+            }
+          },
+          "name": "minecraft:diamond"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 3,
+              "min": 1
+            }
+          },
+          "name": "speedrunnermod:speedrunner_ingot"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_count",
+            "count": {
+              "type": "minecraft:uniform",
+              "max": 6,
+              "min": 1
+            }
+          },
+          "name": "speedrunnermod:cooked_flesh"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "speedrunnermod:experience_fragment"
+        },
+        {
+          "type": "minecraft:item",
+          "modifier": {
+            "type": "minecraft:set_stew_effect",
+            "effects": [
+              {
+                "type": "minecraft:night_vision",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
+                }
+              },
+              {
+                "type": "minecraft:jump_boost",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 10,
+                  "min": 7
+                }
+              },
+              {
+                "type": "minecraft:saturation",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 20,
+                  "min": 10
+                }
+              },
+              {
+                "type": "minecraft:regeneration",
+                "duration": {
+                  "type": "minecraft:uniform",
+                  "max": 20,
+                  "min": 15
+                }
+              }
+            ]
+          },
+          "name": "minecraft:suspicious_stew"
+        }
+      ],
       "rolls": 1
     }
   ]

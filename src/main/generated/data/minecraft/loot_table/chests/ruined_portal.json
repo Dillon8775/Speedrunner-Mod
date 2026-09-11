@@ -42,7 +42,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:golden_axe"
@@ -56,7 +60,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:golden_pickaxe"
@@ -96,15 +104,6 @@
           },
           "name": "minecraft:golden_carrot",
           "weight": 21
-        },
-        {
-          "type": "minecraft:item",
-          "modifier": {
-            "type": "minecraft:set_count",
-            "count": 1
-          },
-          "name": "speedrunnermod:speedrunner_bulk",
-          "weight": 7
         },
         {
           "type": "minecraft:item",
@@ -208,6 +207,11 @@
         },
         {
           "type": "minecraft:item",
+          "name": "speedrunnermod:speedrunner_bulk",
+          "weight": 7
+        },
+        {
+          "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:set_count",
             "count": {
@@ -223,7 +227,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_hoe",
@@ -233,7 +241,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_shovel",
@@ -243,7 +255,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_boots",
@@ -253,7 +269,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_helmet",
@@ -263,7 +283,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:golden_leggings",

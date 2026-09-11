@@ -102,7 +102,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 35,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 35,
+              "min": 35
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:fishing_rod",
@@ -125,7 +129,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 40,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 40,
+              "min": 40
+            },
             "options": "#minecraft:on_random_loot"
           },
           "name": "minecraft:book",

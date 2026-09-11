@@ -20,7 +20,11 @@
 - Abandoned camps generate more commonly.
 - Forest and taiga abandoned camps can generate in the Speedrunner's Wasteland biome.
 - More mobs now drop more loot, and modified some existing buffed loot tables, including piglin bartering and abandoned camps.
+- Buffed additional loot tables, including archaeology, fishing, and other vanilla loot containers.
 - Underwater ruins will now always contain a golden speedrunner helmets and a buried treasure map.
+- Ender matter can now be obtained via fishing in a deep cold ocean biome, archeology, and from trial chambers.
+- Experience fragments can now be obtained via fishing, archeology, trial chambers and trial chambers.
+- Inventory preservers can be found in other various places.
 - Various mob spawning changes, and removed "Creature Spawn Rate" option.
 
 ## Fireball Changes
@@ -41,3 +45,6 @@
 - Massive backend optimizations, and several changes to the mod's configuration system.
 - Several tag removals for conventional item tag replacements.
 - Removed "minBrightness" option.
+
+## Bugs Fixed
+- You can combine enchantments in a speedrunners workbench to go over level 10.

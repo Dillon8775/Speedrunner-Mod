@@ -3,15 +3,12 @@ package net.dillon.speedrunnermod.loot.vanilla.container;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.loot.data.GeneratableLootTable;
 import net.dillon.speedrunnermod.loot.data.LootTableData;
-import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
@@ -48,11 +45,7 @@ public class BuriedTreasureLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(37))
-                                                                .withOptions(
-                                                                       data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(37))
                                         )
                         )
                         .withPool(
@@ -68,27 +61,27 @@ public class BuriedTreasureLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.COOKED_COD)
                                                         .setWeight(20)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 10)))
+                                                        .apply(setCount(5, 10))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 12)))
+                                                        .apply(setCount(5, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 8)))
+                                                        .apply(setCount(3, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.POTION)
@@ -98,7 +91,7 @@ public class BuriedTreasureLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.TNT)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.ENDER_MATTER)

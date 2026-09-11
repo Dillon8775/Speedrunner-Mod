@@ -25,7 +25,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 37,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 37,
+              "min": 37
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:book"

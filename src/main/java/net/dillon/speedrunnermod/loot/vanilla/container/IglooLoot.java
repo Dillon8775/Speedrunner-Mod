@@ -8,7 +8,6 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 /**
@@ -31,32 +30,32 @@ public class IglooLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_NUGGET)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 19)))
+                                                        .apply(setCount(4, 19))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 6)))
+                                                        .apply(setCount(3, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.COOKED_FLESH)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 4)))
+                                                        .apply(setCount(1, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.APPLE)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 5)))
+                                                        .apply(setCount(2, 5))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 8)))
+                                                        .apply(setCount(2, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(3)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 4)))
+                                                        .apply(setCount(2, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.STONE_AXE)

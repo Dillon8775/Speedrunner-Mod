@@ -7,7 +7,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 33,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 33,
+              "min": 33
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "speedrunnermod:speedrunner_axe",
@@ -17,7 +21,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 26,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 26,
+              "min": 26
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:iron_axe",
@@ -27,7 +35,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 30,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 30,
+              "min": 30
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "minecraft:iron_pickaxe",
@@ -37,7 +49,11 @@
           "type": "minecraft:item",
           "modifier": {
             "type": "minecraft:enchant_with_levels",
-            "levels": 24,
+            "levels": {
+              "type": "minecraft:uniform",
+              "max": 24,
+              "min": 24
+            },
             "options": "#speedrunnermod:on_random_speedrunner_loot"
           },
           "name": "speedrunnermod:speedrunner_chestplate",

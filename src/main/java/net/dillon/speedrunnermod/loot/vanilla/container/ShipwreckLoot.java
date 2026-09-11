@@ -11,7 +11,6 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.functions.SetStewEffectFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
@@ -47,7 +46,7 @@ public class ShipwreckLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.PUFFERFISH)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                         )
                         .withPool(
@@ -58,68 +57,66 @@ public class ShipwreckLoot extends GeneratableLootTable {
                                                         .setWeight(10)
                                                         .apply(
                                                                 SetStewEffectFunction.stewEffect()
-                                                                        .withEffect(MobEffects.NIGHT_VISION, ContextIntProviders.between(7, 10))
+                                                                        .withEffect(MobEffects.NIGHT_VISION, ContextIntProviders.between(8, 20))
                                                                         .withEffect(MobEffects.JUMP_BOOST, ContextIntProviders.between(7, 10))
-                                                                        .withEffect(MobEffects.WEAKNESS, ContextIntProviders.between(6, 8))
-                                                                        .withEffect(MobEffects.BLINDNESS, ContextIntProviders.between(5, 7))
-                                                                        .withEffect(MobEffects.POISON, ContextIntProviders.between(10, 20))
-                                                                        .withEffect(MobEffects.SATURATION, ContextIntProviders.between(7, 10))
+                                                                        .withEffect(MobEffects.SATURATION, ContextIntProviders.between(10, 15))
+                                                                        .withEffect(MobEffects.REGENERATION, ContextIntProviders.between(10, 20))
                                                         )
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.CARROT)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 8)))
+                                                        .apply(setCount(4, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.TNT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 9)))
+                                                        .apply(setCount(2, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.WHEAT)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(8, 21)))
+                                                        .apply(setCount(8, 21))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.PAPER)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 12)))
+                                                        .apply(setCount(3, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GUNPOWDER)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 11)))
+                                                        .apply(setCount(3, 11))
                                         )
                                         .add(
                                               LootItem.lootTableItem(Items.POTATO)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 7)))
+                                                        .apply(setCount(3, 7))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 8)))
+                                                        .apply(setCount(2, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.POISONOUS_POTATO)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.ROTTEN_FLESH)
                                                         .setWeight(5)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(5, 24)))
+                                                        .apply(setCount(5, 24))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.PUMPKIN)
                                                         .setWeight(3)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BAMBOO)
                                                         .setWeight(2)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_HELMET)
@@ -191,37 +188,37 @@ public class ShipwreckLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(13)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 9)))
+                                                        .apply(setCount(2, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
+                                                        .apply(setCount(4, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 14)))
+                                                        .apply(setCount(9, 14))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EMERALD)
                                                         .setWeight(6)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 9)))
+                                                        .apply(setCount(1, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.EXPERIENCE_BOTTLE)
                                                         .setWeight(3)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 6)))
+                                                        .apply(setCount(2, 6))
                                         )
                         )
                         .withPool(
@@ -239,22 +236,22 @@ public class ShipwreckLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(7, 13)))
+                                                        .apply(setCount(7, 13))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_NUGGET)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 27)))
+                                                        .apply(setCount(9, 27))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 27)))
+                                                        .apply(setCount(9, 27))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.LAPIS_LAZULI)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 18)))
+                                                        .apply(setCount(6, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COPPER_NAUTILUS_ARMOR)

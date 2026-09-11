@@ -14,9 +14,7 @@ import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.entries.UniformContainerBase;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
 import net.minecraft.world.level.storage.loot.functions.ExplorationMapFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.functions.SetPotionFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
@@ -42,7 +40,7 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                         .withPool(
                                 LootPool.lootPool()
                                         .setRolls(ContextIntProviders.exactly(1))
-                                        .add(buriedTreasureMapItem())
+                                        .add(this.buriedTreasureMapItem())
                         )
                         .withPool(
                                 LootPool.lootPool()
@@ -62,17 +60,17 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_NUGGET)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(8, 16)))
+                                                        .apply(setCount(8, 16))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(12)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 11)))
+                                                        .apply(setCount(4, 11))
                                         )
                         )
                         .withPool(
@@ -81,25 +79,17 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.FISHING_ROD)
                                                         .setWeight(12)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(35))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(EnchantmentTags.ON_RANDOM_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithLevelsAndKey(EnchantmentTags.ON_RANDOM_LOOT, 35))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_NUGGET)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 21)))
+                                                        .apply(setCount(9, 21))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(10)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(40))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(EnchantmentTags.ON_RANDOM_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithLevelsAndKey(EnchantmentTags.ON_RANDOM_LOOT, 40))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COPPER_NAUTILUS_ARMOR)
@@ -147,11 +137,7 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.FISHING_ROD)
                                                         .setWeight(12)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(EnchantmentTags.ON_RANDOM_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithLevelsAndKey(EnchantmentTags.ON_RANDOM_LOOT, 33))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.POTION)
@@ -161,7 +147,7 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 8)))
+                                                        .apply(setCount(2, 8))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_AXE)
@@ -169,12 +155,12 @@ public class UnderwaterRuinLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.ROTTEN_FLESH)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(6, 12)))
+                                                        .apply(setCount(6, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COPPER_NAUTILUS_ARMOR)

@@ -3,7 +3,6 @@ package net.dillon.speedrunnermod.loot.vanilla.container;
 import net.dillon.speedrunnermod.item.core.ModItems;
 import net.dillon.speedrunnermod.loot.data.GeneratableLootTable;
 import net.dillon.speedrunnermod.loot.data.LootTableData;
-import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.minecraft.tags.EnchantmentTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -11,9 +10,6 @@ import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.EnchantRandomlyFunction;
-import net.minecraft.world.level.storage.loot.functions.EnchantWithLevelsFunction;
-import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 /**
@@ -46,37 +42,37 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(10)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.ENDER_PEARL)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 4)))
+                                                        .apply(setCount(1, 4))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 6)))
+                                                        .apply(setCount(4, 6))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(9)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 21)))
+                                                        .apply(setCount(9, 21))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.ENDER_MATTER)
@@ -117,11 +113,7 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(8)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(EnchantmentTags.ON_RANDOM_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithLevelsAndKey(EnchantmentTags.ON_RANDOM_LOOT, 33))
                                         )
                         )
         );
@@ -137,37 +129,37 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.DIAMOND)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 9)))
+                                                        .apply(setCount(1, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.SPEEDRUNNER_INGOT)
                                                         .setWeight(25)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.IRON_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 9)))
+                                                        .apply(setCount(4, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLD_INGOT)
                                                         .setWeight(15)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(4, 12)))
+                                                        .apply(setCount(4, 12))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.COAL)
                                                         .setWeight(11)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BREAD)
                                                         .setWeight(14)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 18)))
+                                                        .apply(setCount(2, 18))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GOLDEN_APPLE)
                                                         .setWeight(8)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(1, 3)))
+                                                        .apply(setCount(1, 3))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(ModItems.DRAGON_UPGRADE_SMITHING_TEMPLATE)
@@ -188,11 +180,7 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(4)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(33))
                                         )
                         )
         );
@@ -207,11 +195,7 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .setRolls(ContextIntProviders.exactly(1))
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
-                                                        .apply(new EnchantRandomlyFunction.Builder()
-                                                                .withEnchantment(
-                                                                        data.enchantments().getOrThrow(Enchantments.FORTUNE)
-                                                                )
-                                                        )
+                                                        .apply(withEnchantment(Enchantments.FORTUNE))
                                         )
                         )
                         .withPool(
@@ -220,30 +204,22 @@ public class StrongholdLoot extends GeneratableLootTable {
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(20)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(33))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.BOOK)
                                                         .setWeight(11)
-                                                        .apply(EnchantWithLevelsFunction.enchantWithLevels(data.enchantments(), ContextIntProviders.exactly(33))
-                                                                .withOptions(
-                                                                        data.enchantments().getOrThrow(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT)
-                                                                )
-                                                        )
+                                                        .apply(enchantWithRandomSpeedrunnerLoot(33))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.GUNPOWDER)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(3, 9)))
+                                                        .apply(setCount(3, 9))
                                         )
                                         .add(
                                                 LootItem.lootTableItem(Items.PAPER)
                                                         .setWeight(7)
-                                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(2, 7)))
+                                                        .apply(setCount(2, 7))
                                         )
                         )
         );

@@ -84,11 +84,5 @@ public class ModBiomeTags extends FabricTagsProvider<Biome> {
         tag(BiomeTags.HAS_VILLAGE_TAIGA)
                 .add(ModBiomes.SPEEDRUNNERS_WASTELAND)
                 .add(Biomes.WINDSWEPT_HILLS);
-
-        tag(BiomeTags.HAS_ABANDONED_CAMP_FOREST)
-                .add(ModBiomes.SPEEDRUNNERS_WASTELAND);
-
-        tag(BiomeTags.HAS_ABANDONED_CAMP_TAIGA)
-                .add(ModBiomes.SPEEDRUNNERS_WASTELAND);
     }
 }

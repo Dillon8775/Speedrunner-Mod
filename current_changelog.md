@@ -18,7 +18,6 @@
 - The mod's Structure Spawn Rate option is now a simple toggle switch, which has been renamed to the legacy "Make Structures More Common" option, and custom structure spawn rates are only possible via the config (and if Make Structures More Common option is enabled).
 - Certain structure spawn rates have been modified.
 - Abandoned camps generate more commonly.
-- Forest and taiga abandoned camps can generate in the Speedrunner's Wasteland biome.
 - More mobs now drop more loot, and modified some existing buffed loot tables, including piglin bartering and abandoned camps.
 - Buffed additional loot tables, including archaeology, fishing, and other vanilla loot containers.
 - Underwater ruins will now always contain a golden speedrunner helmets and a buried treasure map.

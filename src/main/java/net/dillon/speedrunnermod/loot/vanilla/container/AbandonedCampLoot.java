@@ -147,7 +147,7 @@ public class AbandonedCampLoot extends GeneratableLootTable {
                                                         .apply(setCount(2, 6))
                                         )
                                         .add(
-                                                LootItem.lootTableItem(ModItems.GOLDEN_SPEEDRUNNER_HELMET)
+                                                LootItem.lootTableItem(ModItems.SPEEDRUNNER_HELMET)
                                                         .setWeight(7)
                                         )
                                         .add(

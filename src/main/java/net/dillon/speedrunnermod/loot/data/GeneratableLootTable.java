@@ -129,11 +129,4 @@ public abstract class GeneratableLootTable {
     public EnchantWithLevelsFunction.Builder enchantWithRandomSpeedrunnerLoot(int minLevels, int maxLevels) {
         return enchantBetweenLevelsAndKey(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_LOOT, minLevels, maxLevels);
     }
-
-    /**
-     * Enchants a loot entry with an exact amount of levels, and the {@link ModEnchantmentTags#ON_RANDOM_SPEEDRUNNER_BOOK} key.
-     */
-    public EnchantWithLevelsFunction.Builder enchantWithRandomSpeedrunnerBook(int exactLevels) {
-        return enchantBetweenLevelsAndKey(ModEnchantmentTags.ON_RANDOM_SPEEDRUNNER_BOOK, exactLevels, exactLevels);
-    }
 }

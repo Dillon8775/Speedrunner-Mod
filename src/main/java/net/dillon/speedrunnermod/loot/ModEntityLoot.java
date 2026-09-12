@@ -309,7 +309,7 @@ public class ModEntityLoot extends FabricEntityLootSubProvider {
                                                         .apply(SetItemCountFunction.setCount(ContextIntProviders.exactly(1)))
                                                         .apply(EnchantedCountIncreaseFunction.lootingMultiplier(this.enchantments, ContextFloatProviders.between(0.0F, 1.0F)))
                                         )
-                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.enchantments, 0.36F, 0.03F))
+                                        .when(LootItemRandomChanceWithEnchantedBonusCondition.randomChanceAndLootingBoost(this.enchantments, 0.33F, 0.03F))
                                         .when(killedByPlayer())
                         )
         );

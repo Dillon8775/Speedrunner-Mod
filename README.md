@@ -830,7 +830,7 @@ The mod comes with a new built-in panorama for speedrunning!
 ### Players can hold their breath for a longer period of time while underwater.
 You can disable this feature by turning off the "Higher Breath Time" option.
 
-### Nether gold ores drop more golden nuggets.
+### Nether gold ores drop slightly more golden nuggets.
 
 ### Everything smelts and brews faster.
 You can disable this feature by turning off the "Faster Smelting/Brewing" option(s).

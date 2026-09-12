@@ -360,7 +360,7 @@ public class ModBlockLoot extends FabricBlockLootSubProvider {
                         applyExplosionDecay(
                                 block,
                                 LootItem.lootTableItem(Items.GOLD_NUGGET)
-                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(12, 36)))
+                                        .apply(SetItemCountFunction.setCount(ContextIntProviders.between(9, 18)))
                                         .apply(ApplyBonusCount.addOreBonusCount(this.enchantments.getOrThrow(Enchantments.FORTUNE)))
                         )
                 )

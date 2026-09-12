@@ -30,8 +30,7 @@ import static net.dillon.dillonlib.mixin.accessor.ItemsInvoker.registerModItem;
  */
 public class ModItems {
 
-    public static final Item SPEEDRUNNER_INGOT = registerModItem(ModItemIds.SPEEDRUNNER_INGOT, properties -> new TooltipItem(properties,
-            Component.translatable("item.speedrunnermod.speedrunner_ingot.tooltip")));
+    public static final Item SPEEDRUNNER_INGOT = registerModItem(ModItemIds.SPEEDRUNNER_INGOT, Item::new);
     public static final Item SPEEDRUNNER_NUGGET = registerModItem(ModItemIds.SPEEDRUNNER_NUGGET, Item::new);
     public static final Item RAW_SPEEDRUNNER = registerModItem(ModItemIds.RAW_SPEEDRUNNER, Item::new);
     public static final Item SPEEDRUNNER_STICK = registerModItem(ModItemIds.SPEEDRUNNER_STICK, Item::new);

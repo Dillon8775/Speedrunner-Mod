@@ -230,9 +230,9 @@ public class ModModelProviders extends FabricModelProvider {
     }
 
     /**
-     * Registers a {@code speedrunner shield renderer.}
+     * Registers a speedrunner shield renderer.
      */
-    private void registerModdedShield(final ItemModelGenerators itemModelGenerator, Item item, SpecialModelRenderer.Unbaked unbakedModel) {
+    private void registerModdedShield(final ItemModelGenerators itemModelGenerator, Item item, SpecialModelRenderer.Unbaked<?> unbakedModel) {
         ItemModel.Unbaked normal = ItemModelUtils.specialModel(ModelLocationUtils.getModelLocation(item), unbakedModel);
         ItemModel.Unbaked blocking = ItemModelUtils.specialModel(ModelLocationUtils.getModelLocation(item, "_blocking"), unbakedModel);
         itemModelGenerator.itemModelOutput.accept(item, ItemModelUtils.conditional(ShieldSpecialRenderer.DEFAULT_TRANSFORMATION, ItemModelUtils.isUsingItem(), blocking, normal));

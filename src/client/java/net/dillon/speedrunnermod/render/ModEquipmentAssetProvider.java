@@ -56,7 +56,7 @@ public class ModEquipmentAssetProvider extends EquipmentAssetProvider {
     }
 
     @Override
-    public CompletableFuture<?> run(CachedOutput cache) {
+    public CompletableFuture<?> run(final CachedOutput cache) {
         Map<ResourceKey<EquipmentAsset>, EquipmentClientInfo> map = new HashMap<>();
         bootstrap((key, model) -> {
             if (map.putIfAbsent(key, model) != null) {

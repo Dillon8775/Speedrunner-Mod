@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.block;
 
 import net.dillon.speedrunnermod.item.core.ModBlockIds;
 import net.dillon.speedrunnermod.item.core.ModBlockItemIds;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.ARGB;
@@ -468,6 +467,5 @@ public class ModBlocks {
      * Initializes all Speedrunner Mod {@code blocks.}
      */
     public static void initializeBlocks() {
-        SpeedrunnerMod.LOGGER.debug("Initialized blocks.");
     }
 }

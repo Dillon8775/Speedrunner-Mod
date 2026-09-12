@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.world.feature;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
@@ -32,6 +31,5 @@ public class ModStructureSets {
      * Initializes all speedrunner mod structure sets.
      */
     public static void initializeStructureSets() {
-        SpeedrunnerMod.LOGGER.debug("Initialized structure sets.");
     }
 }

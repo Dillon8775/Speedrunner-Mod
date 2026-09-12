@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.component;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.tag.ModItemTags;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -136,6 +135,5 @@ public class ModEnchantments {
      * Initializes all Speedrunner Mod {@code enchantments.}
      */
     public static void initializeEnchantments() {
-        SpeedrunnerMod.LOGGER.debug("Initialized enchantments.");
     }
 }

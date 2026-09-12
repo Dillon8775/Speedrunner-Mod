@@ -3,7 +3,6 @@ package net.dillon.speedrunnermod.villager;
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.tag.ModEnchantmentTags;
 import net.dillon.speedrunnermod.tag.ModPotionTags;
 import net.minecraft.advancements.predicates.DataComponentMatchers;
@@ -383,6 +382,5 @@ public class ModTrades {
      * Initializes all speedrunner mod trades.
      */
     public static void initializeTrades() {
-        SpeedrunnerMod.LOGGER.debug("Initialized trades.");
     }
 }

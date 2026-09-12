@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.villager;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.tag.ModTradeTags;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -41,6 +40,5 @@ public class ModTradeSets {
      * Initializes all speedrunner mod trade sets.
      */
     public static void initializeTradeSets() {
-        SpeedrunnerMod.LOGGER.debug("Initialized trade sets.");
     }
 }

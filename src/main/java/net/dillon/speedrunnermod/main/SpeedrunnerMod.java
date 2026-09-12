@@ -63,7 +63,7 @@ public class SpeedrunnerMod implements ModInitializer {
         ModTradeSets.initializeTradeSets();
         ModVillagers.initializeVillagerProfessions();
 
-        ModPredicates.initializeCriterions();
+        ModPredicates.initializePredicates();
 
         ModAttributeKeys.initializeAttributeKeys();
         ModAttributes.initializeAttributes();
@@ -78,7 +78,7 @@ public class SpeedrunnerMod implements ModInitializer {
         ModSoundEvents.initializeSoundEvents();
 
         ModEnchantments.initializeEnchantments();
-        ModRecipes.registerModSerializers();
+        ModRecipes.registerModRecipeSerializers();
 
         ModMenus.initializeMenus();
 

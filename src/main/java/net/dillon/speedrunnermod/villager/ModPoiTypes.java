@@ -3,7 +3,6 @@ package net.dillon.speedrunnermod.villager;
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
 import net.dillon.speedrunnermod.block.ModBlocks;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.mixin.accessor.PoiTypesInvoker;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -45,6 +44,5 @@ public class ModPoiTypes {
      * Initializes all speedrunner mod poi types.
      */
     public static void initializeModPois() {
-        SpeedrunnerMod.LOGGER.debug("Initialized POIs.");
     }
 }

@@ -1,7 +1,6 @@
 package net.dillon.speedrunnermod.helper;
 
 import net.dillon.dillonlib.util.UpdateChecker;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.platform.SpeedrunnerModPlatforms;
 import net.dillon.speedrunnermod.util.RandomChance;
 import net.fabricmc.loader.api.FabricLoader;
@@ -28,7 +27,6 @@ public class ModConstants {
      * Initializes all constant variables.
      */
     public static void initConstants() {
-        SpeedrunnerMod.LOGGER.debug("Initialized mod constants.");
     }
 
     /**

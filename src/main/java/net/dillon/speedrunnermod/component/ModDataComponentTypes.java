@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.component;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.Registry;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -74,6 +73,5 @@ public class ModDataComponentTypes {
      * Initializes all speedrunner mod data components.
      */
     public static void initializeDataComponents() {
-        SpeedrunnerMod.LOGGER.debug("Initialized data components.");
     }
 }

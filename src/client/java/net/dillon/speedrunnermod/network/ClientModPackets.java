@@ -141,8 +141,6 @@ public class ClientModPackets {
         registerC2SOnServer(); // register client-to-server ONLY on EnvType.SERVER
 
         registerClientJoinAndDisconnectEvents();
-
-        SpeedrunnerMod.LOGGER.debug("Registered server-to-client packets.");
     }
 
     /**
@@ -159,7 +157,7 @@ public class ClientModPackets {
                 integratedServer.getCommands().sendCommands(serverPlayerEntity);
             }
 
-            SpeedrunnerMod.LOGGER.debug("Synced fast world creation settings with world in " + delayTicks + " ticks.");
+            SpeedrunnerMod.LOGGER.info("Synced fast world creation settings with world in {} ticks.", delayTicks);
         }
     }
 

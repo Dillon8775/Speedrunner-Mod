@@ -69,7 +69,7 @@ public abstract class PlayerMixin extends LivingEntity {
      * Makes the Giant disable player's shields.
      */
     @Inject(method = "blockUsingItem", at = @At("TAIL"))
-    private void giantBlocksShields(final ServerLevel level, final LivingEntity attacker, final DamageSource source, final float damage, CallbackInfo ci) {
+    private void giantBlocksShields(final ServerLevel level, final LivingEntity attacker, final DamageSource source, final float damage, final boolean fullyBlocked, CallbackInfo ci) {
         if (!isDoomMode()) {
             return;
         }

@@ -217,7 +217,5 @@ public class ModPackets {
         registerS2COnServer(); // register server-to-client ONLY on EnvType.SERVER
 
         registerDedicatedServerJoinAndDisconnectEvents();
-
-        LOGGER.debug("Registered client-to-server packets.");
     }
 }

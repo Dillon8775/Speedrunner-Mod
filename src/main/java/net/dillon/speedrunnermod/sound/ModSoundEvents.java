@@ -1,7 +1,6 @@
 package net.dillon.speedrunnermod.sound;
 
 import net.dillon.dillonlib.factory.Factories;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.sounds.SoundEvent;
 
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
@@ -18,6 +17,5 @@ public class ModSoundEvents {
      * Initializes all speedrunner mod {@code custom sounds.}
      */
     public static void initializeSoundEvents() {
-        SpeedrunnerMod.LOGGER.debug("Initialized sound events.");
     }
 }

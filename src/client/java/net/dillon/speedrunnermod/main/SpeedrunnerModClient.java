@@ -1,13 +1,11 @@
 package net.dillon.speedrunnermod.main;
 
+import net.dillon.speedrunnermod.keybind.ModKeyMappings;
 import net.dillon.speedrunnermod.network.ClientModPackets;
 import net.dillon.speedrunnermod.option.ModClientOptions;
 import net.dillon.speedrunnermod.particle.ModParticleManager;
 import net.dillon.speedrunnermod.screen.ModMenus;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.loader.api.FabricLoader;
-
-import static net.dillon.speedrunnermod.main.SpeedrunnerMod.LOGGER;
 
 /**
  * The home initializer for the client-side of the Speedrunner Mod.
@@ -21,13 +19,15 @@ public class SpeedrunnerModClient implements ClientModInitializer {
     public void onInitializeClient() {
         ClientModPackets.registerClientPackets();
 
-        ModParticleManager.registerDefaults();
+        ModParticleManager.registerParticleTypes();
         ModMenus.registerScreens();
-        // ModKeyMappings.initializeKeybinds();
+        try {
+            ModKeyMappings.initializeKeybinds();
+        } catch (ExceptionInInitializerError o) {
+            SpeedrunnerMod.LOGGER.error("Skipping keybind initialization. You should only see this if you are running the Datagen.");
+        }
 
         clientConfigHandler().load();
-
-        LOGGER.debug("The client-side for The Speedrunner Mod has successfully loaded.");
     }
 
     /**
@@ -45,13 +45,6 @@ public class SpeedrunnerModClient implements ClientModInitializer {
      */
     public static ModClientOptions.ModClientOptionsHandler clientConfigHandler() {
         return ModClientOptions.INSTANCE;
-    }
-
-    /**
-     * Returns true if the {@code Simple Keybinds} mod is loaded.
-     */
-    public static boolean isSimpleKeybindsLoaded() {
-        return FabricLoader.getInstance().isModLoaded("simplekeybinds");
     }
 
     /**

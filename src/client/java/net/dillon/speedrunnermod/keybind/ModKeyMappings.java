@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.keybind;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import net.blay09.mods.kuma.api.*;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.main.SpeedrunnerModClient;
 import net.dillon.speedrunnermod.platform.ModReferences;
 import net.dillon.speedrunnermod.util.ClientModUtil;
@@ -12,7 +11,8 @@ import net.minecraft.client.gui.components.debug.DebugScreenEntries;
 import net.minecraft.network.chat.Component;
 
 import static net.dillon.speedrunnermod.main.SpeedrunnerMod.ofSpeedrunnerMod;
-import static net.dillon.speedrunnermod.main.SpeedrunnerModClient.*;
+import static net.dillon.speedrunnermod.main.SpeedrunnerModClient.client;
+import static net.dillon.speedrunnermod.main.SpeedrunnerModClient.clientConfigHandler;
 
 /**
  * All {@code Speedrunner Mod} keybindings.
@@ -24,11 +24,6 @@ public class ModKeyMappings {
      * Initializes all {@code Speedrunner Mod} keybindings.
      */
     public static void initializeKeybinds() {
-        SpeedrunnerMod.LOGGER.debug("Initialized keybinds.");
-
-        if (isSimpleKeybindsLoaded()) {
-            SpeedrunnerMod.LOGGER.debug("Simple Keybinds mod is loaded, compatibility has been added.");
-        }
     }
 
     public static final ManagedKeyMapping RESET_WORLD = Kuma.createKeyMapping(ofSpeedrunnerMod("create_new_world"))

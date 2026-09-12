@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.entity;
 
 import net.dillon.dillonlib.factory.Factories;
 import net.dillon.speedrunnermod.item.core.ModItems;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.entity.vehicle.boat.ChestBoat;
@@ -63,6 +62,5 @@ public class ModEntityTypes {
      * Initializes all {@code Speedrunner Mod entity types.}
      */
     public static void initializeEntityTypes() {
-        SpeedrunnerMod.LOGGER.debug("Initialized entity types.");
     }
 }

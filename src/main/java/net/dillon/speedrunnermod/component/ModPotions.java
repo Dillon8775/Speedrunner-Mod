@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.component;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -39,6 +38,5 @@ public class ModPotions {
      * Initializes all potions.
      */
     public static void initializePotions() {
-        SpeedrunnerMod.LOGGER.debug("Initialized potions.");
     }
 }

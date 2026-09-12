@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.world.biome;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.world.ModWorldGeneration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -35,6 +34,5 @@ public class ModBiomes {
      * Initializes this class, registering the {@code Speedrunner's Wasteland} biome.
      */
     public static void initializeBiomes() {
-        SpeedrunnerMod.LOGGER.debug("Initialized Speedrunner Mod biomes.");
     }
 }

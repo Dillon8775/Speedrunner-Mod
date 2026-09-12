@@ -266,8 +266,10 @@ public class Goliath extends Monster implements GoliathBase {
      * Handles {@code knockback} for Goliath.
      */
     @Override
-    protected void blockedByItem(final LivingEntity defender, final DamageSource source, final float damage) {
-        GoliathBase.knockback(this, defender);
+    protected void blockedByItem(final LivingEntity defender, final DamageSource source, final float damage, final boolean fullyBlocked) {
+        if (!fullyBlocked) {
+            GoliathBase.knockback(this, defender);
+        }
     }
 
     /**

@@ -13,7 +13,6 @@ import net.dillon.speedrunnermod.item.material.ModEquipmentAssetKeys;
 import net.dillon.speedrunnermod.item.material.ModToolMaterials;
 import net.dillon.speedrunnermod.item.tool.*;
 import net.dillon.speedrunnermod.loot.ModIntProviders;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.dillon.speedrunnermod.tag.ModItemTags;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.BlockTags;
@@ -321,6 +320,5 @@ public class ModItems {
      * Initializes all Speedrunner Mod {@code items.}
      */
     public static void initializeItems() {
-        SpeedrunnerMod.LOGGER.debug("Initialized items.");
     }
 }

@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.villager;
 
 import com.google.common.collect.ImmutableSet;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -43,6 +42,5 @@ public class ModVillagers {
      * Registers all speedrunner mod {@code villager professions.}
      */
     public static void initializeVillagerProfessions() {
-        SpeedrunnerMod.LOGGER.debug("Initialized villager professions.");
     }
 }

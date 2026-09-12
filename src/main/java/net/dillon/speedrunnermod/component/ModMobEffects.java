@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.component;
 
 import net.dillon.speedrunnermod.component.effect.DragonsAuraEffect;
 import net.dillon.speedrunnermod.component.effect.WitheredEffect;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,6 +27,5 @@ public class ModMobEffects {
     }
 
     public static void registerStatusEffects() {
-        SpeedrunnerMod.LOGGER.debug("Registered potions.");
     }
 }

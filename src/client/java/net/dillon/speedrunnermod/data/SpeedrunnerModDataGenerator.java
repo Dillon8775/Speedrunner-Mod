@@ -9,7 +9,7 @@ import net.dillon.speedrunnermod.loot.ModIntProviders;
 import net.dillon.speedrunnermod.loot.providers.*;
 import net.dillon.speedrunnermod.recipe.ModRecipeProvider;
 import net.dillon.speedrunnermod.render.ModEquipmentAssetProvider;
-import net.dillon.speedrunnermod.render.ModItemModelGenerators;
+import net.dillon.speedrunnermod.render.ModModelProviders;
 import net.dillon.speedrunnermod.tag.*;
 import net.dillon.speedrunnermod.villager.ModTradeSets;
 import net.dillon.speedrunnermod.villager.ModTrades;
@@ -33,7 +33,7 @@ public class SpeedrunnerModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModAdvancementProvider::new);
         pack.addProvider((output, registriesFuture) -> new ModEquipmentAssetProvider(output));
         pack.addProvider(ModRecipeProvider::new);
-        pack.addProvider(ModItemModelGenerators::new);
+        pack.addProvider(ModModelProviders::new);
 
         // Loot Providers
         pack.addProvider(ModBlockLoot::new);

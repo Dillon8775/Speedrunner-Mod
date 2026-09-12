@@ -2,7 +2,6 @@ package net.dillon.speedrunnermod.event;
 
 import net.dillon.speedrunnermod.author.Author;
 import net.dillon.speedrunnermod.author.Authors;
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.minecraft.world.entity.player.Player;
 
@@ -21,7 +20,5 @@ public class ModEventCallbacks {
             }
             return true;
         });
-
-        SpeedrunnerMod.LOGGER.debug("Registered event callbacks.");
     }
 }

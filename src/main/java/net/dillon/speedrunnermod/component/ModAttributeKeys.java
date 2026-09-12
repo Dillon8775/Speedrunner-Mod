@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.component;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -32,6 +31,5 @@ public class ModAttributeKeys {
      * Initializes all speedrunner mod attribute keys.
      */
     public static void initializeAttributeKeys() {
-        SpeedrunnerMod.LOGGER.debug("Initialized attribute keys.");
     }
 }

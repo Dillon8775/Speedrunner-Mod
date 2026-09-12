@@ -1,6 +1,5 @@
 package net.dillon.speedrunnermod.component;
 
-import net.dillon.speedrunnermod.main.SpeedrunnerMod;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -71,6 +70,5 @@ public class ModAttributes {
      * Initializes all Speedrunner Mod attributes.
      */
     public static void initializeAttributes() {
-        SpeedrunnerMod.LOGGER.debug("Initialized attributes.");
     }
 }
